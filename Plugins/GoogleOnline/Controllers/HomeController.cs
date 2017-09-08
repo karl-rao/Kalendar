@@ -40,7 +40,7 @@ namespace Kalendar.Plugins.GoogleOnline.Controllers
                 ApplicationName = "Atimer.cn",
             });
 
-            new CalendarService { }
+            //new CalendarService { }
 
             // Define parameters of request.
             EventsResource.ListRequest request = service.Events.List("primary");

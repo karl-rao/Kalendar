@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using Kalendar.Zero.Data.Controls;
-using Karlrao.Utility.WebHelper;
+using Kalendar.Zero.Utility.Common;
 
 namespace Kalendar.Web.Portal.Controllers
 {
@@ -242,9 +242,9 @@ namespace Kalendar.Web.Portal.Controllers
             //var r=new Zero.ApiTerminal.Clients.BrowserClient();
             //var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow", false,"POST", request.ObjToJson(), null,null,null,"UTF-8","application/json", "application/json");
 
-            var r=new Karlrao.Utility.WebHelper.NetRequest.BrowserClient();
-            var resp = r.SendHttpRequestPostJson("http://proxy.atimer.cn/api/woow", request.ObjToJson());
-
+            var r=new BrowserClient();
+            var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow",false,"POST" ,request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
+            
             return Content(resp.SerializeXml());
         }
 
