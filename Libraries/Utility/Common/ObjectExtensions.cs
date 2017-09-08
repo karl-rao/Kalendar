@@ -23,6 +23,14 @@ namespace Kalendar.Zero.Utility.Common
     /// </summary>
     public static class ObjectExtensions
     {
+
+
+        /// <summary>
+        /// 随机排序
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="oriList"></param>
+        /// <returns></returns>
         public static List<T> RandomResortList<T>(this List<T> oriList)
         {
             Random random = new Random();
