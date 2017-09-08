@@ -1,0 +1,25 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Id > 0)
+{
+    var nickName = string.IsNullOrEmpty(Model.NickName) ? Model.Mobile.Substring(0,3)+"_____" : Model.NickName;
+
+    <a href="/home/index/bootstrapcalendar" rel="wrap" class="ajaxLoad"><i class="fa fa-calendar"></i> Bootstrap </a>
+    <a href="/home/index/fullcalendar" rel="wrap" class="ajaxLoad"><i class="fa fa-calendar-o"></i> FullCalendar </a>
+    <a href="/home/index/ourcalendar" rel="wrap" class="ajaxLoad"><i class="fa fa-calendar-plus-o"></i> 有空日历控件 </a>
+    <a href="/my/index"><i class="fa fa-user"></i> Hi.@nickName </a>
+    <a href="/outlook"><i class="fa fa-windows"></i> </a>
+
+    <a href="/home/signout"><i class="fa fa-sign-out"></i> 登出 </a>
+}
+else
+{
+    <a href="/home/index/signin" rel="wrap" class="ajaxLoad"><i class="fa fa-sign-in"></i> 注册 </a>
+    <a href="/home/index/login" rel="wrap" class="ajaxLoad"><i class="fa fa-key"></i> 登录 </a>
+    <a href="/home/index/bootstrapcalendar" rel="wrap" class="ajaxLoad"><i class="fa fa-calendar"></i> Bootstrap </a>
+    <a href="/home/index/fullcalendar" rel="wrap" class="ajaxLoad"><i class="fa fa-calendar-o"></i> FullCalendar </a>
+    <a href="/home/index/ourcalendar" rel="wrap" class="ajaxLoad"><i class="fa fa-calendar-plus-o"></i> 有空日历控件 </a>
+}

@@ -1,0 +1,166 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="/content/calendar/css/calendar.css">
+
+<div class="col-md-12" id="mainContent">
+    <div id="calendarwrap">
+        <div class="pull-right form-inline">
+            <div class="btn-group">
+                <button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
+                <button class="btn btn-default" data-calendar-nav="today">Today</button>
+                <button class="btn btn-primary" data-calendar-nav="next">Next >></button>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-warning" data-calendar-view="year">Year</button>
+                <button class="btn btn-warning active" data-calendar-view="month">Month</button>
+                <button class="btn btn-warning" data-calendar-view="week">Week</button>
+                <button class="btn btn-warning" data-calendar-view="day">Day</button>
+            </div>
+        </div>
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <hr />
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="#best">最佳 <span class="badge">3</span></a></li>
+            <li role="presentation"><a href="#new">最新 <span class="badge">3</span></a></li>
+            <li role="presentation"><a href="#focus">最热 <span class="badge">3</span></a></li>
+        </ul>
+
+        <form id="projectForm">
+            <div class="tab-content" id="projectItems">
+                @Html.Action("Projects")
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/content/calendar/components/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="/content/calendar/js/calendar.js"></script>
+<script src="/Content/calendar/js/language/zh-CN.js"></script>
+<script type="text/javascript">
+
+    var options = {
+        events_source: '/Home/RenderJsonForBootstrapCalendar',
+        view: 'month',
+        tmpl_path: '/content/calendar/tmpls/',
+        tmpl_cache: false,
+        day: '@(DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd"))',
+        onAfterEventsLoad: function (events) {
+            if (!events) {
+                return;
+            }
+            var list = $('#eventlist');
+            list.html('');
+
+            $.each(events, function (key, val) {
+                $(document.createElement('li'))
+                    .html('<a href="' + val.url + '">' + val.title + '</a>')
+                    .appendTo(list);
+            });
+        },
+        onAfterViewLoad: function (view) {
+            $('.page-header h3').text(this.getTitle());
+            $('.btn-group button').removeClass('active');
+            $('button[data-calendar-view="' + view + '"]').addClass('active');
+        },
+        classes: {
+            months: {
+                general: 'label'
+            }
+        }
+    };
+
+    function projectItemToggle(ele) {
+        var pidinput = $(ele).find("input[name='ProjectIds']").last();
+        var pid = $(ele).attr("projectId");
+
+        if (pidinput.val() == "0") {
+            pidinput.val(pid);
+            $(ele).addClass("active");
+        } else {
+            pidinput.val("0");
+            $(ele).removeClass("active");
+        }
+
+        var d = jQuery("#projectForm").serialize();
+        $.ajax({
+            url: "/home/refresh",
+            data: d,
+            dataType: "json",
+            type: "post",
+            success: function (data) {
+                var calendar = $('#calendar').calendar(options);
+                calendar.view();
+            },
+            error: function () {
+                //alert("Service Error");
+            }
+        });
+
+        return false;
+    }
+
+    (function($) {
+
+        "use strict";
+
+
+        var calendar = $('#calendar').calendar(options);
+        calendar.setLanguage("zh-CN");
+        calendar.view();
+
+        $('.btn-group button[data-calendar-nav]').each(function() {
+            var $this = $(this);
+            $this.click(function() {
+                calendar.navigate($this.data('calendar-nav'));
+            });
+        });
+
+        $('.btn-group button[data-calendar-view]').each(function() {
+            var $this = $(this);
+            $this.click(function() {
+                calendar.view($this.data('calendar-view'));
+            });
+        });
+
+        $('#first_day').change(function() {
+            var value = $(this).val();
+            value = value.length ? parseInt(value) : null;
+            calendar.setOptions({ first_day: value });
+            calendar.view();
+        });
+
+        $('#events-in-modal').change(function() {
+            var val = $(this).is(':checked') ? $(this).val() : null;
+            calendar.setOptions({ modal: val });
+        });
+        $('#format-12-hours').change(function() {
+            var val = $(this).is(':checked') ? true : false;
+            calendar.setOptions({ format12: val });
+            calendar.view();
+        });
+        $('#show_wbn').change(function() {
+            var val = $(this).is(':checked') ? true : false;
+            calendar.setOptions({ display_week_numbers: val });
+            calendar.view();
+        });
+        $('#show_wb').change(function() {
+            var val = $(this).is(':checked') ? true : false;
+            calendar.setOptions({ weekbox: val });
+            calendar.view();
+        });
+        $('#events-modal .modal-header, #events-modal .modal-footer').click(function(e) {
+            //e.preventDefault();
+            //e.stopPropagation();
+        });
+    }(jQuery));
+
+
+</script>

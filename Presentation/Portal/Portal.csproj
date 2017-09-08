@@ -1,0 +1,1402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5CAF0C53-C5E1-42AD-AA4A-8994D5027FCE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalendar.Web.Portal</RootNamespace>
+    <AssemblyName>Kalendar.Web.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Graph, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Graph.1.4.0\lib\net45\Microsoft.Graph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Graph.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Graph.Core.1.5.0\lib\net45\Microsoft.Graph.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Identity.Client.1.1.0-preview\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.0\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OpenIdConnect.3.1.0\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\GoogleController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MyController.cs" />
+    <Compile Include="Controllers\NullController.cs" />
+    <Compile Include="Controllers\OutlookController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\js\npm.js" />
+    <Content Include="Content\calendar\components\bootstrap2\css\bootstrap-responsive.css" />
+    <Content Include="Content\calendar\components\bootstrap2\css\bootstrap.css" />
+    <Content Include="Content\calendar\components\bootstrap2\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\calendar\components\bootstrap2\img\glyphicons-halflings.png" />
+    <Content Include="Content\calendar\components\bootstrap2\js\bootstrap.min.js" />
+    <Content Include="Content\calendar\components\bootstrap3\css\bootstrap-theme.css" />
+    <Content Include="Content\calendar\components\bootstrap3\css\bootstrap-theme.min.css" />
+    <Content Include="Content\calendar\components\bootstrap3\css\bootstrap.css" />
+    <Content Include="Content\calendar\components\bootstrap3\css\bootstrap.min.css" />
+    <Content Include="Content\calendar\components\bootstrap3\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\calendar\components\bootstrap3\js\bootstrap.js" />
+    <Content Include="Content\calendar\components\bootstrap3\js\bootstrap.min.js" />
+    <Content Include="Content\calendar\components\jquery\jquery.min.js" />
+    <Content Include="Content\calendar\components\jstimezonedetect\jstz.js" />
+    <Content Include="Content\calendar\components\jstimezonedetect\jstz.min.js" />
+    <Content Include="Content\calendar\components\jstimezonedetect\LICENCE.txt" />
+    <Content Include="Content\calendar\components\underscore\underscore-min.js" />
+    <Content Include="Content\calendar\css\calendar.css" />
+    <Content Include="Content\calendar\css\calendar.min.css" />
+    <Content Include="Content\calendar\events.json.js" />
+    <Content Include="Content\calendar\events.json.php" />
+    <Content Include="Content\calendar\Gruntfile.js" />
+    <Content Include="Content\calendar\img\dark_wood.png" />
+    <Content Include="Content\calendar\img\slide-bg.png" />
+    <Content Include="Content\calendar\img\tick.png" />
+    <Content Include="Content\calendar\index-bs3.html" />
+    <Content Include="Content\calendar\index.html" />
+    <Content Include="Content\calendar\js\app.js" />
+    <Content Include="Content\calendar\js\calendar.js" />
+    <Content Include="Content\calendar\js\calendar.min.js" />
+    <Content Include="Content\calendar\js\language\ar-SA.js" />
+    <Content Include="Content\calendar\js\language\bg-BG.js" />
+    <Content Include="Content\calendar\js\language\bs-BA.js" />
+    <Content Include="Content\calendar\js\language\ca-ES.js" />
+    <Content Include="Content\calendar\js\language\cs-CZ.js" />
+    <Content Include="Content\calendar\js\language\da-DK.js" />
+    <Content Include="Content\calendar\js\language\de-AT.js" />
+    <Content Include="Content\calendar\js\language\de-DE.js" />
+    <Content Include="Content\calendar\js\language\el-GR.js" />
+    <Content Include="Content\calendar\js\language\es-CL.js" />
+    <Content Include="Content\calendar\js\language\es-CO.js" />
+    <Content Include="Content\calendar\js\language\es-ES.js" />
+    <Content Include="Content\calendar\js\language\es-MX.js" />
+    <Content Include="Content\calendar\js\language\fi-FI.js" />
+    <Content Include="Content\calendar\js\language\fr-FR.js" />
+    <Content Include="Content\calendar\js\language\hr-HR.js" />
+    <Content Include="Content\calendar\js\language\hu-HU.js" />
+    <Content Include="Content\calendar\js\language\id-ID.js" />
+    <Content Include="Content\calendar\js\language\it-IT.js" />
+    <Content Include="Content\calendar\js\language\ja-JP.js" />
+    <Content Include="Content\calendar\js\language\ko-KR.js" />
+    <Content Include="Content\calendar\js\language\ms-MY.js" />
+    <Content Include="Content\calendar\js\language\nl-NL.js" />
+    <Content Include="Content\calendar\js\language\no-NO.js" />
+    <Content Include="Content\calendar\js\language\pl-PL.js" />
+    <Content Include="Content\calendar\js\language\pt-BR.js" />
+    <Content Include="Content\calendar\js\language\ro-RO.js" />
+    <Content Include="Content\calendar\js\language\ru-RU.js" />
+    <Content Include="Content\calendar\js\language\sk-SR.js" />
+    <Content Include="Content\calendar\js\language\sl-SL.js" />
+    <Content Include="Content\calendar\js\language\sv-SE.js" />
+    <Content Include="Content\calendar\js\language\template.js" />
+    <Content Include="Content\calendar\js\language\th-TH.js" />
+    <Content Include="Content\calendar\js\language\tr-TR.js" />
+    <Content Include="Content\calendar\js\language\zh-CN.js" />
+    <Content Include="Content\calendar\js\language\zh-TW.js" />
+    <Content Include="Content\calendar\tmpls\day.html" />
+    <Content Include="Content\calendar\tmpls\events-list.html" />
+    <Content Include="Content\calendar\tmpls\modal.html" />
+    <Content Include="Content\calendar\tmpls\month-day.html" />
+    <Content Include="Content\calendar\tmpls\month.html" />
+    <Content Include="Content\calendar\tmpls\week-days.html" />
+    <Content Include="Content\calendar\tmpls\week.html" />
+    <Content Include="Content\calendar\tmpls\year-month.html" />
+    <Content Include="Content\calendar\tmpls\year.html" />
+    <Content Include="Content\css\bigvideo.css" />
+    <Content Include="Content\css\bigvideo.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_f5f0e5_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_15_5f391b_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_25_cb842e_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_40_0a0a0a_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_40_111111_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_1c1c1c_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_f1fbe5_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_fbf5d0_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_60_000000_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_70_ede4d4_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\css\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\my.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\font\css\font-awesome.css" />
+    <Content Include="Content\font\css\font-awesome.min.css" />
+    <Content Include="Content\font\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\font\HELP-US-OUT.txt" />
+    <Content Include="Content\font\scss\font-awesome.scss" />
+    <Content Include="Content\font\scss\_animated.scss" />
+    <Content Include="Content\font\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font\scss\_core.scss" />
+    <Content Include="Content\font\scss\_fixed-width.scss" />
+    <Content Include="Content\font\scss\_icons.scss" />
+    <Content Include="Content\font\scss\_larger.scss" />
+    <Content Include="Content\font\scss\_list.scss" />
+    <Content Include="Content\font\scss\_mixins.scss" />
+    <Content Include="Content\font\scss\_path.scss" />
+    <Content Include="Content\font\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font\scss\_screen-reader.scss" />
+    <Content Include="Content\font\scss\_stacked.scss" />
+    <Content Include="Content\font\scss\_variables.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\css\prettify.css" />
+    <Content Include="Content\font\src\3.2.1\assets\css\pygments.css" />
+    <Content Include="Content\font\src\3.2.1\assets\css\site.css" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_core.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_extras.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_path.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\font\src\3.2.1\assets\ico\favicon.ico" />
+    <Content Include="Content\font\src\3.2.1\assets\img\contribution-sample.png" />
+    <Content Include="Content\font\src\3.2.1\assets\img\fort_awesome.jpg" />
+    <Content Include="Content\font\src\3.2.1\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\font\src\3.2.1\assets\img\glyphicons-halflings.png" />
+    <Content Include="Content\font\src\3.2.1\assets\js\backbone.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\bootstrap-2.3.1.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\bootstrap-222.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\prettify.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\site.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\underscore.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\ZeroClipboard-1.1.7.min.js" />
+    <Content Include="Content\font\src\3.2.1\assets\js\ZeroClipboard-1.1.7.swf" />
+    <Content Include="Content\font\src\3.2.1\cheatsheet\index.html" />
+    <Content Include="Content\font\src\3.2.1\community\index.html" />
+    <Content Include="Content\font\src\3.2.1\design.html" />
+    <Content Include="Content\font\src\3.2.1\examples\index.html" />
+    <Content Include="Content\font\src\3.2.1\get-started\index.html" />
+    <Content Include="Content\font\src\3.2.1\icons\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\adjust\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\adn\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\align-center\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\align-justify\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\align-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\align-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ambulance\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\anchor\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\android\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\angle-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\angle-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\angle-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\angle-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\apple\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\archive\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\arrow-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\arrow-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\arrow-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\arrow-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\asterisk\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\backward\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ban-circle\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bar-chart\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\barcode\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\beaker\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\beer\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bell-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bell\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bitbucket-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bitbucket\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bold\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bolt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bookmark-empty\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bookmark\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\book\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\briefcase\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\btc\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bug\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\building\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bullhorn\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\bullseye\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\calendar-empty\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\calendar\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\camera-retro\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\camera\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\caret-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\caret-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\caret-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\caret-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\certificate\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\check-empty\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\check-minus\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\check-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\check\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-sign-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-sign-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-sign-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-sign-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\chevron-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\circle-arrow-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\circle-arrow-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\circle-arrow-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\circle-arrow-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\circle-blank\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\circle\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cloud-download\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cloud-upload\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cloud\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cny\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\code-fork\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\code\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\coffee\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cogs\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cog\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\collapse-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\collapse-top\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\collapse\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\columns\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\comment-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\comments-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\comments\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\comment\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\compass\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\copy\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\credit-card\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\crop\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\css3\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\cut\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\dashboard\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\desktop\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\double-angle-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\double-angle-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\double-angle-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\double-angle-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\download-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\download\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\dribbble\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\dropbox\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\edit-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\edit\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\eject\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ellipsis-horizontal\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ellipsis-vertical\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\envelope-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\envelope\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\eraser\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\eur\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\exchange\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\exclamation-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\exclamation\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\expand-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\expand\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\external-link-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\external-link\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\eye-close\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\eye-open\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\facebook-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\facebook\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\facetime-video\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\fast-backward\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\fast-forward\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\female\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\fighter-jet\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\file-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\file-text-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\file-text\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\file\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\film\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\filter\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\fire-extinguisher\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\fire\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\flag-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\flag-checkered\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\flag\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\flickr\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\folder-close-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\folder-close\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\folder-open-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\folder-open\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\font\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\food\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\forward\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\foursquare\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\frown\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\fullscreen\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\gamepad\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\gbp\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\gift\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\github-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\github-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\github\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\gittip\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\glass\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\globe\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\google-plus-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\google-plus\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\group\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\h-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\hand-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\hand-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\hand-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\hand-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\hdd\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\headphones\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\heart-empty\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\heart\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\home\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\hospital\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\html5\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\inbox\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\indent-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\indent-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\info-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\info\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\inr\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\instagram\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\italic\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\jpy\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\keyboard\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\key\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\krw\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\laptop\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\leaf\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\legal\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\lemon\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\level-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\level-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\lightbulb\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\linkedin-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\linkedin\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\link\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\linux\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\list-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\list-ol\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\list-ul\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\list\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\location-arrow\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\lock\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\long-arrow-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\long-arrow-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\long-arrow-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\long-arrow-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\magic\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\magnet\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\mail-reply-all\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\male\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\map-marker\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\maxcdn\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\medkit\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\meh\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\microphone-off\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\microphone\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\minus-sign-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\minus-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\minus\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\mobile-phone\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\money\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\moon\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\move\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\music\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\off\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ok-circle\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ok-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ok\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\paper-clip\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\paste\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\pause\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\pencil\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\phone-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\phone\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\picture\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\pinterest-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\pinterest\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\plane\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\play-circle\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\play-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\play\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\plus-sign-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\plus-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\plus\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\print\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\pushpin\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\puzzle-piece\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\qrcode\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\question-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\question\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\quote-left\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\quote-right\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\random\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\refresh\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\remove-circle\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\remove-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\remove\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\renren\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\reorder\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\repeat\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\reply-all\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\reply\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\resize-full\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\resize-horizontal\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\resize-small\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\resize-vertical\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\retweet\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\road\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\rocket\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\rss-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\rss\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\save\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\screenshot\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\search\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\share-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\share-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\share\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\shield\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\shopping-cart\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sign-blank\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\signal\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\signin\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\signout\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sitemap\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\skype\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\smile\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-by-alphabet-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-by-alphabet\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-by-attributes-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-by-attributes\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-by-order-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-by-order\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sort\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\spinner\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\stackexchange\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\star-empty\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\star-half-empty\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\star-half\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\star\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\step-backward\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\step-forward\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\stethoscope\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\stop\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\strikethrough\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\subscript\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\suitcase\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\sun\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\superscript\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tablet\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\table\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tags\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tag\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tasks\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\terminal\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\text-height\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\text-width\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\th-large\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\th-list\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\thumbs-down-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\thumbs-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\thumbs-up-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\thumbs-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\th\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\ticket\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\time\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tint\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\trash\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\trello\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\trophy\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\truck\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tumblr-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\tumblr\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\twitter-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\twitter\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\umbrella\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\underline\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\undo\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\unlink\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\unlock-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\unlock\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\upload-alt\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\upload\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\usd\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\user-md\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\user\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\vk\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\volume-down\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\volume-off\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\volume-up\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\warning-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\weibo\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\windows\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\wrench\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\xing-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\xing\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\youtube-play\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\youtube-sign\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\youtube\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\zoom-in\index.html" />
+    <Content Include="Content\font\src\3.2.1\icon\zoom-out\index.html" />
+    <Content Include="Content\font\src\3.2.1\index.html" />
+    <Content Include="Content\font\src\3.2.1\license\index.html" />
+    <Content Include="Content\font\src\3.2.1\test\index.html" />
+    <Content Include="Content\font\src\3.2.1\whats-new\index.html" />
+    <Content Include="Content\font\src\accessibility.html" />
+    <Content Include="Content\font\src\assets\css\prettify.css" />
+    <Content Include="Content\font\src\assets\css\pygments.css" />
+    <Content Include="Content\font\src\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\font\src\assets\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_core.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_list.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_path.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\font\src\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\font\src\assets\ico\favicon.ico" />
+    <Content Include="Content\font\src\assets\img\algolia.png" />
+    <Content Include="Content\font\src\assets\img\logo-themeisle.png" />
+    <Content Include="Content\font\src\assets\img\logo-wpbeginner.png" />
+    <Content Include="Content\font\src\assets\js\html5shiv.js" />
+    <Content Include="Content\font\src\assets\js\monetization.js" />
+    <Content Include="Content\font\src\assets\js\prettify.min.js" />
+    <Content Include="Content\font\src\assets\js\respond.min.js" />
+    <Content Include="Content\font\src\assets\js\search.js" />
+    <Content Include="Content\font\src\assets\js\site.js" />
+    <Content Include="Content\font\src\assets\js\ZeroClipboard-1.1.7.min.js" />
+    <Content Include="Content\font\src\assets\js\ZeroClipboard-1.1.7.swf" />
+    <Content Include="Content\font\src\cdn\error.html" />
+    <Content Include="Content\font\src\cdn\success.html" />
+    <Content Include="Content\font\src\cheatsheet.html" />
+    <Content Include="Content\font\src\community.html" />
+    <Content Include="Content\font\src\design.html" />
+    <Content Include="Content\font\src\examples.html" />
+    <Content Include="Content\font\src\get-started.html" />
+    <Content Include="Content\font\src\icons.html" />
+    <Content Include="Content\font\src\index.html" />
+    <Content Include="Content\font\src\license.html" />
+    <Content Include="Content\font\src\store.html" />
+    <Content Include="Content\font\src\survey.html" />
+    <Content Include="Content\font\src\test\2.3.2.html" />
+    <Content Include="Content\font\src\test\all.html" />
+    <Content Include="Content\font\src\test\glyphicons.html" />
+    <Content Include="Content\font\src\test\height\4.4.0.html" />
+    <Content Include="Content\font\src\test\height\4.5.0.html" />
+    <Content Include="Content\font\src\test\height\current.html" />
+    <Content Include="Content\font\src\test\index.html" />
+    <Content Include="Content\font\src\thanks.html" />
+    <Content Include="Content\font\src\whats-new.html" />
+    <Content Include="Content\font\src\_includes\accessibility\accessibility-facdn.html" />
+    <Content Include="Content\font\src\_includes\accessibility\accessibility-manual.html" />
+    <Content Include="Content\font\src\_includes\accessibility\background.html" />
+    <Content Include="Content\font\src\_includes\accessibility\cta-cdn-ally.html" />
+    <Content Include="Content\font\src\_includes\accessibility\other.html" />
+    <Content Include="Content\font\src\_includes\ads\carbon.html" />
+    <Content Include="Content\font\src\_includes\brand-adblock-warning.html" />
+    <Content Include="Content\font\src\_includes\brand-license.html" />
+    <Content Include="Content\font\src\_includes\code\core.scss" />
+    <Content Include="Content\font\src\_includes\code\license.css" />
+    <Content Include="Content\font\src\_includes\community\getting-support.html" />
+    <Content Include="Content\font\src\_includes\community\project-milestones.html" />
+    <Content Include="Content\font\src\_includes\community\reporting-bugs.html" />
+    <Content Include="Content\font\src\_includes\community\requesting-new-icons.html" />
+    <Content Include="Content\font\src\_includes\community\submitting-pull-requests.html" />
+    <Content Include="Content\font\src\_includes\examples\accessible.html" />
+    <Content Include="Content\font\src\_includes\examples\animated.html" />
+    <Content Include="Content\font\src\_includes\examples\basic.html" />
+    <Content Include="Content\font\src\_includes\examples\bootstrap.html" />
+    <Content Include="Content\font\src\_includes\examples\bordered-pulled.html" />
+    <Content Include="Content\font\src\_includes\examples\custom.html" />
+    <Content Include="Content\font\src\_includes\examples\fixed-width.html" />
+    <Content Include="Content\font\src\_includes\examples\larger.html" />
+    <Content Include="Content\font\src\_includes\examples\list.html" />
+    <Content Include="Content\font\src\_includes\examples\rotated-flipped.html" />
+    <Content Include="Content\font\src\_includes\examples\stacked.html" />
+    <Content Include="Content\font\src\_includes\footer.html" />
+    <Content Include="Content\font\src\_includes\icons\accessibility.html" />
+    <Content Include="Content\font\src\_includes\icons\brand.html" />
+    <Content Include="Content\font\src\_includes\icons\chart.html" />
+    <Content Include="Content\font\src\_includes\icons\currency.html" />
+    <Content Include="Content\font\src\_includes\icons\directional.html" />
+    <Content Include="Content\font\src\_includes\icons\file-type.html" />
+    <Content Include="Content\font\src\_includes\icons\form-control.html" />
+    <Content Include="Content\font\src\_includes\icons\gender.html" />
+    <Content Include="Content\font\src\_includes\icons\hand.html" />
+    <Content Include="Content\font\src\_includes\icons\medical.html" />
+    <Content Include="Content\font\src\_includes\icons\new.html" />
+    <Content Include="Content\font\src\_includes\icons\payment.html" />
+    <Content Include="Content\font\src\_includes\icons\spinner.html" />
+    <Content Include="Content\font\src\_includes\icons\text-editor.html" />
+    <Content Include="Content\font\src\_includes\icons\transportation.html" />
+    <Content Include="Content\font\src\_includes\icons\video-player.html" />
+    <Content Include="Content\font\src\_includes\icons\web-application.html" />
+    <Content Include="Content\font\src\_includes\jumbotron-carousel.html" />
+    <Content Include="Content\font\src\_includes\jumbotron.html" />
+    <Content Include="Content\font\src\_includes\kickstarter-widget.html" />
+    <Content Include="Content\font\src\_includes\modals\download.html" />
+    <Content Include="Content\font\src\_includes\modals\kickstarter.html" />
+    <Content Include="Content\font\src\_includes\navbar.html" />
+    <Content Include="Content\font\src\_includes\new-features.html" />
+    <Content Include="Content\font\src\_includes\new-naming.html" />
+    <Content Include="Content\font\src\_includes\new-upgrading.html" />
+    <Content Include="Content\font\src\_includes\newsletter-subscribe.html" />
+    <Content Include="Content\font\src\_includes\products\camera-retro-tee.html" />
+    <Content Include="Content\font\src\_includes\products\classics-tee.html" />
+    <Content Include="Content\font\src\_includes\products\cta-suggestions.html" />
+    <Content Include="Content\font\src\_includes\products\fa-ther-tee.html" />
+    <Content Include="Content\font\src\_includes\products\green-logo-tee.html" />
+    <Content Include="Content\font\src\_includes\products\old-skool-tee.html" />
+    <Content Include="Content\font\src\_includes\products\rock-paper-scissors-lizard-spock-tee.html" />
+    <Content Include="Content\font\src\_includes\products\space-shuttle-tee.html" />
+    <Content Include="Content\font\src\_includes\products\white-logo-tee.html" />
+    <Content Include="Content\font\src\_includes\stripe-ad.html" />
+    <Content Include="Content\font\src\_includes\stripe-social.html" />
+    <Content Include="Content\font\src\_includes\tell-me-thanks.html" />
+    <Content Include="Content\font\src\_includes\tests\rotated-flipped-inside-anchor.html" />
+    <Content Include="Content\font\src\_includes\tests\rotated-flipped-inside-btn.html" />
+    <Content Include="Content\font\src\_includes\tests\rotated-flipped.html" />
+    <Content Include="Content\font\src\_includes\tests\stacked-inside-anchor.html" />
+    <Content Include="Content\font\src\_includes\tests\stacked-with-text.html" />
+    <Content Include="Content\font\src\_includes\tests\stacked.html" />
+    <Content Include="Content\font\src\_includes\thanks-to.html" />
+    <Content Include="Content\font\src\_includes\why.html" />
+    <Content Include="Content\font\src\_layouts\base.html" />
+    <Content Include="Content\font\src\_layouts\icon.html" />
+    <Content Include="Content\font\src\_layouts\survey.html" />
+    <Content Include="Content\fullcalendar\CHANGELOG.txt" />
+    <Content Include="Content\fullcalendar\CONTRIBUTING.txt" />
+    <Content Include="Content\fullcalendar\custom-calendar.css" />
+    <Content Include="Content\fullcalendar\custom-calendar.js" />
+    <Content Include="Content\fullcalendar\demos\agenda-views.html" />
+    <Content Include="Content\fullcalendar\demos\background-events.html" />
+    <Content Include="Content\fullcalendar\demos\basic-views.html" />
+    <Content Include="Content\fullcalendar\demos\default.html" />
+    <Content Include="Content\fullcalendar\demos\external-dragging.html" />
+    <Content Include="Content\fullcalendar\demos\gcal.html" />
+    <Content Include="Content\fullcalendar\demos\json.html" />
+    <Content Include="Content\fullcalendar\demos\list-views.html" />
+    <Content Include="Content\fullcalendar\demos\locales.html" />
+    <Content Include="Content\fullcalendar\demos\php\get-events.php" />
+    <Content Include="Content\fullcalendar\demos\php\get-timezones.php" />
+    <Content Include="Content\fullcalendar\demos\php\utils.php" />
+    <Content Include="Content\fullcalendar\demos\selectable.html" />
+    <Content Include="Content\fullcalendar\demos\theme.html" />
+    <Content Include="Content\fullcalendar\demos\timezones.html" />
+    <Content Include="Content\fullcalendar\demos\week-numbers.html" />
+    <Content Include="Content\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\fullcalendar\fullcalendar.print.min.css" />
+    <Content Include="Content\fullcalendar\gcal.js" />
+    <Content Include="Content\fullcalendar\gcal.min.js" />
+    <Content Include="Content\fullcalendar\grid-sm.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\fullcalendar\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="Content\fullcalendar\lib\jquery-ui.min.js" />
+    <Content Include="Content\fullcalendar\lib\jquery.min.js" />
+    <Content Include="Content\fullcalendar\lib\moment.min.js" />
+    <Content Include="Content\fullcalendar\LICENSE.txt" />
+    <Content Include="Content\fullcalendar\locale-all.js" />
+    <Content Include="Content\fullcalendar\locale\af.js" />
+    <Content Include="Content\fullcalendar\locale\ar-dz.js" />
+    <Content Include="Content\fullcalendar\locale\ar-kw.js" />
+    <Content Include="Content\fullcalendar\locale\ar-ly.js" />
+    <Content Include="Content\fullcalendar\locale\ar-ma.js" />
+    <Content Include="Content\fullcalendar\locale\ar-sa.js" />
+    <Content Include="Content\fullcalendar\locale\ar-tn.js" />
+    <Content Include="Content\fullcalendar\locale\ar.js" />
+    <Content Include="Content\fullcalendar\locale\bg.js" />
+    <Content Include="Content\fullcalendar\locale\ca.js" />
+    <Content Include="Content\fullcalendar\locale\cs.js" />
+    <Content Include="Content\fullcalendar\locale\da.js" />
+    <Content Include="Content\fullcalendar\locale\de-at.js" />
+    <Content Include="Content\fullcalendar\locale\de-ch.js" />
+    <Content Include="Content\fullcalendar\locale\de.js" />
+    <Content Include="Content\fullcalendar\locale\el.js" />
+    <Content Include="Content\fullcalendar\locale\en-au.js" />
+    <Content Include="Content\fullcalendar\locale\en-ca.js" />
+    <Content Include="Content\fullcalendar\locale\en-gb.js" />
+    <Content Include="Content\fullcalendar\locale\en-ie.js" />
+    <Content Include="Content\fullcalendar\locale\en-nz.js" />
+    <Content Include="Content\fullcalendar\locale\es-do.js" />
+    <Content Include="Content\fullcalendar\locale\es.js" />
+    <Content Include="Content\fullcalendar\locale\et.js" />
+    <Content Include="Content\fullcalendar\locale\eu.js" />
+    <Content Include="Content\fullcalendar\locale\fa.js" />
+    <Content Include="Content\fullcalendar\locale\fi.js" />
+    <Content Include="Content\fullcalendar\locale\fr-ca.js" />
+    <Content Include="Content\fullcalendar\locale\fr-ch.js" />
+    <Content Include="Content\fullcalendar\locale\fr.js" />
+    <Content Include="Content\fullcalendar\locale\gl.js" />
+    <Content Include="Content\fullcalendar\locale\he.js" />
+    <Content Include="Content\fullcalendar\locale\hi.js" />
+    <Content Include="Content\fullcalendar\locale\hr.js" />
+    <Content Include="Content\fullcalendar\locale\hu.js" />
+    <Content Include="Content\fullcalendar\locale\id.js" />
+    <Content Include="Content\fullcalendar\locale\is.js" />
+    <Content Include="Content\fullcalendar\locale\it.js" />
+    <Content Include="Content\fullcalendar\locale\ja.js" />
+    <Content Include="Content\fullcalendar\locale\kk.js" />
+    <Content Include="Content\fullcalendar\locale\ko.js" />
+    <Content Include="Content\fullcalendar\locale\lb.js" />
+    <Content Include="Content\fullcalendar\locale\lt.js" />
+    <Content Include="Content\fullcalendar\locale\lv.js" />
+    <Content Include="Content\fullcalendar\locale\mk.js" />
+    <Content Include="Content\fullcalendar\locale\ms-my.js" />
+    <Content Include="Content\fullcalendar\locale\ms.js" />
+    <Content Include="Content\fullcalendar\locale\nb.js" />
+    <Content Include="Content\fullcalendar\locale\nl-be.js" />
+    <Content Include="Content\fullcalendar\locale\nl.js" />
+    <Content Include="Content\fullcalendar\locale\nn.js" />
+    <Content Include="Content\fullcalendar\locale\pl.js" />
+    <Content Include="Content\fullcalendar\locale\pt-br.js" />
+    <Content Include="Content\fullcalendar\locale\pt.js" />
+    <Content Include="Content\fullcalendar\locale\ro.js" />
+    <Content Include="Content\fullcalendar\locale\ru.js" />
+    <Content Include="Content\fullcalendar\locale\sk.js" />
+    <Content Include="Content\fullcalendar\locale\sl.js" />
+    <Content Include="Content\fullcalendar\locale\sr-cyrl.js" />
+    <Content Include="Content\fullcalendar\locale\sr.js" />
+    <Content Include="Content\fullcalendar\locale\sv.js" />
+    <Content Include="Content\fullcalendar\locale\th.js" />
+    <Content Include="Content\fullcalendar\locale\tr.js" />
+    <Content Include="Content\fullcalendar\locale\uk.js" />
+    <Content Include="Content\fullcalendar\locale\vi.js" />
+    <Content Include="Content\fullcalendar\locale\zh-cn.js" />
+    <Content Include="Content\fullcalendar\locale\zh-tw.js" />
+    <Content Include="Content\fullcalendar\sprite.png" />
+    <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\bg.mp4" />
+    <Content Include="Content\images\clip.mp4" />
+    <Content Include="Content\images\htmlbg.jpg" />
+    <Content Include="Content\images\login.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\signin.jpg" />
+    <Content Include="Content\images\spry.mp4" />
+    <Content Include="Content\images\video-header.mp4" />
+    <Content Include="Content\images\video-js.swf" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\js\bigvideo.js" />
+    <Content Include="Content\js\gbin1.js" />
+    <Content Include="Content\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\js\jquery-ui-1.8.12.min.js" />
+    <Content Include="Content\js\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="Content\js\jquery-ui.js" />
+    <Content Include="Content\js\jquery.imagesloaded.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\video.js" />
+    <Content Include="Content\v1.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\RenderNav.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Data\" />
+    <Folder Include="Views\Null\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\ApiTerminal\ApiTerminal.csproj">
+      <Project>{af9d6a06-6fb1-46f1-a224-e07cc1f3e970}</Project>
+      <Name>ApiTerminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Data\Data.csproj">
+      <Project>{e64f3a39-d5f3-4b73-9296-e060cd42ba92}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\DB\DB.csproj">
+      <Project>{2656eed8-5043-4171-91f3-984b21051007}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Utility\Utility.csproj">
+      <Project>{fad6cf5b-5ae0-43d9-8514-a799270f810c}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\calendar\.bowerrc" />
+    <Content Include="Content\calendar\.gitignore" />
+    <Content Include="Content\calendar\bower.json" />
+    <Content Include="Content\calendar\components\bootstrap3\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\calendar\components\bootstrap3\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\calendar\components\bootstrap3\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\calendar\composer.json" />
+    <Content Include="Content\calendar\CONTRIBUTING.md" />
+    <Content Include="Content\calendar\less\calendar.less" />
+    <Content Include="Content\calendar\less\day.less" />
+    <Content Include="Content\calendar\less\events.less" />
+    <Content Include="Content\calendar\less\grid.less" />
+    <Content Include="Content\calendar\less\month.less" />
+    <Content Include="Content\calendar\less\theme.less" />
+    <Content Include="Content\calendar\less\variables.less" />
+    <Content Include="Content\calendar\less\week.less" />
+    <Content Include="Content\calendar\LICENSE" />
+    <Content Include="Content\calendar\package.json" />
+    <Content Include="Content\calendar\README.md" />
+    <Content Include="Content\calendar\web.config" />
+    <Content Include="Content\font\.gitignore" />
+    <Content Include="Content\font\.npmignore" />
+    <Content Include="Content\font\bower.json" />
+    <Content Include="Content\font\component.json" />
+    <Content Include="Content\font\composer.json" />
+    <Content Include="Content\font\CONTRIBUTING.md" />
+    <Content Include="Content\font\css\font-awesome.css.map" />
+    <Content Include="Content\font\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font\fonts\FontAwesome.otf" />
+    <Content Include="Content\font\Gemfile" />
+    <Content Include="Content\font\Gemfile.lock" />
+    <Content Include="Content\font\less\animated.less" />
+    <Content Include="Content\font\less\bordered-pulled.less" />
+    <Content Include="Content\font\less\core.less" />
+    <Content Include="Content\font\less\fixed-width.less" />
+    <Content Include="Content\font\less\font-awesome.less" />
+    <Content Include="Content\font\less\icons.less" />
+    <Content Include="Content\font\less\larger.less" />
+    <Content Include="Content\font\less\list.less" />
+    <Content Include="Content\font\less\mixins.less" />
+    <Content Include="Content\font\less\path.less" />
+    <Content Include="Content\font\less\rotated-flipped.less" />
+    <Content Include="Content\font\less\screen-reader.less" />
+    <Content Include="Content\font\less\stacked.less" />
+    <Content Include="Content\font\less\variables.less" />
+    <Content Include="Content\font\package.json" />
+    <Content Include="Content\font\README.md" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome.zip" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\bootstrap.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\core.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\extras.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\icons.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\mixins.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\path.less" />
+    <Content Include="Content\font\src\3.2.1\assets\font-awesome\less\variables.less" />
+    <Content Include="Content\font\src\3.2.1\assets\img\icon-flag.pdf" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\accordion.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\alerts.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\bootstrap.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\breadcrumbs.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\button-groups.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\buttons.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\carousel.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\close.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\code.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\component-animations.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\dropdowns.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\forms.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\grid.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\hero-unit.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\labels-badges.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\layouts.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\media.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\mixins.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\modals.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\navbar.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\navs.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\pager.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\pagination.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\popovers.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\progress-bars.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\reset.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-1200px-min.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-767px-max.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-768px-979px.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-navbar.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-utilities.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\responsive.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\scaffolding.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\sprites.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\tables.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\thumbnails.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\tooltip.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\type.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\utilities.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\variables.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\bootstrap-2.3.2\wells.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\lazy.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\mixins.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\responsive-1200px-min.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\responsive-767px-max.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\responsive-768px-979px.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\responsive-navbar.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\responsive.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\site.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\sticky-footer.less" />
+    <Content Include="Content\font\src\3.2.1\assets\less\variables.less" />
+    <Content Include="Content\font\src\3.2.1\CNAME" />
+    <Content Include="Content\font\src\3.2.1\icons.yml" />
+    <Content Include="Content\font\src\3.2.1\Makefile" />
+    <Content Include="Content\font\src\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font\src\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\src\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font\src\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font\src\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\font\src\assets\font-awesome\less\animated.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\core.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\icons.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\larger.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\list.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\mixins.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\path.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\stacked.less" />
+    <Content Include="Content\font\src\assets\font-awesome\less\variables.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\.csscomb.json" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\.csslintrc" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\alerts.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\badges.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\bootstrap.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\breadcrumbs.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\button-groups.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\buttons.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\carousel.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\close.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\code.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\component-animations.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\dropdowns.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\forms.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\glyphicons.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\grid.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\input-groups.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\jumbotron.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\labels.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\list-group.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\media.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\alerts.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\background-variant.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\border-radius.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\buttons.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\center-block.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\clearfix.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\forms.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\gradients.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\grid-framework.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\grid.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\hide-text.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\image.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\labels.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\list-group.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\nav-divider.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\nav-vertical-align.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\opacity.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\pagination.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\panels.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\progress-bar.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\reset-filter.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\reset-text.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\resize.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\responsive-visibility.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\size.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\tab-focus.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\table-row.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\text-emphasis.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\text-overflow.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\mixins\vendor-prefixes.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\modals.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\navbar.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\navs.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\normalize.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\pager.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\pagination.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\panels.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\popovers.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\print.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\progress-bars.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\responsive-embed.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\responsive-utilities.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\scaffolding.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\tables.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\theme.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\thumbnails.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\tooltip.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\type.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\utilities.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\variables.less" />
+    <Content Include="Content\font\src\assets\less\bootstrap-3.3.5\wells.less" />
+    <Content Include="Content\font\src\assets\less\gandy-grid\grid.less" />
+    <Content Include="Content\font\src\assets\less\gandy-grid\mixins.less" />
+    <Content Include="Content\font\src\assets\less\site.less" />
+    <Content Include="Content\font\src\assets\less\site\algolia.less" />
+    <Content Include="Content\font\src\assets\less\site\banner-ad.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\alerts.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\buttons.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\jumbotron.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\labels.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\modals.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\navbar.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\panels.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\tooltip.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\type.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\variables.less" />
+    <Content Include="Content\font\src\assets\less\site\bootstrap\wells.less" />
+    <Content Include="Content\font\src\assets\less\site\bsap-ad.less" />
+    <Content Include="Content\font\src\assets\less\site\carbon-ad.less" />
+    <Content Include="Content\font\src\assets\less\site\example-rating.less" />
+    <Content Include="Content\font\src\assets\less\site\feature-list.less" />
+    <Content Include="Content\font\src\assets\less\site\fontawesome-icon-list.less" />
+    <Content Include="Content\font\src\assets\less\site\footer.less" />
+    <Content Include="Content\font\src\assets\less\site\jumbotron-carousel.less" />
+    <Content Include="Content\font\src\assets\less\site\kickstarter.less" />
+    <Content Include="Content\font\src\assets\less\site\layout.less" />
+    <Content Include="Content\font\src\assets\less\site\lazy.less" />
+    <Content Include="Content\font\src\assets\less\site\newsletter.less" />
+    <Content Include="Content\font\src\assets\less\site\responsive\screen-lg.less" />
+    <Content Include="Content\font\src\assets\less\site\responsive\screen-md.less" />
+    <Content Include="Content\font\src\assets\less\site\responsive\screen-sm-up.less" />
+    <Content Include="Content\font\src\assets\less\site\responsive\screen-sm.less" />
+    <Content Include="Content\font\src\assets\less\site\responsive\screen-xs.less" />
+    <Content Include="Content\font\src\assets\less\site\search.less" />
+    <Content Include="Content\font\src\assets\less\site\social-buttons.less" />
+    <Content Include="Content\font\src\assets\less\site\store.less" />
+    <Content Include="Content\font\src\assets\less\site\stripe-ad.less" />
+    <Content Include="Content\font\src\assets\less\site\sumome.less" />
+    <Content Include="Content\font\src\assets\less\site\textured-bg.less" />
+    <Content Include="Content\font\src\assets\less\site\views.less" />
+    <Content Include="Content\font\src\CNAME" />
+    <Content Include="Content\font\src\icons.yml" />
+    <Content Include="Content\font\src\Makefile" />
+    <Content Include="Content\font\src\README.md-nobuild" />
+    <Content Include="Content\font\src\_includes\code\core.less" />
+    <Content Include="Content\font\src\_plugins\flatten_icon_filters.rb" />
+    <Content Include="Content\font\src\_plugins\icon_page_generator.rb" />
+    <Content Include="Content\font\src\_plugins\site.rb" />
+    <Content Include="Content\font\_config.yml" />
+    <Content Include="Content\images\spry.ogv" />
+    <Content Include="Content\images\spry.webm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\bg.webm" />
+    <Content Include="Content\images\cloud.ogg" />
+    <Content Include="Content\images\cloud.webm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\BootstrapCalendar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fullcalendar\demos\json\events.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\FullCalendar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Signin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\OurCalendar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutMy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\My\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\My\Documents.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\My\Samples.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\My\Libraries.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\My\Tutorials.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\My\Contactus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Projects.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Privacy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Disclaimer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Outlook\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Google\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35446</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35446/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,48 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    ViewBag.Title = "使用教程";
+    Layout = "/Views/Shared/_LayoutMy.cshtml";
+}
+
+
+<div class="bs-docs-header">
+    <div class="container">
+        <h1>Tutorials</h1>
+        <p>如何快速将有空日历嵌入您的系统，或客户端、移动端应用之中</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="col-md-9">
+        <h1 id="accountinfo" class="page-header">如何开始</h1>
+
+        <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+            <h4>建议使用压缩版的 JavaScript 文件</h4>
+            <p><code>bootstrap.js</code> 和 <code>bootstrap.min.js</code> 都包含了所有插件，你在使用时，只需选择一个引入页面就可以了。</p>
+        </div>
+    </div>
+    <div class="col-md-3 ui-slider">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="160" data-offset-bottom="200">
+            <ul class="nav bs-docs-sidenav">
+                <li><a href="">如何开始</a></li>
+                <li><a href="">应用授权</a></li>
+                <li><a href="">消息推送</a></li>
+                <li><a href="">时区信息</a></li>
+                <li><a href="">样式风格</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+
+
+@section PageTail
+{
+    <script>
+        focusNav("#navTutorials");
+    </script>
+}

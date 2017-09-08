@@ -1,0 +1,33 @@
+﻿@using Karlrao.Utility.WebHelper
+@model Kalendar.Zero.Data.Domain.Account
+@{
+    Layout = null;
+    var data = (Kalendar.Zero.Data.Domain.ProjectPack) Model.CurrentData;
+}
+@if (data!=null&&data.Projects != null) {
+    foreach (var p in data.Projects)
+    {
+        if (Model.Projects != null && Model.Projects.Any(x => x.Id == p.Id))
+        {
+            <div class="projectItem active" projectId="@p.Id" onclick="return projectItemToggle(this);">
+                <h4>@p.ProjectName</h4>
+                <p>@p.Schedules.Count 个日程</p>
+                <h5>@Kalendar.Zero.Utility.DataCache.Organization.GetOrganizationName(p.OrganizationId) @("@") @p.CreateTime.ToString("yyyy-MM-dd")</h5>
+                <i class="fa fa-check fa-3x"></i>
+                <input type="hidden" name="ProjectIds" value="@p.Id"/>
+            </div>
+        }
+        else
+        {
+            <div class="projectItem" projectId="@p.Id" onclick="return projectItemToggle(this);">
+                <h4>@p.ProjectName</h4>
+                <p>@p.Schedules.Count 个日程</p>
+                <h5>@Kalendar.Zero.Utility.DataCache.Organization.GetOrganizationName(p.OrganizationId) @("@") @p.CreateTime.ToString("yyyy-MM-dd")</h5>
+                <i class="fa fa-check fa-3x"></i>
+                <input type="hidden" name="ProjectIds" value="0"/>
+            </div>
+        }
+    }
+
+    @Html.Raw(data.Pagination)
+}

@@ -1,0 +1,44 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    ViewBag.Title = "联系我们";
+    Layout = "/Views/Shared/_LayoutMy.cshtml";
+}
+
+<div class="bs-docs-header">
+    <div class="container">
+        <h1>Contact us</h1>
+        <p>联系我们，招募信息</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="col-md-9">
+        <h1 id="accountinfo" class="page-header">关于我们</h1>
+
+        <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+            <h4>以下信息都是真实可信，查有实据的</h4>
+            <p>积跬步至千里；积小流成江海；积怠惰致深渊。</p>
+        </div>
+    </div>
+    <div class="col-md-3 ui-slider">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="160" data-offset-bottom="200">
+            <ul class="nav bs-docs-sidenav">
+                <li class=""><a href="#accountinfo">关于我们</a></li>
+                <li class=""><a href="#accountinfo">合作事宜</a></li>
+                <li class=""><a href="#accountinfo">招募信息</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+
+@section PageTail
+{
+    <script>
+        focusNav("#navContactus");
+    </script>
+}

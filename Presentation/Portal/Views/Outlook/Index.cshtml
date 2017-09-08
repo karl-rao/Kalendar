@@ -1,0 +1,101 @@
+﻿@using Karlrao.Utility.WebHelper
+@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    var channel = (Kalendar.Zero.DB.Entity.Base.ChannelPO)
+        Model.CurrentData;
+
+    ViewBag.Title = channel.ChannelName;
+
+    var contacts = Model.Contacts.FindAll(o => o.ChannelId == channel.Id);
+    var messages=Model.Messages.FindAll(o => o.ChannelId == channel.Id);
+    var projects = Model.Projects.FindAll(o => o.ChannelId == channel.Id);
+    var schedules = Model.Schedules.FindAll(o => projects.Any(x => x.Id == o.ProjectId));
+}
+
+<div class="row" id="wrap">
+    <div class="col-md-12" style="background-color: white;">
+        <div class="col-md-12">
+            <h1>@channel.ChannelName 中数据 </h1>
+            <em><i class="fa fa-info"></i> 我们会每10min进行一次同步</em>
+            <hr />
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>联系人<span class="badge">@Model.Contacts.Count</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var c in contacts)
+                {
+                    var detail = c.Detail.JsonToObj<Kalendar.Zero.Data.Clients.Response.MsonlineContact>();
+                    <tr>
+                        <td>
+                            @(string.IsNullOrEmpty(c.DisplayName) ? "匿名" : c.DisplayName)
+                            @if (!string.IsNullOrEmpty(detail.MobilePhone))
+                            {
+                                <a href="tel:@detail.MobilePhone"><i class="fa fa-mobile">@detail.MobilePhone</i></a>
+                            }
+                            @if (detail.HomePhones != null && detail.HomePhones.Any())
+                            {
+                                foreach (var homePhone in detail.HomePhones)
+                                {
+                                    <a href="tel:@homePhone"><i class="fa fa-phone">@homePhone</i></a>
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>消息<span class="badge">@Model.Messages.Count</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var c in messages)
+                {
+                    <tr>
+                        <td>
+                            @(c.MessageSubject.Length>20?c.MessageSubject.Substring(0,20)+"...":c.MessageSubject)
+                            @if (!string.IsNullOrEmpty(c.Weblink))
+                            {
+                                <a href="@c.Weblink" target="_blank"> <i class="fa fa-link"></i></a>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>日历<span class="badge">@schedules.Count</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var c in schedules)
+                {
+                    <tr>
+                        <td>
+                            @c.ScheduleTitle
+                            @if (!string.IsNullOrEmpty(c.Weblink))
+                            {
+                                <a href="@c.Weblink" target="_blank"> <i class="fa fa-link"></i></a>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    ViewBag.Title = "典型应用";
+    Layout = "/Views/Shared/_LayoutMy.cshtml";
+}
+
+
+<div class="bs-docs-header">
+    <div class="container">
+        <h1>Sample Apps</h1>
+        <p>在生活的方方面面，我们都希望能发现一些有趣的尝试</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="col-md-9">
+        <h1 id="accountinfo" class="page-header">优秀应用</h1>
+
+        <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+            <h4>以下是一些我们认为不错的应用</h4>
+            <p>可能有失偏颇，不过我们不是竞价排名</p>
+        </div>
+    </div>
+    <div class="col-md-3 ui-slider">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="160" data-offset-bottom="200">
+            <ul class="nav bs-docs-sidenav">
+                <li><a href="">旅游假日</a></li>
+                <li><a href="">社交人际</a></li>
+                <li><a href="">金融理财</a></li>
+                <li><a href="">娱乐演出</a></li>
+                <li><a href="">教育学习</a></li>
+                <li><a href="">科技生活</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+
+
+@section PageTail
+{
+    <script>
+        focusNav("#navSamples");
+    </script>
+}

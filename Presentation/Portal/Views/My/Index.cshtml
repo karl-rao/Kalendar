@@ -1,0 +1,151 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    ViewBag.Title = "用户面板";
+    Layout = "/Views/Shared/_LayoutMy.cshtml";
+}
+
+
+<div class="bs-docs-header">
+    <div class="container">
+        <h1>wooooh...</h1>
+        <p>用户面板，如何使用都在这里，慢慢睇吓</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="col-md-9">
+        <h1 id="accountinfo" class="page-header">账户信息</h1>
+
+        <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+            <h4>登录信息</h4>
+
+
+            <form class="form-horizontal" action="/my/update" method="post" onsubmit="return submitForm(this);">
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-user fa-2x"></i>
+                            </div>
+                            <input type="text" name="nickName" class="form-control input-lg" placeholder="昵称" required="required" value="@Model.NickName"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-mobile fa-2x"></i>
+                            </div>
+                            <input type="text" name="mobile" class="form-control input-lg" placeholder="移动电话" required="required" value="@Model.Mobile" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-key fa-2x"></i>
+                            </div>
+                            <input type="password" name="password" class="form-control input-lg" placeholder="设置密码" required="required"/>
+                            <div class="input-group-addon"> * 不修改请留空</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-envelope fa-2x"></i>
+                            </div>
+                            <input type="email" name="Email" class="form-control input-lg" placeholder="邮箱地址" required="required" value="@Model.Email"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-cogs fa-2x"></i>
+                            </div>
+                            @Html.DropDownListFor(model=>model.TimeZone,Kalendar.Zero.Utility.DataCache.DataTimezone.Options,new {@class="form-control input-lg"})
+                            <div class="input-group-addon">选择时区</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-globe fa-2x"></i>
+                            </div>
+                            @Html.DropDownListFor(model => model.DataRegionId, Kalendar.Zero.Utility.DataCache.DataRegion.Options, new { @class = "form-control input-lg" })
+                            <div class="input-group-addon">选择地区</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon" style="width: 60px;">
+                                <i class="fa fa-language fa-2x"></i>
+                            </div>
+                            @Html.DropDownListFor(model => model.DataLanguageId, Kalendar.Zero.Utility.DataCache.DataLanguage.Options, new { @class = "form-control input-lg" })
+                            <div class="input-group-addon">选择语言</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-sm-10">
+                        <button class="btn btn-lg btn-warning">更新账户信息</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3 ui-slider">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="160" data-offset-bottom="200">
+            <ul class="nav bs-docs-sidenav">
+                <li class="">
+                    <a href="#accountinfo">账户信息</a>
+                    <ul class="nav">
+                        <li><a href="#overview-doctype">注册信息</a></li>
+                        <li><a href="#overview-mobile">创建日程</a></li>
+                        <li><a href="#overview-type-links">我的日程</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#enterpriseInfo">进阶用户</a>
+                    <ul class="nav">
+                        <li><a href="#grid-media-queries">授权</a></li>
+                        <li><a href="#grid-options">发布日程</a></li>
+                        <li><a href="#grid-example-basic">日程列表</a></li>
+                        <li><a href="#grid-intro">企业资料</a></li>
+                        <li><a href="#grid-offsetting">组织结构</a></li>
+                        <li><a href="#grid-nesting">最新消息</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+
+
+@section PageTail
+{
+    <script>
+        focusNav("#navHome");
+    </script>
+}

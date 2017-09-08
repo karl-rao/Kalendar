@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <meta name="Keywords" content="@ViewBag.Keywords"/>
+    <meta name="Description" content="@ViewBag.Description"/>
+    <link rel="stylesheet" href="/content/css/bigvideo.css"/>
+    <link rel="stylesheet" href="/content/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/content/font/css/font-awesome.min.css"/>
+    <link href="/Content/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="/Content/css/my.css" rel="stylesheet" />
+    <script src="/content/js/jquery-1.11.1.min.js"></script>
+    <script src="/Content/js/jquery-ui.js"></script>
+</head>
+<body>
+<div class="navbar navbar-fixed-top mytopper">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand hidden-sm" href="/" id="Home"><i class="fa fa-home"></i> Atimer.cn</a>
+        </div>
+        <div class="navbar-collapse collapse" role="navigation" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+                <li><a href="/My/Index/Documents" id="navDocuments"><i class="fa fa-television"></i> 接口文档</a> </li>
+                <li><a href="/My/Index/Samples" id="navSamples"><i class="fa fa-star-o"></i> 典型应用</a></li>
+                <li><a href="/My/Index/Tutorials" id="navTutorials"><i class="fa fa-gear"></i> 使用教程</a></li>
+                <li><a href="/My/Index/Libraries" id="navLibraries"><i class="fa fa-flask"></i> 引用类库</a></li>
+                <li><a href="/My/Index/Contactus" id="navContactus"><i class="fa fa-bell-o"></i> 联系我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right hidden-sm">
+                <li><a href="/My/" id="navHome"><i class="fa fa-dashboard"></i> 用户面板</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@RenderBody()
+
+<div style="clear: both; height: 50px;"></div>
+<footer class="navbar-bottom">
+    <div class="container">
+        <div class="pull-left"></div>
+        <div class="pull-right"></div>
+    </div>
+</footer>
+
+<script src="/content/js/jquery.imagesloaded.min.js"></script>
+<script src="/content/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Content/v1.js"></script>
+
+@if (IsSectionDefined("PageTail"))
+{
+    @RenderSection("PageTail")
+}
+</body>
+</html>

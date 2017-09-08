@@ -1,0 +1,61 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+@{
+    Layout = null;
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="col-lg-8 col-md-8 col-sm-8 htmlLoginBanner">
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <form class="form-horizontal" action="/home/login" method="post" onsubmit="return submitForm(this);">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                    <h3 id="notice">登录</h3>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="width: 60px;">
+                            <i class="fa fa-mobile fa-2x"></i>
+                        </div>
+                        <input type="text" name="mobile" class="form-control input-lg" placeholder="移动电话" required="required"/>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="width: 60px;">
+                            <i class="fa fa-key fa-2x"></i>
+                        </div>
+                        <input type="password" name="password" class="form-control input-lg" placeholder="设置密码" required="required"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: 46px; overflow: hidden;">
+                <div class="col-md-offset-2 col-sm-10">
+                    <input type="text" class="form-control input-lg" id="validCode" name="validCode" required="required" placeholder="验证码">
+                    <img id="vcLoginImage" onclick="return RefreshVC(this);" style="position: relative; top: -45px; left: 130px; float: left; height: 44px; cursor: pointer; valign: middle; line-height: 42px;" src="/Home/GetValidateCode/login?v=@(DateTime.Now)" alt="验证码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                    <button class="btn btn-lg btn-warning">登录</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10 outerLogin">
+                    <a href="/outlook/signin" target="_blank" title="Microsoft Account"><i class="fa  fa-windows fa-2x"></i></a>
+                    <a href="/google/signin" target="_blank" title="Google Account"><i class="fa  fa-google fa-2x"></i></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

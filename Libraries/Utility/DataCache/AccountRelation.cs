@@ -1,0 +1,40 @@
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web.Mvc;
+using Kalendar.Zero.DB.Entity.Base;
+
+
+
+namespace Kalendar.Zero.Utility.DataCache
+{
+    /// <summary>
+    /// AccountRelation=用户关系数据缓存类
+    /// </summary>
+    public class AccountRelation
+    {
+        #region BasicCache
+        /// <summary>
+        /// Datas the Colection.
+        /// </summary>
+        /// <returns></returns>
+        public static List<DB.Entity.Base.AccountRelationPO> CacheList(int accountId)
+        {
+            var condition = $"Valid=1 AND AccountId={accountId}";
+            return new Common.CacheHelper<DB.Entity.Base.AccountRelationPO>().Find(condition, false, true);
+        }
+
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
+        /// <returns></returns>
+        public static List<DB.Entity.Base.AccountRelationPO> InitCache(int accountId)
+        {
+            var condition = $"Valid=1 AND AccountId={accountId}";
+            return new Common.CacheHelper<DB.Entity.Base.AccountRelationPO>().Find(condition, false, true);
+        }
+
+        #endregion
+
+    }
+}

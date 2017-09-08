@@ -1,0 +1,60 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    ViewBag.Title = "接口文档";
+    Layout = "/Views/Shared/_LayoutMy.cshtml";
+}
+
+
+<div class="bs-docs-header">
+    <div class="container">
+        <h1>API documents</h1>
+        <p>我们准备了较为丰富的接口，以满足开发者于日历上的需求</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="col-md-9">
+        <h1 id="accountinfo" class="page-header">介绍</h1>
+
+        <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+            <h4>建议在生产环境前，使用沙盒进行调试并认真检查</h4>
+            <p>以确保我们的日历控件或服务能达成您的需求。</p>
+        </div>
+    </div>
+    <div class="col-md-3 ui-slider">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="160" data-offset-bottom="200">
+            <ul class="nav bs-docs-sidenav">
+                <li><a href="">介绍</a></li>
+                <li><a href="">错误代码</a></li>
+                <li><a href="">授权信息</a></li>
+                <li><a href="">验证方式</a></li>
+                <li class="">
+                    <a href="#accountinfo">方法事件</a>
+                    <ul class="nav">
+                        <li><a href="#overview-doctype">创建日程</a></li>
+                        <li><a href="#overview-doctype">修改日程</a></li>
+                        <li><a href="#overview-doctype">取消日程</a></li>
+                        <li><a href="#overview-doctype">订阅日历</a></li>
+                        <li><a href="#overview-doctype">退订日历</a></li>
+                        <li><a href="#overview-mobile">获取日程</a></li>
+                        <li><a href="#overview-type-links">设置提醒</a></li>
+                    </ul>
+                </li>
+                <li><a href="">数据格式</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+
+
+@section PageTail
+{
+    <script>
+        focusNav("#navDocuments");
+    </script>
+}

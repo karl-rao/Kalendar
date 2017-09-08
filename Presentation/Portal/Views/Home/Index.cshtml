@@ -1,0 +1,20 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+@{
+    ViewBag.Title = "首页_"+Kalendar.Zero.Data.Config.SiteTitle;
+}
+
+<div class="row" id="wrap">
+    @Html.Action("Index", "Home", new {id = "BootstrapCalendar"})
+</div>
+
+@section PageTail{
+    <script src="/content/js/video.js"></script>
+    <script src="/content/js/bigvideo.js"></script>
+    <script>
+        $(function() {
+            var bv = new $.BigVideo();
+            bv.init();
+            bv.show('/content/images/cloud.webm', { ambient: true, doLoop: true });
+        });
+    </script>
+}

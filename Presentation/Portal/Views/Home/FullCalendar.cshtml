@@ -1,0 +1,100 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+@{
+    Layout = null;
+}
+
+<link href='/content/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+<link href='/content/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<link href="/Content/fullcalendar/custom-calendar.css" rel="stylesheet" />
+
+<div class="col-md-12" id="mainContent">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="calendar" style="clear: both;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <hr />
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="#best">最佳 <span class="badge">3</span></a></li>
+            <li role="presentation"><a href="#new">最新 <span class="badge">3</span></a></li>
+            <li role="presentation"><a href="#focus">最热 <span class="badge">3</span></a></li>
+        </ul>
+
+        <form id="projectForm">
+            <div class="tab-content" id="projectItems">
+                @Html.Action("Projects")
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src='/content/fullcalendar/lib/moment.min.js'></script>
+<script src="/Content/fullcalendar/fullcalendar.min.js"></script>
+<script src="/Content/fullcalendar/locale/zh-cn.js"></script>
+<script>
+
+    function projectItemToggle(ele) {
+        var pidinput = $(ele).find("input[name='ProjectIds']").last();
+        var pid = $(ele).attr("projectId");
+
+        if (pidinput.val() == "0") {
+            pidinput.val(pid);
+            $(ele).addClass("active");
+        } else {
+            pidinput.val("0");
+            $(ele).removeClass("active");
+        }
+
+        var d = jQuery("#projectForm").serialize();
+        $.ajax({
+            url: "/home/refresh",
+            data: d,
+            dataType: "json",
+            type: "post",
+            success: function (data) {
+                reRender();
+            },
+            error: function () {
+                //alert("Service Error");
+            }
+        });
+
+        return false;
+    }
+
+    function reRender() {
+        var events = {
+            url: '/Home/RenderJsonForFullCalendar'
+        };
+        $('#calendar').fullCalendar("refetchEventSources", events);
+    }
+
+    $(document).ready(function() {
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listWeek'
+            },
+            defaultDate: '@(DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd"))',
+            editable: true,
+            navLinks: true, // can click day/week names to navigate views
+            eventLimit: true, // allow "more" link when too many events
+            events: {
+                url: '/Home/RenderJsonForFullCalendar',
+                error: function() {
+                    $('#script-warning').show();
+                }
+            },
+            loading: function(bool) {
+                $('#loading').toggle(bool);
+            }
+        });
+
+    });
+</script>

@@ -1,0 +1,48 @@
+﻿@model Kalendar.Zero.Data.Domain.Account
+
+@{
+    ViewBag.Title = "引用类库";
+    Layout = "/Views/Shared/_LayoutMy.cshtml";
+}
+
+
+<div class="bs-docs-header">
+    <div class="container">
+        <h1>API Libraries</h1>
+        <p>各环境下，我们产品的支持</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="col-md-9">
+        <h1 id="accountinfo" class="page-header">快速引用</h1>
+
+        <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+            <h4>建议使用压缩版的 JavaScript 文件</h4>
+            <p>开发与应用的多样性，促成我们希望能把服务做得更简单</p>
+        </div>
+    </div>
+    <div class="col-md-3 ui-slider">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="160" data-offset-bottom="200">
+            <ul class="nav bs-docs-sidenav">
+                <li><a href="">C# /.NET</a></li>
+                <li><a href="">PHP</a></li>
+                <li><a href="">Javascript</a></li>
+                <li><a href="">Android</a></li>
+                <li><a href="">IOS</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+
+
+@section PageTail
+{
+    <script>
+        focusNav("#navLibraries");
+    </script>
+}

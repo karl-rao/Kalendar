@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E64F3A39-D5F3-4B73-9296-E060CD42BA92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalendar.Zero.Data</RootNamespace>
+    <AssemblyName>Kalendar.Zero.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\References\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\BaseHelper.cs" />
+    <Compile Include="Clients\GoogleHelper.cs" />
+    <Compile Include="Clients\IBaseHelper.cs" />
+    <Compile Include="Clients\MsonlineHelper.cs" />
+    <Compile Include="Clients\Response\MsonlineAnyone.cs" />
+    <Compile Include="Clients\Response\MsonlineContact.cs" />
+    <Compile Include="Clients\Response\MsonlineContacts.cs" />
+    <Compile Include="Clients\Response\MsonlineEmailaddress.cs" />
+    <Compile Include="Clients\Response\MsonlineInfo.cs" />
+    <Compile Include="Clients\Response\MsonlineLocation.cs" />
+    <Compile Include="Clients\Response\MsonlineMessage.cs" />
+    <Compile Include="Clients\Response\MsonlineMessages.cs" />
+    <Compile Include="Clients\Response\MsonlineEvent.cs" />
+    <Compile Include="Clients\Response\MsonlineEvents.cs" />
+    <Compile Include="Clients\Response\MsonlineRecurrence.cs" />
+    <Compile Include="Clients\Response\MsonlineRecurrenceRange.cs" />
+    <Compile Include="Clients\Response\MsonlineRecurrencePattern.cs" />
+    <Compile Include="Clients\Response\MsonlineTime.cs" />
+    <Compile Include="Clients\Response\GoogleToken.cs" />
+    <Compile Include="Clients\Response\MsonlineToken.cs" />
+    <Compile Include="Clients\Response\GoogleUser.cs" />
+    <Compile Include="Clients\Response\MsonlineUser.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Controls\AuthAttribute.cs" />
+    <Compile Include="Controls\BackendController.cs" />
+    <Compile Include="Controls\PortalController.cs" />
+    <Compile Include="Controls\StaticFilterAttribute.cs" />
+    <Compile Include="Domain\Account.cs" />
+    <Compile Include="Domain\AccountAvatars.cs" />
+    <Compile Include="Domain\AccountContacts.cs" />
+    <Compile Include="Domain\AccountHelper.cs" />
+    <Compile Include="Domain\AccountMessages.cs" />
+    <Compile Include="Domain\Channel.cs" />
+    <Compile Include="Domain\DataLabel.cs" />
+    <Compile Include="Domain\DataLanguage.cs" />
+    <Compile Include="Domain\DataRegion.cs" />
+    <Compile Include="Domain\DataStyle.cs" />
+    <Compile Include="Domain\Marketing.cs" />
+    <Compile Include="Domain\Organization.cs" />
+    <Compile Include="Domain\Project.cs" />
+    <Compile Include="Domain\ProjectPack.cs" />
+    <Compile Include="Domain\Schedule.cs" />
+    <Compile Include="Domain\Tag.cs" />
+    <Compile Include="Entities\CssDeclaration.cs" />
+    <Compile Include="Entities\KalendarEvent.cs" />
+    <Compile Include="Entities\KalendarEvents.cs" />
+    <Compile Include="Entities\TimeDuration.cs" />
+    <Compile Include="Filters\AccountAvatarsFilter.cs" />
+    <Compile Include="Filters\AccountContactsFilter.cs" />
+    <Compile Include="Filters\AccountMessagesFilter.cs" />
+    <Compile Include="Filters\ChannelFilter.cs" />
+    <Compile Include="Filters\MarketingFilter.cs" />
+    <Compile Include="Filters\OrganizationDepartmentFilter.cs" />
+    <Compile Include="HtmlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Filters\AccountFilter.cs" />
+    <Compile Include="Filters\AccountLogFilter.cs" />
+    <Compile Include="Filters\AccountRelationFilter.cs" />
+    <Compile Include="Filters\DataContextFilter.cs" />
+    <Compile Include="Filters\DataLabelFilter.cs" />
+    <Compile Include="Filters\DataLanguageFilter.cs" />
+    <Compile Include="Filters\DataRegionFilter.cs" />
+    <Compile Include="Filters\DataStyleFilter.cs" />
+    <Compile Include="Filters\OrganizationFilter.cs" />
+    <Compile Include="Filters\OrganizationMemberFilter.cs" />
+    <Compile Include="Filters\ProjectFilter.cs" />
+    <Compile Include="Filters\ScheduleFilter.cs" />
+    <Compile Include="Filters\SubscribeFilter.cs" />
+    <Compile Include="Filters\TagFilter.cs" />
+    <Compile Include="Filters\TagReferenceFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{2656eed8-5043-4171-91f3-984b21051007}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{fad6cf5b-5ae0-43d9-8514-a799270f810c}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>
