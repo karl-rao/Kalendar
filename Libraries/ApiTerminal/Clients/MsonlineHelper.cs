@@ -10,7 +10,7 @@ using System.Web;
 namespace Kalendar.Zero.ApiTerminal.Clients
 {
     public class MsonlineHelper
-        :BaseHelper,IBaseHelper
+        : BaseHelper, IBaseHelper
     {
         /// <summary>
         /// 登录地址
@@ -19,16 +19,11 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         public new string Signin()
         {
             var url =
-                string.Format(
-                    "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={0}&redirect_uri={1}&response_type=code&scope={2}",
-                    Channel.AppId,
-                    Channel.CodeCallback,
-                    Channel.Parameters
-                    );
+                $"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={Channel.AppId}&redirect_uri={Channel.CodeCallback}&response_type=code&scope={Channel.Parameters}";
 
             return url;
         }
-        
+
         /// <summary>
         /// 获取令牌
         /// </summary>
@@ -41,17 +36,13 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             var url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
 
             var data =
-                string.Format(
-                    "grant_type=authorization_code&code={0}&redirect_uri={1}&client_id={2}&client_secret={3}",
-                    code,
-                    HttpUtility.UrlEncode(Channel.CodeCallback),
-                    Channel.AppId,
-                    Channel.AppSecret);
+                $"grant_type=authorization_code&code={code}&redirect_uri={HttpUtility.UrlEncode(Channel.CodeCallback)}&client_id={Channel.AppId}&client_secret={Channel.AppSecret}";
 
             try
             {
                 var r = new BrowserClient();
-                var response = r.SendHttpRequest(url,true,"POST", data,null,null,null,"utf-8","application/json", "application/x-www-form-urlencoded");
+                var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json",
+                    "application/x-www-form-urlencoded");
                 Logger.Info(response);
                 var token = response.JsonToObjContract<Response.MsonlineToken>();
                 if (token != null)
@@ -85,18 +76,13 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             Logger.Info(Channel.SerializeXml());
 
             var data =
-                string.Format(
-                    "grant_type=refresh_token&refresh_token={0}&redirect_uri={1}&client_id={2}&client_secret={3}&scope={4}",
-                    refreshToken,
-                    HttpUtility.UrlEncode(Channel.CodeCallback),
-                    Channel.AppId,
-                    Channel.AppSecret,
-                    Channel.Parameters);
-            Logger.Info("data="+data);
+                $"grant_type=refresh_token&refresh_token={refreshToken}&redirect_uri={HttpUtility.UrlEncode(Channel.CodeCallback)}&client_id={Channel.AppId}&client_secret={Channel.AppSecret}&scope={Channel.Parameters}";
+            Logger.Info("data=" + data);
             try
             {
                 var r = new BrowserClient();
-                var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json", "application/x-www-form-urlencoded");
+                var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json",
+                    "application/x-www-form-urlencoded");
                 Logger.Info(response);
                 var token = response.JsonToObjContract<Response.MsonlineToken>();
                 if (token != null)
@@ -129,21 +115,21 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             {
                 avatar.ChannelIdentity = user.Id;
                 avatar.ChannelId = Channel.Id;
-                avatar.DisplayName =string.IsNullOrEmpty(user.DisplayName)?user.UserPrincipalName: user.DisplayName;
+                avatar.DisplayName = string.IsNullOrEmpty(user.DisplayName) ? user.UserPrincipalName : user.DisplayName;
                 avatar.Code = user.UserPrincipalName;
             }
-            
+
             return avatar;
         }
 
         public new List<Entities.Message> ReadMessages(int page = 1)
         {
-            var result= new List<Entities.Message>();
+            var result = new List<Entities.Message>();
             var url = "https://graph.microsoft.com/v1.0/me/mailfolders/inbox/messages";
             url += "?$select=id,receivedDateTime,subject,importance,webLink,sender";
             if (page > 1)
             {
-                url += "&$skip=" + (page - 1) * 10;
+                url += "&$skip=" + (page - 1)*10;
             }
 
             try
@@ -158,13 +144,13 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                     messages.Data.Select(
                         msonlineMessage => new Entities.Message
                         {
-                            AvatarId=Avatar.Id,
+                            AvatarId = Avatar.Id,
                             ChannelIdentity = msonlineMessage.Id,
                             //MessageType = (int) DB.Defined.MessageType.Mail,
                             MessageSubject = msonlineMessage.Sender.EmailAddress.Name + " " + msonlineMessage.Subject,
                             MessageContent = msonlineMessage.ObjToJson(),
                             Weblink = msonlineMessage.WebLink,
-                            CreateTime=msonlineMessage.ReceivedDateTime.ToDateTime()
+                            CreateTime = msonlineMessage.ReceivedDateTime.ToDateTime()
                         }));
             }
             catch (Exception ex)
@@ -175,9 +161,14 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return result;
         }
 
-        public new List<Entities.Contact> ReadContacts(int page=1)
+        /// <summary>
+        /// 读取联系人信息
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public new List<Entities.Contact> ReadContacts(int page = 1)
         {
-            var result= new List<Entities.Contact>();
+            var result = new List<Entities.Contact>();
             var url = "https://graph.microsoft.com/v1.0/me/contacts";
 
             url += "?$select=id,displayName,homePhones,mobilePhone,birthday";
@@ -198,7 +189,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
                 result.AddRange(
                     contacts.Data.Select(
-                        msonlineContact=> new Entities.Contact
+                        msonlineContact => new Entities.Contact
                         {
                             AvatarId = Avatar.Id,
                             ChannelIdentity = msonlineContact.Id,
@@ -214,9 +205,14 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return result;
         }
 
+        /// <summary>
+        /// 读取日历事件
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
         public new List<Entities.Event> ReadEvents(int page = 1)
         {
-            var result= new List<Entities.Event>();
+            var result = new List<Entities.Event>();
             var url = "https://graph.microsoft.com/v1.0/me/calendar/events";
 
             url += "?$select=id,subject,bodyPreview,start,end,location,showAs,webLink,recurrence";
@@ -243,8 +239,8 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                                 msonlineEvent.Recurrence != null && msonlineEvent.Recurrence.Pattern != null
                                     ? GetMsonlineCycle(msonlineEvent.Recurrence.Pattern.Type)
                                     : 0,
-                            EventSubject= msonlineEvent.Subject,
-                            EventLead= msonlineEvent.BodyPreview,
+                            EventSubject = msonlineEvent.Subject,
+                            EventLead = msonlineEvent.BodyPreview,
                             Start = msonlineEvent.Start.DateTime.ToDateTime(),
                             End = msonlineEvent.End.DateTime.ToDateTime(),
                             Weblink = msonlineEvent.WebLink
@@ -255,16 +251,26 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 Logger.Error(ex);
             }
 
-
             return result;
         }
 
+        /// <summary>
+        /// 日历时间创建
+        /// </summary>
+        /// <param name="eventInfo"></param>
+        /// <returns></returns>
         public new Entities.Event CreateEvent(Entities.Event eventInfo)
         {
-            
+
+
             return eventInfo;
         }
 
+        /// <summary>
+        /// 日历事件取消
+        /// </summary>
+        /// <param name="eventInfo"></param>
+        /// <returns></returns>
         public new bool CancelEvent(Entities.Event eventInfo)
         {
             var result = true;
@@ -273,12 +279,15 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return result;
         }
 
+        /// <summary>
+        /// 日历事件修改
+        /// </summary>
+        /// <param name="eventInfo"></param>
+        /// <returns></returns>
         public new Entities.Event UpdateEvent(Entities.Event eventInfo)
         {
 
             return eventInfo;
         }
-
-
-        }
+    }
 }

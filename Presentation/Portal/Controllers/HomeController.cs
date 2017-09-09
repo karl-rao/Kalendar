@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using Kalendar.Zero.Data.Controls;
+using Kalendar.Zero.DB.Agent;
+using Kalendar.Zero.DB.Entity.Base;
 using Kalendar.Zero.Utility.Common;
 
 namespace Kalendar.Web.Portal.Controllers
@@ -46,7 +48,7 @@ namespace Kalendar.Web.Portal.Controllers
         }
 
         #region Account
-        
+
         /// <summary>
         /// 注册
         /// </summary>
@@ -59,42 +61,57 @@ namespace Kalendar.Web.Portal.Controllers
             var result = "";
             var now = DateTime.Now;
             var validCode = collection["validCode"] ?? "";
-            var entity = new Zero.DB.Entity.Base.AccountPO { Valid = true, CreateTime = DateTime.Now };
+            var entity = new Zero.DB.Entity.Base.AccountPO {Valid = true, CreateTime = DateTime.Now};
 
             if (validCode == (Session[Zero.Utility.Config.SessionName + "register"] + ""))
             {
-                var dbHelper = new Zero.DB.BLL.Base.AccountBO();
-
-                var existsCount = dbHelper.ExecuteScalar(
-                    "Select Count(1) AS RecordCount From Account Where Mobile=@Mobile ",
-                    CommandType.Text,
-                    new IDbDataParameter[]
-                    {new SqlParameter("@Mobile", collection["Mobile"])});
-
-                if (existsCount.ToInt() > 0)
+                var trans = new Transaction();
+                try
                 {
-                    result = "该号码已经注册！";
-                }
-                else
-                {
-                    entity.FillFromCollection(collection);
+                    trans.Begin();
+                    var dbHelper = new Zero.DB.Agent.MssqlHelper<AccountPO>();
 
-                    entity.Valid = true;
-                    entity.LastSignin = now;
-                    entity.UpdateTime = now;
-                    entity.CreateTime = now;
+                    var existsCount = dbHelper.ExecuteScalar(
+                        "Select Count(1) AS RecordCount From Account Where Mobile=@Mobile ",
+                        CommandType.Text,
+                        new IDbDataParameter[]
+                        {new SqlParameter("@Mobile", collection["Mobile"])}, trans.DbConnection, trans.DbTrans);
 
-                    var salt = Guid.NewGuid().ToString().Replace("-", "").ToLower().Substring(10, 10);
-                        entity.Salt = salt;
-                    entity.LoginPassword = Karlrao.Utility.Crypto.HashAlgorithm.MD5(collection["Password"] + salt);
-
-                    entity = dbHelper.Insert(entity);
-
-                    if (entity != null)
+                    if (existsCount.ToInt() > 0)
                     {
-                        SetAuthorizedAccountTiket(entity, true);
-                        //TraineeHelper.Refresh(entity);
+                        result = "该号码已经注册！";
                     }
+                    else
+                    {
+                        entity.FillFromCollection(collection);
+
+                        entity.Valid = true;
+                        entity.LastSignin = now;
+                        entity.UpdateTime = now;
+                        entity.CreateTime = now;
+
+                        var salt = Guid.NewGuid().ToString().Replace("-", "").ToLower().Substring(10, 10);
+                        entity.Salt = salt;
+                        entity.LoginPassword = (collection["Password"] + salt).Md5();
+
+                        entity = dbHelper.Insert(entity, trans.DbConnection, trans.DbTrans);
+
+                        if (entity != null)
+                        {
+                            SetAuthorizedAccountTiket(entity, true);
+                            //TraineeHelper.Refresh(entity);
+                        }
+                    }
+                    trans.Commit();
+                }
+                catch (Exception ex)
+                {
+                    trans.RollBack();
+                    Logger.Error(ex);
+                }
+                finally
+                {
+                    trans.Dispose();
                 }
             }
 
@@ -110,7 +127,7 @@ namespace Kalendar.Web.Portal.Controllers
         public ActionResult Login(FormCollection collection)
         {
             var result = "";
-            var mobile = Karlrao.Utility.Variables.Text.RegexHelper.SQLParse((collection["Mobile"] ?? "").ToLower());
+            var mobile = collection["Mobile"].SQLParse();
             var loginPassword = collection["Password"];
             var validCode = collection["validCode"] ?? "";
             var url = Request["ReturnUrl"] ?? "";
@@ -122,33 +139,50 @@ namespace Kalendar.Web.Portal.Controllers
                     if ((mobile != "") && (loginPassword != ""))
                     {
                         var condition = string.Format(" Mobile='{0}' ", mobile);
-                        var dbHelper = new Zero.DB.BLL.Base.AccountBO();
-                        var trainee = dbHelper.FindSingle(condition);
+                        var trans = new Transaction();
 
-                        if (trainee != null)
+                        try
                         {
-                            var now = DateTime.Now;
+                            trans.Begin();
+                            var dbHelper = new Zero.DB.Agent.MssqlHelper<AccountPO>();
+                            var trainee = dbHelper.FindSingle(condition, trans.DbConnection, trans.DbTrans);
 
-                            if (trainee.LoginPassword ==
-                                Karlrao.Utility.Crypto.HashAlgorithm.MD5(loginPassword + trainee.Salt))
+                            if (trainee != null)
                             {
-                                trainee.LastSignin = now;
-                                dbHelper.Update(trainee);
+                                var now = DateTime.Now;
 
-                                Logger.Info("LOGIN");
-                                SetAuthorizedAccountTiket(trainee, true);
-                                //Data.Domain.TraineeHelper.Refresh(trainee);
+                                if (trainee.LoginPassword == (loginPassword + trainee.Salt).Md5())
+                                {
+                                    var traineeNew = new Zero.DB.Entity.Base.AccountPO();
+                                    traineeNew.FillFrom(trainee);
+                                    traineeNew.LastSignin = now;
+                                    dbHelper.Update(trainee, traineeNew, trans.DbConnection, trans.DbTrans);
+
+                                    Logger.Info("LOGIN");
+                                    SetAuthorizedAccountTiket(trainee, true);
+                                    //Data.Domain.TraineeHelper.Refresh(trainee);
+                                }
+                                else
+                                {
+                                    result = "密码错误";
+                                    Logger.Error(result);
+                                }
                             }
                             else
                             {
-                                result = "密码错误";
+                                result = "账号不存在";
                                 Logger.Error(result);
                             }
+                            trans.Commit();
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            result = "账号不存在";
-                            Logger.Error(result);
+                            Logger.Error(ex);
+                            trans.RollBack();
+                        }
+                        finally
+                        {
+                            trans.Dispose();
                         }
                     }
                 }
@@ -191,7 +225,7 @@ namespace Kalendar.Web.Portal.Controllers
         /// <returns></returns>
         public ActionResult GetValidateCode(string id)
         {
-            var vCode = new Karlrao.Utility.Files.Image.ValidateCode();
+            var vCode = new Zero.Utility.Common.ValidateCode();
             string code = vCode.CreateValidateCode(4);
             Session[Zero.Utility.Config.SessionName + id] = code;
             byte[] bytes = vCode.CreateValidateGraphic(code);

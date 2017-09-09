@@ -45,6 +45,18 @@ namespace Kalendar.Zero.Utility.Common
             return newList;
         }
 
+        /// <summary>
+        /// SQL过滤
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string SQLParse(this string text)
+        {
+            var sqlExp = new Regex(@"\s*\'\s+|\s(and|exec|insert|select|delete|update|count|drop|table|\*|\%|chr|mid|master|truncate|char|declare)\s");
+
+            return sqlExp.Replace(text+"", "").Trim();
+        }
+
         #region Json - T
 
         /// <summary>

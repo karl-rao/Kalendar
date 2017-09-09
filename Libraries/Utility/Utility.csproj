@@ -59,6 +59,7 @@
     <Compile Include="Common\FileParser.cs" />
     <Compile Include="Common\JsonCache.cs" />
     <Compile Include="Common\ObjectExtensions.cs" />
+    <Compile Include="Common\ValidateCode.cs" />
     <Compile Include="Common\XmlCache.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="DataCache\Account.cs" />

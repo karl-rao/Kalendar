@@ -10,6 +10,6 @@ namespace Kalendar.Zero.Data
     {
         public static string SiteTitle = "UKONG";
 
-
+        public static string ProxyApiUri =DB.Config.AppSetting("ProxyApiUri","http://proxy.atimer.cn/api/woow");
     }
 }

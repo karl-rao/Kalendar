@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\BaseHelper.cs" />
+    <Compile Include="Clients\DataHelper.cs" />
     <Compile Include="Clients\GoogleHelper.cs" />
     <Compile Include="Clients\IBaseHelper.cs" />
     <Compile Include="Clients\MsonlineHelper.cs" />
@@ -129,6 +130,10 @@
     <Compile Include="Filters\TagReferenceFilter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApiTerminal\ApiTerminal.csproj">
+      <Project>{af9d6a06-6fb1-46f1-a224-e07cc1f3e970}</Project>
+      <Name>ApiTerminal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DB\DB.csproj">
       <Project>{2656eed8-5043-4171-91f3-984b21051007}</Project>
       <Name>DB</Name>
@@ -140,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
