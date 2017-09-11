@@ -276,8 +276,8 @@ namespace Kalendar.Web.Portal.Controllers
 
         public ActionResult Test()
         {
-            var channel = Zero.Utility.DataCache.Channel.GetEntity(1);
-            var avatar = Zero.Utility.DataCache.AccountAvatars.CacheList(10).FindLast(o => o.Id == 1);
+            var channel = Zero.Utility.DataCache.Channel.GetEntity(2);
+            var avatar = Zero.Utility.DataCache.AccountAvatars.CacheList(13).FindLast(o => o.Id == 5);
 
             var paser = new Zero.Data.Clients.DataHelper
             {
@@ -286,7 +286,7 @@ namespace Kalendar.Web.Portal.Controllers
             };
             
             Logger.Debug("TEST");
-            var resp = paser.ReadContacts();
+            var resp = paser.ReadSchedules();
             Logger.Info(resp);
             //var request=new Zero.ApiTerminal.Clients.Request.WoowRequest
             //{
@@ -304,6 +304,16 @@ namespace Kalendar.Web.Portal.Controllers
             //var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow",false,"POST" ,request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
             
             return Content(resp.SerializeXml());
+        }
+
+        public ActionResult Testgu()
+        {
+            var content =
+                "{ \"id\": \"101041433066104582113\",\"name\": \"赵马\",\"given_name\": \"马\",\"family_name\": \"赵\",\"link\": \"https://plus.google.com/101041433066104582113\",\"picture\": \"https://lh6.googleusercontent.com/-aQIfycAFfeU/AAAAAAAAAAI/AAAAAAAAAII/dbmnSFPzJk0/photo.jpg\",\"gender\": \"male\",\"locale\": \"zh-CN\"}";
+
+            var u = content.JsonToObjContract<Zero.Data.Clients.Response.GoogleUser>();
+
+            return Content(u.SerializeXml());
         }
 
     }

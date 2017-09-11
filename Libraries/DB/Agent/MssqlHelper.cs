@@ -250,15 +250,15 @@ namespace Kalendar.Zero.DB.Agent
                     var objValue = t.GetValue(obj, null) ?? DBNull.Value;
                     if (attribute.InsertRequired)
                     {
-                        if (fields != "")
-                        {
-                            fields += " , ";
-                            values += " , ";
-                        }
-                        fields += $" [{t.Name}] ";
-                        values += $" @{t.Name} ";
+                            if (fields != "")
+                            {
+                                fields += " , ";
+                                values += " , ";
+                            }
+                            fields += $" [{t.Name}] ";
+                            values += $" @{t.Name} ";
 
-                        param.Add(new SqlParameter($"@{t.Name}", objValue));
+                            param.Add(new SqlParameter($"@{t.Name}", objValue));
                     }
 
                     if (attribute.IsIdentity)

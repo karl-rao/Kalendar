@@ -153,7 +153,7 @@ namespace Kalendar.Zero.Utility.Common
         /// <returns></returns>
         public static T JsonToObjContract<T>(this string str)
         {
-            var stream = new MemoryStream(Encoding.Default.GetBytes(str));
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(str));
             var serializer =
                 new DataContractJsonSerializer(typeof(T));
             return (T)serializer.ReadObject(stream);

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kalendar.Zero.DB.Agent;
 using Kalendar.Zero.DB.Entity.Base;
-
+using Kalendar.Zero.Utility.Common;
 using log4net.Repository.Hierarchy;
 
 namespace Kalendar.Zero.Data.Domain
@@ -96,8 +96,11 @@ namespace Kalendar.Zero.Data.Domain
                             Valid = true,
                             UpdateTime = now,
                             CreateTime = now,
-                            LastSignin=now
+                            LastSignin=now,
+                            MobileVerifyTime = now,
+                            EmailVerifyTime=now
                         };
+                        Logger.Debug(account.SerializeXml());
                         account = bllAccount.Insert(account, trans.DbConnection, trans.DbTrans);
                     }
 
@@ -112,10 +115,15 @@ namespace Kalendar.Zero.Data.Domain
                         TokenExpires = avatar.TokenExpires,
                         UpdateTime = avatar.UpdateTime,
                         RefreshToken = avatar.RefreshToken,
-                        AccountId = account.Id
+                        AccountId = account.Id,
+                        Valid=true,
+                        CreateTime=now,
+                        SynchroTime=now,
+                        SynchroDuration = 600
                     };
 
                     avatarExists.UpdateTime = now;
+                    Logger.Debug(avatarExists.SerializeXml());
 
                     avatar = bllAccountAvatars.Insert(avatarExists, trans.DbConnection, trans.DbTrans);
                 }
@@ -124,7 +132,6 @@ namespace Kalendar.Zero.Data.Domain
                     avatar.Id = avatarExists.Id;
                     avatar.AccountId = avatarExists.AccountId;
                     avatar.Valid = avatarExists.Valid;
-                    avatar.CreateTime = avatarExists.CreateTime;
 
                     bllAccountAvatars.Update(avatarExists,avatar, trans.DbConnection, trans.DbTrans);
 
@@ -237,8 +244,10 @@ namespace Kalendar.Zero.Data.Domain
                         UpdateTime = now,
                         ProjectName = avatar.DisplayName + "@" + channel.ChannelName,
                         ChannelId = channel.Id,
-                        CreatorAccountId = account.Id
+                        CreatorAccountId = account.Id,
+                        EnterDeadline=now
                     };
+                    Logger.Debug(projectExists.SerializeXml());
                     projectExists = bllProject.Insert(projectExists,  trans.DbConnection, trans.DbTrans);
                 }
                 else

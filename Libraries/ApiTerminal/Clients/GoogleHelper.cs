@@ -147,7 +147,6 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
             Logger.Info(response);
 
-
             return new List<Entities.Message>();
         }
 
@@ -158,7 +157,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// <returns></returns>
         public override List<Entities.Contact> ReadContacts(int page = 1)
         {
-            var url = "https://www.google.com/m8/feeds/contacts/default/full";
+            var url = "https://www.google.com/m8/feeds/contacts/default/thin";
             var response = ReadApi(url);
 
             Logger.Info(response);
@@ -174,10 +173,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// <returns></returns>
         public override List<Entities.Event> ReadEvents(int page = 1)
         {
-            var url = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+            var url = "https://www.googleapis.com/calendar/v3/users/me/calendarList/primary";
+                //"https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
             var response = ReadApi(url);
 
             Logger.Info(response);
+
             return new List<Entities.Event>();
         }
 

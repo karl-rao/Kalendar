@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent\DynamicBuilder.cs" />
-    <Compile Include="Agent\Field.cs" />
     <Compile Include="Agent\IBaseHelper.cs" />
     <Compile Include="Agent\MssqlHelper.cs" />
     <Compile Include="Agent\Transaction.cs" />

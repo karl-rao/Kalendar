@@ -53,6 +53,7 @@ namespace Kalendar.Zero.Data.Clients
                     avatar.TokenGenerated = now;
                     avatar.TokenExpires = now.AddSeconds(token.ExpiresIn);
                     avatar.UpdateTime = now;
+                    avatar.CreateTime = now;
                 }
             }
             catch (Exception ex)
@@ -91,6 +92,7 @@ namespace Kalendar.Zero.Data.Clients
                     avatar.TokenGenerated = now;
                     avatar.TokenExpires = now.AddSeconds(token.ExpiresIn);
                     avatar.UpdateTime = now;
+                    avatar.CreateTime = now;
                 }
             }
             catch (Exception ex)
@@ -105,6 +107,7 @@ namespace Kalendar.Zero.Data.Clients
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new AccountAvatarsPO { CreateTime = now, Valid = true };
+            try { 
             var url = "https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token={0}";
 
             var r = new BrowserClient();
@@ -119,6 +122,11 @@ namespace Kalendar.Zero.Data.Clients
                 avatar.ChannelId = Channel.Id;
                 avatar.DisplayName = user.Name;
                 avatar.Code = user.Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
             }
 
             return avatar;
@@ -126,21 +134,34 @@ namespace Kalendar.Zero.Data.Clients
 
         public List<DB.Entity.Base.AccountMessagesPO> ReadMessages(int page = 1)
         {
-            var url = "https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest";
-            var response = ReadApi(url);
+            try
+            {
+                var url = "https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest";
+                var response = ReadApi(url);
 
-            Logger.Info(response);
-
+                Logger.Info(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
 
             return new List<AccountMessagesPO>();
         }
 
         public List<DB.Entity.Base.AccountContactsPO> ReadContacts(int page = 1)
         {
-            var url = "https://www.google.com/m8/feeds/contacts/default/full";
-            var response = ReadApi(url);
+            try
+            {
+                var url = "https://www.google.com/m8/feeds/contacts/default/full";
+                var response = ReadApi(url);
 
-            Logger.Info(response);
+                Logger.Info(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
 
             return new List<AccountContactsPO>();
 
@@ -149,10 +170,18 @@ namespace Kalendar.Zero.Data.Clients
 
         public List<DB.Entity.Base.SchedulePO> ReadSchedules(int page = 1)
         {
-            var url = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
-            var response = ReadApi(url);
+            try
+            {
+                var url = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+                var response = ReadApi(url);
 
-            Logger.Info(response);
+                Logger.Info(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+
             return new List<SchedulePO>();
         }
 

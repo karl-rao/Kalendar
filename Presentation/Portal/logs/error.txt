@@ -484,3 +484,43 @@
   <UpdateTime>0001-01-01T00:00:00</UpdateTime>
   <CreateTime>0001-01-01T00:00:00</CreateTime>
 </AccountContacts>}
+2017-09-11 21:20:26,822 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 113.3117 ms
+2017-09-11 21:21:30,099 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 216.58.200.42:443
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\BrowserClient.cs:行号 92
+2017-09-11 21:21:30,118 [6] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 21:21:30,137 [6] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.Runtime.Serialization.SerializationException: 应为来自命名空间“”的元素“root”。。遇到名称为“”、命名空间为“”的“None”。
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 Kalendar.Zero.Utility.Common.ObjectExtensions.JsonToObjContract[T](String str) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\ObjectExtensions.cs:行号 159
+   在 Kalendar.Zero.Data.Clients.GoogleHelper.ExchangeToken(String code) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\GoogleHelper.cs:行号 47
+2017-09-11 21:21:30,144 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 获取AccessToken:
+2017-09-11 21:22:33,152 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 216.58.200.42:443
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\BrowserClient.cs:行号 140
+2017-09-11 21:22:33,153 [6] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 23:41:06,047 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 34.592 ms
+2017-09-11 23:41:06,231 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 25.5987 ms.
+2017-09-11 23:41:06,255 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 14.0416 ms
+2017-09-11 23:41:06,256 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:41:11,576 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 23:42:22,948 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.0924 ms
+2017-09-11 23:42:22,982 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.5382 ms
+2017-09-11 23:42:22,984 [7] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:42:24,023 [7] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 23:52:05,837 [19] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 23.0596 ms
+2017-09-11 23:52:05,874 [19] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 16.009 ms
+2017-09-11 23:52:05,876 [19] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:52:11,420 [19] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 23:54:07,646 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 22.0595 ms
+2017-09-11 23:54:07,684 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.04 ms
+2017-09-11 23:54:07,686 [9] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:54:08,252 [9] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 

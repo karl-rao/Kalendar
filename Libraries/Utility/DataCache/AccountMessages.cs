@@ -19,7 +19,7 @@ namespace Kalendar.Zero.Utility.DataCache
         /// <returns></returns>
         public static List<DB.Entity.Base.AccountMessagesPO> CacheList(int accountId)
         {
-            var condition = $"Valid=1 AND AccountId={accountId}";
+            var condition = $"Valid=1 AND ToAccountId={accountId}";
             return new Common.CacheHelper<DB.Entity.Base.AccountMessagesPO>().Find(condition, false, true);
         }
 
@@ -29,7 +29,7 @@ namespace Kalendar.Zero.Utility.DataCache
         /// <returns></returns>
         public static List<DB.Entity.Base.AccountMessagesPO> InitCache(int accountId)
         {
-            var condition = $"Valid=1 AND AccountId={accountId}";
+            var condition = $"Valid=1 AND ToAccountId={accountId}";
             return new Common.CacheHelper<DB.Entity.Base.AccountMessagesPO>().Find(condition, false, true);
         }
 

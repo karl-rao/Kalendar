@@ -15,17 +15,16 @@ namespace Kalendar.Zero.ApiTerminal.Clients.Response
     public class GoogleUser
     {
         /*
-            "givenName": "Karl",
-            "surname": "Zhao",
-            "displayName": "Karl Zhao",
-            "id": "6cd2df35ca5f55ac",
-            "userPrincipalName": "zhaoma@hotmail.com",
-            "businessPhones": [],
-            "jobTitle": null,
-            "mail": null,
-            "mobilePhone": null,
-            "officeLocation": null,
-            "preferredLanguage": null
+{
+    "id": "101041433066104582113",
+    "name": "赵马",
+    "given_name": "马",
+    "family_name": "赵",
+    "link": "https://plus.google.com/101041433066104582113",
+    "picture": "https://lh6.googleusercontent.com/-aQIfycAFfeU/AAAAAAAAAAI/AAAAAAAAAII/dbmnSFPzJk0/photo.jpg",
+    "gender": "male",
+    "locale": "zh-CN"
+}
              */
 
         [DataMember(Name = "name")]
