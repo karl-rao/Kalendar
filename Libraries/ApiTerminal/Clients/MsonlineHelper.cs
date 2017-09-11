@@ -16,7 +16,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// 登录地址
         /// </summary>
         /// <returns></returns>
-        public new string Signin()
+        public override string Signin()
         {
             var url =
                 $"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={Channel.AppId}&redirect_uri={Channel.CodeCallback}&response_type=code&scope={Channel.Parameters}";
@@ -29,7 +29,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public new Entities.Avatar ExchangeToken(string code)
+        public override Entities.Avatar ExchangeToken(string code)
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new Entities.Avatar();
@@ -67,7 +67,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="refreshToken"></param>
         /// <returns></returns>
-        public new Entities.Avatar RefreshToken(string refreshToken)
+        public override Entities.Avatar RefreshToken(string refreshToken)
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new Entities.Avatar();
@@ -102,7 +102,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
-        public new Entities.Avatar ReadAvatar()
+        public override Entities.Avatar ReadAvatar()
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new Entities.Avatar();
@@ -122,7 +122,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
-        public new List<Entities.Message> ReadMessages(int page = 1)
+        public override List<Entities.Message> ReadMessages(int page = 1)
         {
             var result = new List<Entities.Message>();
             var url = "https://graph.microsoft.com/v1.0/me/mailfolders/inbox/messages";
@@ -166,7 +166,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>
-        public new List<Entities.Contact> ReadContacts(int page = 1)
+        public override List<Entities.Contact> ReadContacts(int page = 1)
         {
             var result = new List<Entities.Contact>();
             var url = "https://graph.microsoft.com/v1.0/me/contacts";
@@ -210,7 +210,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>
-        public new List<Entities.Event> ReadEvents(int page = 1)
+        public override List<Entities.Event> ReadEvents(int page = 1)
         {
             var result = new List<Entities.Event>();
             var url = "https://graph.microsoft.com/v1.0/me/calendar/events";
@@ -259,7 +259,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="eventInfo"></param>
         /// <returns></returns>
-        public new Entities.Event CreateEvent(Entities.Event eventInfo)
+        public override Entities.Event CreateEvent(Entities.Event eventInfo)
         {
 
 
@@ -271,7 +271,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="eventInfo"></param>
         /// <returns></returns>
-        public new bool CancelEvent(Entities.Event eventInfo)
+        public override bool CancelEvent(Entities.Event eventInfo)
         {
             var result = true;
 
@@ -284,7 +284,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </summary>
         /// <param name="eventInfo"></param>
         /// <returns></returns>
-        public new Entities.Event UpdateEvent(Entities.Event eventInfo)
+        public override Entities.Event UpdateEvent(Entities.Event eventInfo)
         {
 
             return eventInfo;

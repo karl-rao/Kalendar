@@ -23,7 +23,7 @@ namespace Kalendar.Plugins.Proxy.Controllers
         {
             object result=null;
 
-            Logger.Info(request.SerializeXml());
+            Logger.Info("PARSE REQUEST:"+request.SerializeXml());
             BaseHelper helper=null;
             switch (request.ChannelSymbol)
             {
@@ -44,6 +44,8 @@ namespace Kalendar.Plugins.Proxy.Controllers
                 return "";
             }
 
+            Logger.Debug(helper.GetType());
+
             switch ((request.Method+"").ToUpper())
             {
                 case "SIGNIN":
@@ -62,6 +64,7 @@ namespace Kalendar.Plugins.Proxy.Controllers
                     result = helper.ReadMessages(request.Data.ToInt());
                     break;
                 case "READCONTACTS":
+                    Logger.Debug("READCONTACTS");
                     result = helper.ReadContacts(request.Data.ToInt());
                     break;
                 case "READEVENTS":
@@ -77,6 +80,8 @@ namespace Kalendar.Plugins.Proxy.Controllers
                     result = helper.UpdateEvent(request.Data.JsonToObj<Zero.ApiTerminal.Entities.Event>());
                     break;
             }
+
+            Logger.Info("CALLBACK:"+result);
 
             return result;
         }

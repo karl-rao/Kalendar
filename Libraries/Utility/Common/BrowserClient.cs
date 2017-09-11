@@ -86,9 +86,10 @@ namespace Kalendar.Zero.Utility.Common
                 }
 
                 var encoder = Encoding.GetEncoding(encoding);
-                Stream stream = request.GetRequestStream();
+                Stream stream = null;
                 if (value != "")
                 {
+                    stream = request.GetRequestStream();
                     var buffer = encoder.GetBytes(value);
                     stream.Write(buffer, 0, buffer.Length);
                 }
@@ -115,6 +116,7 @@ namespace Kalendar.Zero.Utility.Common
                 if (uploadFiles != null && uploadFiles.Any())
                 {
                     request.ContentType = "multipart/form-data; boundary=" + boundary;
+                    if (stream == null) { stream = request.GetRequestStream(); }
 
                     string description;
                     foreach (KeyValuePair<string, string> kvp in uploadFiles)
@@ -132,7 +134,8 @@ namespace Kalendar.Zero.Utility.Common
                     }
                 }
 
-                stream.Close();
+                if (stream != null)
+                    stream.Close();
 
                 using (WebResponse response = request.GetResponse())
                 {

@@ -63,7 +63,21 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             try
             {
                 url = UrlByVerification(url);
+                var encoder = Encoding.GetEncoding(encoding);
 
+
+                Logger.Debug("url=" + url);
+                Logger.Debug("method=" + method);
+                Logger.Debug("accept=" + accept);
+                Logger.Debug("contentType=" + contentType);
+                if (header != null && header.Count > 0)
+                {
+                    foreach (KeyValuePair<string, string> item in header)
+                    {
+                        Logger.Debug(item.Key+"="+ item.Value);
+                    }
+                }
+                
                 if (ssl)
                 {
                     //ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
@@ -73,8 +87,8 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
                 var request = (HttpWebRequest) WebRequest.Create(url);
                 request.Accept = accept;
-                request.Method = method;
-                request.ContentType = contentType; //+ "; charset=" + encoding.WebName;
+                request.Method =method;
+                request.ContentType = contentType+ "; charset=" + encoder.WebName;
                 request.CookieContainer = ClientCookieContainer;
 
                 if (header != null && header.Count > 0)
@@ -85,10 +99,10 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                     }
                 }
 
-                var encoder = Encoding.GetEncoding(encoding);
-                Stream stream = request.GetRequestStream();
+                Stream stream = null;
                 if (value != "")
                 {
+                    stream = request.GetRequestStream();
                     var buffer = encoder.GetBytes(value);
                     stream.Write(buffer, 0, buffer.Length);
                 }
@@ -116,6 +130,9 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 {
                     request.ContentType = "multipart/form-data; boundary=" + boundary;
 
+                    if(stream==null)
+                        stream = request.GetRequestStream();
+
                     string description;
                     foreach (KeyValuePair<string, string> kvp in uploadFiles)
                     {
@@ -132,7 +149,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                     }
                 }
 
-                stream.Close();
+                stream?.Close();
 
                 using (WebResponse response = request.GetResponse())
                 {

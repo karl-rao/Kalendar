@@ -9,7 +9,11 @@ namespace Kalendar.Zero.ApiTerminal.Clients
     public class GoogleHelper
         : BaseHelper, IBaseHelper
     {
-        public new string Signin()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override string Signin()
         {
             var url =
                 string.Format(
@@ -22,7 +26,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return url;
         }
 
-        public new Entities.Avatar ExchangeToken(string code)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public override Entities.Avatar ExchangeToken(string code)
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new Entities.Avatar();
@@ -59,7 +68,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
-        public new Entities.Avatar RefreshToken(string refreshToken)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="refreshToken"></param>
+        /// <returns></returns>
+        public override Entities.Avatar RefreshToken(string refreshToken)
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new Entities.Avatar();
@@ -96,7 +110,11 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
-        public new Entities.Avatar ReadAvatar()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override Entities.Avatar ReadAvatar()
         {
             var now = DateTime.Now;
             var avatar = Avatar ?? new Entities.Avatar();
@@ -117,7 +135,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
-        public new List<Entities.Message> ReadMessages(int page = 1)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public override List<Entities.Message> ReadMessages(int page = 1)
         {
             var url = "https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest";
             var response = ReadApi(url);
@@ -128,7 +151,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return new List<Entities.Message>();
         }
 
-        public new List<Entities.Contact> ReadContacts(int page = 1)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public override List<Entities.Contact> ReadContacts(int page = 1)
         {
             var url = "https://www.google.com/m8/feeds/contacts/default/full";
             var response = ReadApi(url);
@@ -139,8 +167,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
         }
 
-
-        public new List<Entities.Event> ReadEvents(int page = 1)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public override List<Entities.Event> ReadEvents(int page = 1)
         {
             var url = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
             var response = ReadApi(url);
@@ -150,13 +182,18 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         }
 
 
-        public new Entities.Event CreateEvent(Entities.Event eventInfo)
+        public override Entities.Event CreateEvent(Entities.Event eventInfo)
         {
 
             return eventInfo;
         }
 
-        public new bool CancelEvent(Entities.Event eventInfo)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="eventInfo"></param>
+        /// <returns></returns>
+        public override bool CancelEvent(Entities.Event eventInfo)
         {
             var result = true;
 
@@ -164,7 +201,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return result;
         }
 
-        public new Entities.Event UpdateEvent(Entities.Event eventInfo)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="eventInfo"></param>
+        /// <returns></returns>
+        public override Entities.Event UpdateEvent(Entities.Event eventInfo)
         {
 
             return eventInfo;

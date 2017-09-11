@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Kalendar.Zero.DB.Entity.Base;
 using Kalendar.Zero.Utility.Common;
 
@@ -11,89 +8,109 @@ namespace Kalendar.Zero.Data.Clients
     public class DataHelper
         : BaseHelper, IBaseHelper
     {
-        private ApiTerminal.Entities.Channel ProxyChannel
+        #region private
+        private ApiTerminal.Clients.Request.WoowRequest ProxyRequest(string method)
         {
-            get
+            var channel = new ApiTerminal.Entities.Channel();
+            channel.FillFrom(Channel);
+
+            var avatar = new ApiTerminal.Entities.Avatar();
+            avatar.FillFrom(Avatar);
+
+            return new ApiTerminal.Clients.Request.WoowRequest
             {
-                var channel=new ApiTerminal.Entities.Channel();
-                channel.FillFrom(Channel);
-                return channel;
-            }
+                ChannelSymbol = Channel.ChannelSymbol,
+                Method = method,
+                Channel = channel,
+                Avatar = avatar
+            };
+        }
+        
+        private string ReadFromProxy(ApiTerminal.Clients.Request.WoowRequest request)
+        {
+            var r = new BrowserClient();
+            return r.SendHttpRequest(Config.ProxyApiUri, false, "POST", request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
         }
 
-        private ApiTerminal.Entities.Avatar ProxyAvatar
-        {
-            get
-            {
-                var avatar = new ApiTerminal.Entities.Avatar();
-                avatar.FillFrom(Avatar);
-                return avatar;
-            }
-        }
+        #endregion
 
         public string Signin()
         {
-            var request = new ApiTerminal.Clients.Request.WoowRequest
-            {
-                ChannelSymbol = Channel.ChannelSymbol,
-                Method = "Signin",
-                Channel = ProxyChannel,
-                Avatar= ProxyAvatar,
-
-            };
+            var request = ProxyRequest("Signin");
 
             return ReadFromProxy(request).JsonToObj<string>();
         }
 
         public AccountAvatarsPO ExchangeToken(string code)
         {
-            return new AccountAvatarsPO();
+            var request = ProxyRequest("ExchangeToken");
+            request.Data = code;
+
+            return ReadFromProxy(request).JsonToObj<AccountAvatarsPO>();
         }
 
         public AccountAvatarsPO RefreshToken(string refreshToken)
         {
-            return new AccountAvatarsPO();
+            var request = ProxyRequest("RefreshToken");
+            request.Data = refreshToken;
+
+            return ReadFromProxy(request).JsonToObj<AccountAvatarsPO>();
         }
 
         public AccountAvatarsPO ReadAvatar()
         {
-            return new AccountAvatarsPO();
+            var request = ProxyRequest("ReadAvatar");
+
+            return ReadFromProxy(request).JsonToObj<AccountAvatarsPO>();
         }
 
         public List<AccountMessagesPO> ReadMessages(int page = 1)
         {
-            return new List<AccountMessagesPO>();
+            var request = ProxyRequest("ReadMessages");
+            request.Data = page+"";
+
+            return ReadFromProxy(request).JsonToObj<List<AccountMessagesPO>>();
         }
 
         public List<AccountContactsPO> ReadContacts(int page = 1)
         {
-            return new List<AccountContactsPO>();
+            var request = ProxyRequest("ReadContacts");
+            request.Data = page + "";
+
+            return ReadFromProxy(request).JsonToObj<List<AccountContactsPO>>();
         }
 
         public List<SchedulePO> ReadSchedules(int page = 1)
         {
-            return new List<SchedulePO>();
+            var request = ProxyRequest("ReadSchedules");
+            request.Data = page + "";
+
+            return ReadFromProxy(request).JsonToObj<List<SchedulePO>>();
         }
 
         public SchedulePO CreateSchedules(SchedulePO schedule)
         {
-            return new SchedulePO();
+            var request = ProxyRequest("CreateSchedules");
+            request.Data = schedule.ObjToJson();
+
+            return ReadFromProxy(request).JsonToObj<SchedulePO>();
         }
 
         public bool CancelSchedules(SchedulePO schedule)
         {
-            return true;
+            var request = ProxyRequest("CancelSchedules");
+            request.Data = schedule.ObjToJson();
+
+            return ReadFromProxy(request).JsonToObj<bool>();
         }
 
         public SchedulePO UpdateSchedules(SchedulePO schedule)
         {
-            return new SchedulePO();
+            var request = ProxyRequest("UpdateSchedules");
+            request.Data = schedule.ObjToJson();
+
+            return ReadFromProxy(request).JsonToObj<SchedulePO>();
         }
 
-        private string ReadFromProxy(ApiTerminal.Clients.Request.WoowRequest request)
-        {
-            var r = new Utility.Common.BrowserClient();
-            return r.SendHttpRequest(Config.ProxyApiUri, false, "POST", request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
-        }
     }
 }

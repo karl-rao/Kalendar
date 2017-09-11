@@ -8,6 +8,7 @@ using Kalendar.Zero.Data.Controls;
 using Kalendar.Zero.DB.Agent;
 using Kalendar.Zero.DB.Entity.Base;
 using Kalendar.Zero.Utility.Common;
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
 namespace Kalendar.Web.Portal.Controllers
 {
@@ -262,22 +263,45 @@ namespace Kalendar.Web.Portal.Controllers
 
         #endregion
 
+        public ActionResult LocalTest()
+        {
+            var channel = Zero.Utility.DataCache.Channel.GetEntity(1);
+            var avatar = Zero.Utility.DataCache.AccountAvatars.CacheList(10).FindLast(o => o.Id == 1);
+
+            var helper=new Zero.Data.Clients.MsonlineHelper {Channel=channel,Avatar=avatar};
+            var cs=helper.ReadContacts();
+
+            return Content(cs.SerializeXml());
+        }
+
         public ActionResult Test()
         {
-            var request=new Zero.ApiTerminal.Clients.Request.WoowRequest
+            var channel = Zero.Utility.DataCache.Channel.GetEntity(1);
+            var avatar = Zero.Utility.DataCache.AccountAvatars.CacheList(10).FindLast(o => o.Id == 1);
+
+            var paser = new Zero.Data.Clients.DataHelper
             {
-                ChannelSymbol=1,
-                Method= "RefreshToken",
-                Channel=new Zero.ApiTerminal.Entities.Channel { AppId = "APPID"},
-                Avatar=new Zero.ApiTerminal.Entities.Avatar { Code="CODE"},
-                Data="REFRESHTOKEN"
+                Channel = channel,
+                Avatar = avatar
             };
+            
+            Logger.Debug("TEST");
+            var resp = paser.ReadContacts();
+            Logger.Info(resp);
+            //var request=new Zero.ApiTerminal.Clients.Request.WoowRequest
+            //{
+            //    ChannelSymbol=1,
+            //    Method= "RefreshToken",
+            //    Channel=new Zero.ApiTerminal.Entities.Channel { AppId = "APPID"},
+            //    Avatar=new Zero.ApiTerminal.Entities.Avatar { Code="CODE"},
+            //    Data="REFRESHTOKEN"
+            //};
 
-            //var r=new Zero.ApiTerminal.Clients.BrowserClient();
-            //var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow", false,"POST", request.ObjToJson(), null,null,null,"UTF-8","application/json", "application/json");
+            ////var r=new Zero.ApiTerminal.Clients.BrowserClient();
+            ////var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow", false,"POST", request.ObjToJson(), null,null,null,"UTF-8","application/json", "application/json");
 
-            var r=new BrowserClient();
-            var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow",false,"POST" ,request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
+            //var r=new BrowserClient();
+            //var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow",false,"POST" ,request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
             
             return Content(resp.SerializeXml());
         }

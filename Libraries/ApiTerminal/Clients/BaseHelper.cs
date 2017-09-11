@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kalendar.Zero.ApiTerminal.Clients
 {
-    public class BaseHelper
+    public abstract class BaseHelper
     {
         public  readonly log4net.ILog Logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
           
@@ -14,6 +14,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
         public Entities.Avatar Avatar { get; set; }
 
+        public BaseHelper() { }
 
         /// <summary>
         /// 
@@ -45,55 +46,25 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
         #region 方法示例
 
-        public string Signin()
-        {
-            return "";
-        }
+        public abstract string Signin();
 
-        public Entities.Avatar ExchangeToken(string code)
-        {
-            return new Entities.Avatar();
-        }
+        public abstract Entities.Avatar ExchangeToken(string code);
 
-        public Entities.Avatar RefreshToken(string refreshToken)
-        {
-            return new Entities.Avatar();
-        }
+        public abstract Entities.Avatar RefreshToken(string refreshToken);
 
-        public Entities.Avatar ReadAvatar()
-        {
-            return new Entities.Avatar();
-        }
+        public abstract Entities.Avatar ReadAvatar();
 
-        public List<Entities.Message> ReadMessages(int page = 1)
-        {
-            return new List<Entities.Message>();
-        }
+        public abstract List<Entities.Message> ReadMessages(int page = 1);
 
-        public List<Entities.Contact> ReadContacts(int page = 1)
-        {
-            return new List<Entities.Contact>();
-        }
+        public abstract List<Entities.Contact> ReadContacts(int page = 1);
 
-        public List<Entities.Event> ReadEvents(int page = 1)
-        {
-            return new List<Entities.Event>();
-        }
+        public abstract List<Entities.Event> ReadEvents(int page = 1);
 
-        public Entities.Event CreateEvent(Entities.Event eventInfo)
-        {
-            return eventInfo;
-        }
+        public abstract Entities.Event CreateEvent(Entities.Event eventInfo);
 
-        public bool CancelEvent(Entities.Event eventInfo)
-        {
-            return false;
-        }
+        public abstract bool CancelEvent(Entities.Event eventInfo);
 
-        public Entities.Event UpdateEvent(Entities.Event eventInfo)
-        {
-            return eventInfo;
-        }
+        public abstract Entities.Event UpdateEvent(Entities.Event eventInfo);
 
         #endregion
 
@@ -104,6 +75,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// <returns></returns>
         public string ReadApi(string url)
         {
+            Logger.Debug("READ API...");
             try
             {
                 var kv = new Dictionary<string, string>
