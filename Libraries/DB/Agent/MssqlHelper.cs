@@ -268,16 +268,14 @@ namespace Kalendar.Zero.DB.Agent
                 }
             }
 
-            string sql = $"INSERT INTO {TableName} ({fields}) VALUES ({values})";
+            string sql = $"INSERT INTO [{TableName}] ({fields}) VALUES ({values})";
             sql += getScopeIdentity ? " Select CAST(ISNULL(SCOPE_IDENTITY() ,0) As int)" : "Select 0";
             var objKeyValue = ExecuteScalar(sql, CommandType.Text, param.ToArray(), connection, transaction);
 	        if (getScopeIdentity)
 	        {
 	            foreach (PropertyInfo t in pis)
                 {
-                    foreach (
-                        FieldSettingsAttribute attribute in t.GetCustomAttributes(typeof (FieldSettingsAttribute), true)
-                        )
+                    foreach (FieldSettingsAttribute attribute in t.GetCustomAttributes(typeof (FieldSettingsAttribute), true))
                     {
                         if (attribute.IsPrimaryKey && attribute.IsIdentity)
                         {
@@ -330,10 +328,9 @@ namespace Kalendar.Zero.DB.Agent
                         param.Add(new SqlParameter($"@{t.Name}", objValue));
                     }
                 }
-                
             }
             
-            string sql = $"UPDATE {TableName} SET {fields} WHERE {condition} ";
+            string sql = $"UPDATE [{TableName}] SET {fields} WHERE {condition} ";
             return Execute(sql, CommandType.Text, param.ToArray(), connection, transaction);
         }
         
@@ -478,7 +475,7 @@ namespace Kalendar.Zero.DB.Agent
         {
             var sql = GetSql(TableName,condition,SelectedFields,orderField,isDescending,pageSize,pageNo);
             sql +=
-                $" Select Count(1) As RecordCount From {TableName}  WITH (NOLOCK) where {(condition == "" ? " 1=1 " : condition)}";
+                $" Select Count(1) As RecordCount From [{TableName}]  WITH (NOLOCK) where {(condition == "" ? " 1=1 " : condition)}";
             var ds = GetDataSet(sql, CommandType.Text, paramList, connection, transaction);
 
             if (ds != null)
@@ -669,7 +666,7 @@ namespace Kalendar.Zero.DB.Agent
         #region SQL
         
         /// <summary>
-        /// 
+        /// SQL拼装
         /// </summary>
         /// <param name="tableName"></param>
         /// <param name="condition"></param>
@@ -728,8 +725,6 @@ namespace Kalendar.Zero.DB.Agent
             return sql;
         }
 
-
         #endregion
-
     }
 }

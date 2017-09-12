@@ -1,4 +1,4 @@
-﻿@using Karlrao.Utility.WebHelper
+﻿@using Kalendar.Zero.Utility.Common
 @model Kalendar.Zero.Data.Domain.Account
 
 @{
@@ -30,7 +30,7 @@
                 <tbody>
                 @foreach (var c in contacts)
                 {
-                    var detail = c.Detail.JsonToObj<Kalendar.Zero.Data.Clients.Response.MsonlineContact>();
+                    var detail = c.Detail.JsonToObj<Kalendar.Zero.ApiTerminal.Clients.Response.MsonlineContact>();
                     <tr>
                         <td>
                             @(string.IsNullOrEmpty(c.DisplayName) ? "匿名" : c.DisplayName)

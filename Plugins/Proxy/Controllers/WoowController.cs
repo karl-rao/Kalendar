@@ -68,6 +68,7 @@ namespace Kalendar.Plugins.Proxy.Controllers
                     result = helper.ReadContacts(request.Data.ToInt());
                     break;
                 case "READEVENTS":
+                    Logger.Debug("READEVENTS");
                     result = helper.ReadEvents(request.Data.ToInt());
                     break;
                 case "CREATEEVENT":

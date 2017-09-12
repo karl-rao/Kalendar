@@ -25,8 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Presentation\Port
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imagent", "Services\Imagent\Imagent.csproj", "{C4A49CFF-FF9B-4046-BC9A-0F169645FF7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleOnline", "Plugins\GoogleOnline\GoogleOnline.csproj", "{9AEC389C-C6BF-475A-A038-6AA0FC0FC9A6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,10 +59,6 @@ Global
 		{C4A49CFF-FF9B-4046-BC9A-0F169645FF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A49CFF-FF9B-4046-BC9A-0F169645FF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A49CFF-FF9B-4046-BC9A-0F169645FF7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AEC389C-C6BF-475A-A038-6AA0FC0FC9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AEC389C-C6BF-475A-A038-6AA0FC0FC9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AEC389C-C6BF-475A-A038-6AA0FC0FC9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AEC389C-C6BF-475A-A038-6AA0FC0FC9A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +71,5 @@ Global
 		{13817E72-B2A9-49A5-B93C-EF4012583F9B} = {7F67E01A-5A59-446B-A113-E489D4CC2B4F}
 		{5CAF0C53-C5E1-42AD-AA4A-8994D5027FCE} = {D0386C84-A0AF-406F-8B8C-18F216316263}
 		{C4A49CFF-FF9B-4046-BC9A-0F169645FF7E} = {834C8CE7-969F-46BC-9911-63A7FF1622A0}
-		{9AEC389C-C6BF-475A-A038-6AA0FC0FC9A6} = {7F67E01A-5A59-446B-A113-E489D4CC2B4F}
 	EndGlobalSection
 EndGlobal

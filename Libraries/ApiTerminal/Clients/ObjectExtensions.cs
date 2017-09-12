@@ -692,7 +692,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 {
                     return ((IConvertible) value).ToInt32(null);
                 }
-            }catch(Exception ex) { }
+            }catch(Exception) { }
             return 0;
         }
 

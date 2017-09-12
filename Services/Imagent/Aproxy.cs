@@ -27,7 +27,7 @@ namespace Kalendar.Zero.Imagent
             var fw = new FileSystemWatcher
             {
                 Path = path,
-                Filter = "*queue.json",
+                Filter = "*AgentQueue",
                 IncludeSubdirectories = true,
                 NotifyFilter =
                     NotifyFilters.Attributes

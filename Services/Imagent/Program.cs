@@ -11,12 +11,11 @@ namespace Kalendar.Zero.Imagent
         {
             log4net.Config.XmlConfigurator.Configure();
 
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            var servicesToRun = new ServiceBase[]
             {
                 new Aproxy(), 
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(servicesToRun);
         }
     }
 }

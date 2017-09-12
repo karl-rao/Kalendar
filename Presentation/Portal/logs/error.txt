@@ -564,3 +564,29 @@
 2017-09-12 14:44:44,482 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5003 ms
 2017-09-12 14:44:44,528 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 33.4993 ms
 2017-09-12 14:48:42,545 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 3524.8568 ms
+2017-09-12 20:42:49,669 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 20.0239 ms.
+2017-09-12 20:42:49,729 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 24.0311 ms
+2017-09-12 20:42:49,753 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 12.0162 ms.
+2017-09-12 20:42:49,773 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 12.0162 ms
+2017-09-12 20:42:49,773 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 20:42:50,864 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 20:44:39,695 [8] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 12.0209 ms.
+2017-09-12 20:44:39,711 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 8.0051 ms
+2017-09-12 20:44:39,739 [8] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 16.0269 ms.
+2017-09-12 20:44:39,751 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 4.0034 ms
+2017-09-12 20:44:39,755 [8] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 20:44:40,698 [8] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:02:22,308 [24] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 24.0073 ms
+2017-09-12 21:02:22,340 [24] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 11.9889 ms
+2017-09-12 21:02:22,340 [24] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:02:27,196 [24] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:08:16,386 [22] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 20.0034 ms
+2017-09-12 21:08:16,418 [22] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.9928 ms
+2017-09-12 21:08:16,418 [22] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:08:21,278 [22] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:54:59,402 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 93.2169 ms
+2017-09-12 21:54:59,450 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 22.0569 ms
+2017-09-12 21:54:59,452 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:55:04,757 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:57:32,893 [5] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:57:37,742 [5] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}

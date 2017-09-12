@@ -173,8 +173,10 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// <returns></returns>
         public override List<Entities.Event> ReadEvents(int page = 1)
         {
-            var url = "https://www.googleapis.com/calendar/v3/users/me/calendarList/primary";
+            var url = "https://www.googleapis.com/calendar/v3/calendars/primary/events";
+                //"https://www.googleapis.com/calendar/v3/users/me/calendarList/primary";
                 //"https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+            Logger.Info(url);
             var response = ReadApi(url);
 
             Logger.Info(response);
