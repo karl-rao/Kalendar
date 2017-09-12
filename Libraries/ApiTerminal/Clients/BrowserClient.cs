@@ -21,7 +21,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         {
             ClientCookieContainer = new CookieContainer();
         }
-        
+
         /// <summary>
         /// 模拟WebRequest
         /// </summary>
@@ -45,8 +45,9 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// </param>
         /// <param name="contentType">提交数据格式</param>
         /// <param name="saveToFile">结果保存到文件</param>
+        /// <param name="credentials">结果保存到文件</param>
         /// <returns>响应内容</returns>
-	    public string SendHttpRequest(
+        public string SendHttpRequest(
 	        string url,
 	        bool ssl = false,
 	        string method = "POST",
@@ -57,7 +58,8 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 	        string encoding = "utf-8",
 	        string accept = "text/xml",
 	        string contentType = "text/xml",
-	        string saveToFile = "")
+	        string saveToFile = "",
+            NetworkCredential credentials = null)
 	    {
 	        var result = "";
             try
@@ -90,6 +92,13 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 request.Method =method;
                 request.ContentType = contentType+ "; charset=" + encoder.WebName;
                 request.CookieContainer = ClientCookieContainer;
+
+                if (credentials != null)
+                {
+                    var credentialsHeader = "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(
+                        credentials.UserName + ":" + credentials.Password));
+                    request.Headers[HttpRequestHeader.Authorization] = credentialsHeader;
+                }
 
                 if (header != null && header.Count > 0)
                 {

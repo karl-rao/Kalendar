@@ -27,7 +27,7 @@ namespace Kalendar.Web.Portal.Controllers
                 switch (channelSymbol)
                 {
                     case 1:
-                        var ms = new Zero.Data.Clients.MsonlineHelper
+                        var ms = new Zero.Data.Clients.DataHelper
                         {
                             Channel = new Zero.DB.Entity.Base.ChannelPO {Id = channelId},
                             Avatar = new Zero.DB.Entity.Base.AccountAvatarsPO {Token = token}

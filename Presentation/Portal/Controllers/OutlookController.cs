@@ -15,8 +15,8 @@ namespace Kalendar.Web.Portal.Controllers
             get { return Zero.Utility.DataCache.Channel.CacheList().FindLast(o => o.Valid && o.ChannelSymbol == 1); }
         }
 
-        private Zero.Data.Clients.MsonlineHelper _helper
-            = new Zero.Data.Clients.MsonlineHelper
+        private Zero.Data.Clients.DataHelper _helper
+            = new Zero.Data.Clients.DataHelper
             {
                 Channel = Channel
             };

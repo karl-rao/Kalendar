@@ -82,7 +82,7 @@ namespace Kalendar.Zero.Data.Clients
 
         public List<SchedulePO> ReadSchedules(int page = 1)
         {
-            var request = ProxyRequest("ReadSchedules");
+            var request = ProxyRequest("ReadEvents");
             request.Data = page + "";
 
             return ReadFromProxy(request).JsonToObj<List<SchedulePO>>();
@@ -90,7 +90,7 @@ namespace Kalendar.Zero.Data.Clients
 
         public SchedulePO CreateSchedules(SchedulePO schedule)
         {
-            var request = ProxyRequest("CreateSchedules");
+            var request = ProxyRequest("CreateEvent");
             request.Data = schedule.ObjToJson();
 
             return ReadFromProxy(request).JsonToObj<SchedulePO>();
@@ -98,7 +98,7 @@ namespace Kalendar.Zero.Data.Clients
 
         public bool CancelSchedules(SchedulePO schedule)
         {
-            var request = ProxyRequest("CancelSchedules");
+            var request = ProxyRequest("CancelEvent");
             request.Data = schedule.ObjToJson();
 
             return ReadFromProxy(request).JsonToObj<bool>();
@@ -106,7 +106,7 @@ namespace Kalendar.Zero.Data.Clients
 
         public SchedulePO UpdateSchedules(SchedulePO schedule)
         {
-            var request = ProxyRequest("UpdateSchedules");
+            var request = ProxyRequest("UpdateEvent");
             request.Data = schedule.ObjToJson();
 
             return ReadFromProxy(request).JsonToObj<SchedulePO>();

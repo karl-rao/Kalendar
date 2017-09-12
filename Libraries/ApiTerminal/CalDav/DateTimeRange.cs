@@ -1,0 +1,8 @@
+﻿using System;
+
+namespace Kalendar.Zero.ApiTerminal.CalDav {
+	public struct DateTimeRange {
+		public DateTime? From { get; set; }
+		public DateTime? To { get; set; }
+	}
+}

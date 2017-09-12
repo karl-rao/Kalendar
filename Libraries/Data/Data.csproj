@@ -59,27 +59,7 @@
   <ItemGroup>
     <Compile Include="Clients\BaseHelper.cs" />
     <Compile Include="Clients\DataHelper.cs" />
-    <Compile Include="Clients\GoogleHelper.cs" />
     <Compile Include="Clients\IBaseHelper.cs" />
-    <Compile Include="Clients\MsonlineHelper.cs" />
-    <Compile Include="Clients\Response\MsonlineAnyone.cs" />
-    <Compile Include="Clients\Response\MsonlineContact.cs" />
-    <Compile Include="Clients\Response\MsonlineContacts.cs" />
-    <Compile Include="Clients\Response\MsonlineEmailaddress.cs" />
-    <Compile Include="Clients\Response\MsonlineInfo.cs" />
-    <Compile Include="Clients\Response\MsonlineLocation.cs" />
-    <Compile Include="Clients\Response\MsonlineMessage.cs" />
-    <Compile Include="Clients\Response\MsonlineMessages.cs" />
-    <Compile Include="Clients\Response\MsonlineEvent.cs" />
-    <Compile Include="Clients\Response\MsonlineEvents.cs" />
-    <Compile Include="Clients\Response\MsonlineRecurrence.cs" />
-    <Compile Include="Clients\Response\MsonlineRecurrenceRange.cs" />
-    <Compile Include="Clients\Response\MsonlineRecurrencePattern.cs" />
-    <Compile Include="Clients\Response\MsonlineTime.cs" />
-    <Compile Include="Clients\Response\GoogleToken.cs" />
-    <Compile Include="Clients\Response\MsonlineToken.cs" />
-    <Compile Include="Clients\Response\GoogleUser.cs" />
-    <Compile Include="Clients\Response\MsonlineUser.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Controls\AuthAttribute.cs" />
     <Compile Include="Controls\BackendController.cs" />

@@ -46,6 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalDav\Alarm.cs" />
+    <Compile Include="CalDav\Calendar.cs" />
+    <Compile Include="CalDav\CalendarCollection.cs" />
+    <Compile Include="CalDav\CalendarQuery.cs" />
+    <Compile Include="CalDav\Classes.cs" />
+    <Compile Include="CalDav\Client\Calendar.cs" />
+    <Compile Include="CalDav\Client\Common.cs" />
+    <Compile Include="CalDav\Client\Server.cs" />
+    <Compile Include="CalDav\Common.cs" />
+    <Compile Include="CalDav\Contact.cs" />
+    <Compile Include="CalDav\DateTimeRange.cs" />
+    <Compile Include="CalDav\Event.cs" />
+    <Compile Include="CalDav\Filter.cs" />
+    <Compile Include="CalDav\FreeBusy.cs" />
+    <Compile Include="CalDav\Frequencies.cs" />
+    <Compile Include="CalDav\ICalendarObject.cs" />
+    <Compile Include="CalDav\IHasParameters.cs" />
+    <Compile Include="CalDav\ISerializeToICAL.cs" />
+    <Compile Include="CalDav\JournalEntry.cs" />
+    <Compile Include="CalDav\Recurrence.cs" />
+    <Compile Include="CalDav\Serializer.cs" />
+    <Compile Include="CalDav\Statuses.cs" />
+    <Compile Include="CalDav\TimeZone.cs" />
+    <Compile Include="CalDav\ToDo.cs" />
+    <Compile Include="CalDav\Trigger.cs" />
     <Compile Include="Clients\BrowserClient.cs" />
     <Compile Include="Clients\ObjectExtensions.cs" />
     <Compile Include="Clients\Request\WoowRequest.cs" />

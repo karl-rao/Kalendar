@@ -268,7 +268,7 @@ namespace Kalendar.Web.Portal.Controllers
             var channel = Zero.Utility.DataCache.Channel.GetEntity(1);
             var avatar = Zero.Utility.DataCache.AccountAvatars.CacheList(10).FindLast(o => o.Id == 1);
 
-            var helper=new Zero.Data.Clients.MsonlineHelper {Channel=channel,Avatar=avatar};
+            var helper=new Zero.Data.Clients.DataHelper { Channel=channel,Avatar=avatar};
             var cs=helper.ReadContacts();
 
             return Content(cs.SerializeXml());
@@ -311,9 +311,25 @@ namespace Kalendar.Web.Portal.Controllers
             var content =
                 "{ \"id\": \"101041433066104582113\",\"name\": \"赵马\",\"given_name\": \"马\",\"family_name\": \"赵\",\"link\": \"https://plus.google.com/101041433066104582113\",\"picture\": \"https://lh6.googleusercontent.com/-aQIfycAFfeU/AAAAAAAAAAI/AAAAAAAAAII/dbmnSFPzJk0/photo.jpg\",\"gender\": \"male\",\"locale\": \"zh-CN\"}";
 
-            var u = content.JsonToObjContract<Zero.Data.Clients.Response.GoogleUser>();
+            var u = content.JsonToObjContract<Zero.ApiTerminal.Clients.Response.GoogleUser>();
 
             return Content(u.SerializeXml());
+        }
+
+        /// <summary>
+        /// ceygaswmlktlbgja
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Caldav()
+        {
+            ///("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
+            var server = new Zero.ApiTerminal.CalDav.Client.Server("https://caldav.icloud.com/", "zhaoma@foxmail.com", "Pi=3.1415926");
+            if (server.Supports("MKCALENDAR"))
+                server.CreateCalendar("me");
+            var sets = server.GetCalendars();
+            Response.Write(sets.Length);
+
+            return Content("");
         }
 
     }

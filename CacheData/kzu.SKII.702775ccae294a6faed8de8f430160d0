@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<Account xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>0</Id>
+  <TimeZone>0</TimeZone>
+  <DataRegionId>0</DataRegionId>
+  <DataLanguageId>0</DataLanguageId>
+  <IsEmailVerified>false</IsEmailVerified>
+  <EmailVerifyTime>0001-01-01T00:00:00</EmailVerifyTime>
+  <IsMobileVerified>false</IsMobileVerified>
+  <MobileVerifyTime>0001-01-01T00:00:00</MobileVerifyTime>
+  <MarketingId>0</MarketingId>
+  <VerifySendCount>0</VerifySendCount>
+  <Balance>0</Balance>
+  <Credit>0</Credit>
+  <LastSignin>0001-01-01T00:00:00</LastSignin>
+  <CanCreateProject>false</CanCreateProject>
+  <IsRoot>false</IsRoot>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+  <Logs />
+  <Notes />
+  <Relations />
+  <Avatars />
+  <Contacts />
+  <Messages />
+  <Styles />
+  <OrganizationRelations />
+  <Organizations />
+  <Subscribes />
+  <Projects />
+  <Schedules />
+</Account>
