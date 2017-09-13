@@ -274,6 +274,24 @@ namespace Kalendar.Web.Portal.Controllers
             return Content(cs.SerializeXml());
         }
 
+        public ActionResult Mail()
+        {
+
+            var channel = Zero.Utility.DataCache.Channel.GetEntity(2);
+            var avatar = Zero.Utility.DataCache.AccountAvatars.CacheList(13).FindLast(o => o.Id == 5);
+
+            var paser = new Zero.Data.Clients.DataHelper
+            {
+                Channel = channel,
+                Avatar = avatar
+            };
+
+            Logger.Debug("TEST");
+            var resp = paser.ReadMessages();
+            Logger.Info(resp);
+            return Content("");
+        }
+
         public ActionResult Test()
         {
             var channel = Zero.Utility.DataCache.Channel.GetEntity(2);
@@ -303,7 +321,7 @@ namespace Kalendar.Web.Portal.Controllers
             //var r=new BrowserClient();
             //var resp = r.SendHttpRequest("http://proxy.atimer.cn/api/woow",false,"POST" ,request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
             
-            return Content(resp.SerializeXml());
+            return Content("");
         }
 
         public ActionResult Testgu()
@@ -322,8 +340,9 @@ namespace Kalendar.Web.Portal.Controllers
         /// <returns></returns>
         public ActionResult Caldav()
         {
+            //gzky-zztx-nnta-awzy
             ///("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
-            var server = new Zero.ApiTerminal.CalDav.Client.Server("https://caldav.icloud.com/", "zhaoma@foxmail.com", "Pi=3.1415926");
+            var server = new Zero.ApiTerminal.CalDav.Client.Server("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
             if (server.Supports("MKCALENDAR"))
                 server.CreateCalendar("me");
             var sets = server.GetCalendars();

@@ -5,16 +5,16 @@
     <AccountId>13</AccountId>
     <ChannelId>2</ChannelId>
     <ChannelIdentity>101041433066104582113</ChannelIdentity>
-    <Code>101041433066104582113</Code>
+    <Code>zhaoma@gmail.com</Code>
     <DisplayName>赵马</DisplayName>
-    <Token>ya29.GlvDBNlRfrlZQ0PeKIYNZWSEbZoPS3EN-ngNe0H33QIMU5blkXP-36C3tQE8FmyCP4d7igH61gWiojMWIWH1OMoUny5ZZb16JvNNRiyNuZAJFTPaMP0LjPdK-l3U</Token>
-    <RefreshToken>1/9nXnCiYlSI_13pgatubknJFz4FgIH_7WwJh_KciK0Hs</RefreshToken>
-    <TokenGenerated>2017-09-11T23:23:12.387</TokenGenerated>
-    <TokenExpires>2017-09-12T00:23:12.387</TokenExpires>
-    <SynchroTime>2017-09-11T23:23:20.887</SynchroTime>
+    <Token>ya29.GlvFBCeJRQOwtekB_SabWUha6rkDx4WEOrQburS_BHhD-LvSWa0Ew5US7mX0qHNM1ePzWjbM8ME8WFwK3PN9dcS8tDkxXQEspUlqj6lsBFwauVyeXcLkprneOFUd</Token>
+    <RefreshToken>1/eS_kytAZVKoFkqlaquBIKvSrrHSi-gx8QjU87uwtUlk</RefreshToken>
+    <TokenGenerated>2017-09-13T23:07:29.753</TokenGenerated>
+    <TokenExpires>2017-09-14T00:07:29.753</TokenExpires>
+    <SynchroTime>2017-09-13T23:07:10.16</SynchroTime>
     <SynchroDuration>600</SynchroDuration>
     <Valid>true</Valid>
-    <UpdateTime>2017-09-11T23:23:20.887</UpdateTime>
+    <UpdateTime>2017-09-13T23:07:10.16</UpdateTime>
     <CreateTime>2017-09-11T23:23:20.887</CreateTime>
   </AccountAvatarsPO>
 </ArrayOfAccountAvatarsPO>

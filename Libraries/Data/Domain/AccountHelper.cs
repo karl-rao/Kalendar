@@ -132,7 +132,13 @@ namespace Kalendar.Zero.Data.Domain
                     avatar.Id = avatarExists.Id;
                     avatar.AccountId = avatarExists.AccountId;
                     avatar.Valid = avatarExists.Valid;
+                    avatar.CreateTime = avatarExists.CreateTime;
+                    avatar.UpdateTime = now;
+                    avatar.SynchroTime = now;
+                    if (avatar.SynchroDuration == 0)
+                        avatar.SynchroDuration = 600;
 
+                    Logger.Info(avatar.SerializeXml());
                     bllAccountAvatars.Update(avatarExists,avatar, trans.DbConnection, trans.DbTrans);
 
                     account = bllAccount.FindById(avatar.AccountId, trans.DbConnection, trans.DbTrans);
@@ -142,164 +148,179 @@ namespace Kalendar.Zero.Data.Domain
 
                 #endregion
 
+                Logger.Debug("REFRESH ACCOUNT CACHE");
                 var all = Refresh(account);
 
                 #region contacts
 
-                foreach (var a in contacts)
+                if (contacts != null && contacts.Any())
                 {
-                    var a0 =
-                        all.Contacts.FindLast(
-                            o =>
-                                o.ChannelId == a.ChannelId && o.ChannelIdentity == a.ChannelIdentity &&
-                                o.AccountId == account.Id);
-                    if (a0 == null)
+                    Logger.Debug("SAVE CONTACTS");
+                    foreach (var a in contacts)
                     {
-                        a0=new AccountContactsPO
+                        var a0 =
+                            all.Contacts.FindLast(
+                                o =>
+                                    o.ChannelId == a.ChannelId && o.ChannelIdentity == a.ChannelIdentity &&
+                                    o.AccountId == account.Id);
+                        if (a0 == null)
                         {
-                            AccountId=account.Id,
-                            ChannelId=a.ChannelId,
-                            ChannelIdentity=a.ChannelIdentity,
-                            DisplayName = a.DisplayName,
-                            Detail=a.Detail,
-                            CreateTime=now,
-                            Valid=true,
-                            UpdateTime=now
-                        };
-                        a0 = bllAccountContacts.Insert(a0,  trans.DbConnection, trans.DbTrans);
-                    }
-                    else
-                    {
-                        a0.DisplayName = a.DisplayName;
-                        a0.Detail = a.Detail;
-                        a0.UpdateTime = now;
+                            a0 = new AccountContactsPO
+                            {
+                                AccountId = account.Id,
+                                ChannelId = a.ChannelId,
+                                ChannelIdentity = a.ChannelIdentity,
+                                DisplayName = a.DisplayName,
+                                Detail = a.Detail,
+                                CreateTime = now,
+                                Valid = true,
+                                UpdateTime = now
+                            };
+                            a0 = bllAccountContacts.Insert(a0, trans.DbConnection, trans.DbTrans);
+                        }
+                        else
+                        {
+                            a0.DisplayName = a.DisplayName;
+                            a0.Detail = a.Detail;
+                            a0.UpdateTime = now;
 
-                        bllAccountContacts.Update(a,a0,  trans.DbConnection, trans.DbTrans);
+                            bllAccountContacts.Update(a, a0, trans.DbConnection, trans.DbTrans);
+                        }
                     }
+                    Utility.DataCache.AccountContacts.InitCache(account.Id);
                 }
-                Utility.DataCache.AccountContacts.InitCache(account.Id);
 
                 #endregion
 
                 #region messages
 
-                foreach (var b in messages)
+                if (messages != null && messages.Any())
                 {
-                    var b0 =
-                        all.Messages.FindLast(
-                            o =>
-                                o.ChannelId == b.ChannelId
-                                && o.ChannelIdentity == b.ChannelIdentity &&
-                                o.ToAccountId == account.Id);
-                    if (b0 == null)
-                    {
-                        b0 = new AccountMessagesPO
-                        {
-                            ToAccountId=account.Id,
-                            ChannelId = b.ChannelId,
-                            ChannelIdentity = b.ChannelIdentity,
-                            MessageType = b.MessageType,
-                            MessageSubject = b.MessageSubject,
-                            MessageContent = b.MessageContent,
-                            CreateTime = b.CreateTime,
-                            Valid = true,
-                            Weblink=b.Weblink,
-                            UpdateTime = now
-                        };
-                        b0 = bllAccountMessages.Insert(b0,  trans.DbConnection, trans.DbTrans);
-                    }
-                    else
-                    {
-                        b0.MessageType = b.MessageType;
-                        b0.MessageSubject = b.MessageSubject;
-                        b0.MessageContent = b.MessageContent;
-                        b0.Weblink = b.Weblink;
-                        b0.UpdateTime = now;
-                        b0.CreateTime = b.CreateTime;
+                    Logger.Debug("SAVE MESSAGES");
 
-                        bllAccountMessages.Update(b,b0,  trans.DbConnection, trans.DbTrans);
+                    foreach (var b in messages)
+                    {
+                        var b0 =
+                            all.Messages.FindLast(
+                                o =>
+                                    o.ChannelId == b.ChannelId
+                                    && o.ChannelIdentity == b.ChannelIdentity &&
+                                    o.ToAccountId == account.Id);
+                        if (b0 == null)
+                        {
+                            b0 = new AccountMessagesPO
+                            {
+                                ToAccountId = account.Id,
+                                ChannelId = b.ChannelId,
+                                ChannelIdentity = b.ChannelIdentity,
+                                MessageType = b.MessageType,
+                                MessageSubject = b.MessageSubject,
+                                MessageContent = b.MessageContent,
+                                CreateTime = b.CreateTime,
+                                Valid = true,
+                                Weblink = b.Weblink,
+                                UpdateTime = now
+                            };
+                            b0 = bllAccountMessages.Insert(b0, trans.DbConnection, trans.DbTrans);
+                        }
+                        else
+                        {
+                            b0.MessageType = b.MessageType;
+                            b0.MessageSubject = b.MessageSubject;
+                            b0.MessageContent = b.MessageContent;
+                            b0.Weblink = b.Weblink;
+                            b0.UpdateTime = now;
+                            b0.CreateTime = b.CreateTime;
+
+                            bllAccountMessages.Update(b, b0, trans.DbConnection, trans.DbTrans);
+                        }
                     }
+                    Utility.DataCache.AccountMessages.InitCache(account.Id);
                 }
-                Utility.DataCache.AccountMessages.InitCache(account.Id);
 
                 #endregion
 
                 #region p&s
 
-                var projectCode = avatar.Code + "." + account.Id + "." + channel.Id;
-                var projectExists = Utility.DataCache.Project.CacheList().FindLast(o =>
-                    o.ChannelId == channel.Id
-                    && o.CreatorAccountId == account.Id
-                    && o.ProjectCode == projectCode);
-                
-                var projectSchedules = new List<SchedulePO>();
-
-                if (projectExists == null)
+                if (schedules != null && schedules.Any())
                 {
-                    projectExists = new ProjectPO
+                    Logger.Debug("SAVE SCHEDULES");
+
+                    var projectCode = avatar.Code + "." + account.Id + "." + channel.Id;
+                    var projectExists = Utility.DataCache.Project.CacheList().FindLast(o =>
+                        o.ChannelId == channel.Id
+                        && o.CreatorAccountId == account.Id
+                        && o.ProjectCode == projectCode);
+
+                    var projectSchedules = new List<SchedulePO>();
+
+                    if (projectExists == null)
                     {
-                        ProjectCode = projectCode,
-                        Valid = true,
-                        CreateTime = now,
-                        UpdateTime = now,
-                        ProjectName = avatar.DisplayName + "@" + channel.ChannelName,
-                        ChannelId = channel.Id,
-                        CreatorAccountId = account.Id,
-                        EnterDeadline=now
-                    };
-                    Logger.Debug(projectExists.SerializeXml());
-                    projectExists = bllProject.Insert(projectExists,  trans.DbConnection, trans.DbTrans);
-                }
-                else
-                {
-                    projectSchedules = Utility.DataCache.Schedule.CacheList(projectExists.Id);
-                }
-
-                Utility.DataCache.Project.InitCache();
-
-                foreach (var c in schedules)
-                {
-                    var c0 =
-                        projectSchedules.FindLast(
-                            o =>
-                                o.ProjectId == projectExists.Id
-                                && o.ScheduleIdentity == c.ScheduleIdentity);
-                    if (c0 == null)
-                    {
-                        c0 = new SchedulePO
+                        projectExists = new ProjectPO
                         {
-                            ProjectId = projectExists.Id,
-                            ScheduleIdentity = c.ScheduleIdentity,
-                            Cycle = c.Cycle,
-                            ScheduleTitle = c.ScheduleTitle,
-                            ScheduleLead = c.ScheduleLead,
-                            BeginDate = c.BeginDate,
-                            BeginTime = c.BeginTime,
-                            EndDate = c.EndDate,
-                            EndTime = c.EndTime,
-                            Weblink = c.Weblink,
-                            CreateTime = now,
+                            ProjectCode = projectCode,
                             Valid = true,
-                            UpdateTime = now
+                            CreateTime = now,
+                            UpdateTime = now,
+                            ProjectName = avatar.DisplayName + "@" + channel.ChannelName,
+                            ChannelId = channel.Id,
+                            CreatorAccountId = account.Id,
+                            EnterDeadline = now
                         };
-                        c0 = bllSchedule.Insert(c0,  trans.DbConnection, trans.DbTrans);
+                        Logger.Debug(projectExists.SerializeXml());
+                        projectExists = bllProject.Insert(projectExists, trans.DbConnection, trans.DbTrans);
                     }
                     else
                     {
-                        c0.Cycle = c.Cycle;
-                        c0.ScheduleTitle = c.ScheduleTitle;
-                        c0.ScheduleLead = c.ScheduleLead;
-                        c0.BeginDate = c.BeginDate;
-                        c0.BeginTime = c.BeginTime;
-                        c0.EndDate = c.EndDate;
-                        c0.EndTime = c.EndTime;
-                        c0.Weblink = c.Weblink;
-                        c0.UpdateTime = now;
-
-                        bllSchedule.Update(c,c0,  trans.DbConnection, trans.DbTrans);
+                        projectSchedules = Utility.DataCache.Schedule.CacheList(projectExists.Id);
                     }
+
+                    Utility.DataCache.Project.InitCache();
+
+                    foreach (var c in schedules)
+                    {
+                        var c0 =
+                            projectSchedules.FindLast(
+                                o =>
+                                    o.ProjectId == projectExists.Id
+                                    && o.ScheduleIdentity == c.ScheduleIdentity);
+                        if (c0 == null)
+                        {
+                            c0 = new SchedulePO
+                            {
+                                ProjectId = projectExists.Id,
+                                ScheduleIdentity = c.ScheduleIdentity,
+                                Cycle = c.Cycle,
+                                ScheduleTitle = c.ScheduleTitle,
+                                ScheduleLead = c.ScheduleLead,
+                                BeginDate = c.BeginDate,
+                                BeginTime = c.BeginTime,
+                                EndDate = c.EndDate,
+                                EndTime = c.EndTime,
+                                Weblink = c.Weblink,
+                                CreateTime = now,
+                                Valid = true,
+                                UpdateTime = now
+                            };
+                            c0 = bllSchedule.Insert(c0, trans.DbConnection, trans.DbTrans);
+                        }
+                        else
+                        {
+                            c0.Cycle = c.Cycle;
+                            c0.ScheduleTitle = c.ScheduleTitle;
+                            c0.ScheduleLead = c.ScheduleLead;
+                            c0.BeginDate = c.BeginDate;
+                            c0.BeginTime = c.BeginTime;
+                            c0.EndDate = c.EndDate;
+                            c0.EndTime = c.EndTime;
+                            c0.Weblink = c.Weblink;
+                            c0.UpdateTime = now;
+
+                            bllSchedule.Update(c, c0, trans.DbConnection, trans.DbTrans);
+                        }
+                    }
+                    Utility.DataCache.Schedule.InitCache(projectExists.Id);
                 }
-                Utility.DataCache.Schedule.InitCache(projectExists.Id);
 
                 #endregion
 

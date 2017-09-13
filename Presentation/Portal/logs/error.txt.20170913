@@ -1,0 +1,174 @@
+﻿2017-09-13 11:01:40,060 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 42.1121 ms
+2017-09-13 11:01:40,095 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 16.041 ms
+2017-09-13 11:01:40,097 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 11:01:40,713 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 11:01:40,722 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 11:07:03,066 [14] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.0761 ms
+2017-09-13 11:07:03,105 [14] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 18.0484 ms
+2017-09-13 11:07:03,109 [14] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 11:07:05,147 [14] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 11:07:05,158 [14] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 11:08:49,546 [20] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 25.068 ms
+2017-09-13 11:08:49,584 [20] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 16.0418 ms
+2017-09-13 11:08:49,585 [20] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 11:08:50,957 [20] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 11:08:50,962 [20] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 11:12:20,744 [23] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 20.055 ms
+2017-09-13 11:12:20,777 [23] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.0335 ms
+2017-09-13 11:12:20,778 [23] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 11:12:22,106 [23] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 11:12:22,112 [23] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 11:28:51,840 [46] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 20.052 ms
+2017-09-13 11:28:51,875 [46] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.0258 ms
+2017-09-13 11:28:51,876 [46] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 11:28:54,140 [46] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 11:28:54,147 [46] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 11:36:13,350 [47] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 22.0591 ms.
+2017-09-13 11:36:13,364 [47] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 8.0204 ms
+2017-09-13 11:36:13,380 [47] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 9.024 ms.
+2017-09-13 11:36:13,390 [47] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 4.0124 ms
+2017-09-13 11:36:13,391 [47] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 11:36:13,931 [47] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 11:36:13,931 [47] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 12:07:24,126 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 27.0737 ms
+2017-09-13 12:07:24,167 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 17.0125 ms
+2017-09-13 12:07:24,168 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 12:07:25,648 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 12:07:25,656 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 12:15:13,337 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 23.0814 ms
+2017-09-13 12:15:13,375 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 17.0479 ms
+2017-09-13 12:15:13,376 [9] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 12:15:14,639 [9] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 12:15:14,649 [9] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 12:17:50,486 [14] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 28.079 ms
+2017-09-13 12:17:50,524 [14] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.0643 ms
+2017-09-13 12:17:50,526 [14] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 12:17:51,910 [14] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 12:17:51,916 [14] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 12:27:56,846 [18] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.0765 ms
+2017-09-13 12:27:56,884 [18] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 13.0329 ms
+2017-09-13 12:27:56,886 [18] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 12:27:58,580 [18] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 12:27:58,586 [18] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 13:17:51,133 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 24.0507 ms
+2017-09-13 13:17:51,170 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.017 ms
+2017-09-13 13:17:51,171 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 13:17:53,438 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 13:17:53,445 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 13:26:59,451 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 23.0878 ms
+2017-09-13 13:26:59,490 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 13.0347 ms
+2017-09-13 13:26:59,491 [9] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 13:27:00,856 [9] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 13:27:00,862 [9] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 14:17:43,402 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 24.0623 ms.
+2017-09-13 14:17:43,444 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1653 spent 18.0489 ms
+2017-09-13 14:17:43,462 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 8.0218 ms.
+2017-09-13 14:17:43,478 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1030 spent 11.031 ms
+2017-09-13 14:17:43,479 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 14:17:45,049 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 14:17:45,057 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 15:21:36,342 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 51.1433 ms
+2017-09-13 15:21:36,382 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 16.0423 ms
+2017-09-13 15:21:36,383 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 15:21:37,946 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 15:21:37,959 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 16:16:04,445 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 24.0631 ms
+2017-09-13 16:16:04,480 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.0391 ms
+2017-09-13 16:16:04,481 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 16:16:05,880 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-13 16:16:05,889 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-13 16:46:43,430 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.6b3d269b08de4086b76240f4c0f0e0d4:D:\VisualStudio\Kalendar.Git\CacheData\kzu.SKII.6b3d269b08de4086b76240f4c0f0e0d4,1043 spent 114.3044 ms
+2017-09-13 16:46:43,752 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 21.0568 ms
+2017-09-13 16:46:43,775 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 21.0555 ms
+2017-09-13 16:46:43,777 [8] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 16:46:45,193 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Project]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 21.5535 ms.
+2017-09-13 16:46:45,215 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO,6315 spent 16.544 ms
+2017-09-13 16:46:45,241 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=6 Order by Id DESC cost 16.0439 ms.
+2017-09-13 16:46:45,264 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO,28159 spent 17.5467 ms
+2017-09-13 16:46:45,280 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=5 Order by Id DESC cost 8.5226 ms.
+2017-09-13 16:46:45,287 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO,8292 spent 1.4976 ms
+2017-09-13 16:46:45,299 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=1 Order by Id DESC cost 6.0143 ms.
+2017-09-13 16:46:45,305 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO,161 spent 1.0035 ms
+2017-09-13 16:46:45,338 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Organization]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 6.5165 ms.
+2017-09-13 16:46:45,350 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO,165 spent 7.0208 ms
+2017-09-13 16:46:45,876 [8] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 16:52:07,458 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 27.5729 ms
+2017-09-13 16:52:07,497 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 17.0445 ms
+2017-09-13 16:52:07,499 [8] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 16:52:09,302 [8] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 16:59:48,970 [17] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.0702 ms
+2017-09-13 16:59:49,011 [17] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 19.0516 ms
+2017-09-13 16:59:49,012 [17] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 16:59:51,224 [17] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 17:00:39,887 [24] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.0677 ms
+2017-09-13 17:00:39,927 [24] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 19.0519 ms
+2017-09-13 17:00:39,928 [24] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 17:00:41,762 [24] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 17:31:34,680 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 25.568 ms
+2017-09-13 17:31:34,719 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.0395 ms
+2017-09-13 17:31:34,721 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 17:31:36,894 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 17:44:00,457 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.5711 ms
+2017-09-13 17:44:00,494 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.0405 ms
+2017-09-13 17:44:00,495 [8] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 17:44:02,430 [8] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 17:52:00,940 [10] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 36.5982 ms
+2017-09-13 17:52:00,998 [10] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 27.5725 ms
+2017-09-13 17:52:01,000 [10] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 17:52:02,714 [10] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 18:04:27,616 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 22.0825 ms
+2017-09-13 18:04:27,649 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.0382 ms
+2017-09-13 18:04:27,650 [9] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 18:04:29,364 [9] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 22:47:52,727 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 240.0015 ms
+2017-09-13 22:47:52,775 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 19.997 ms
+2017-09-13 22:47:52,779 [7] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 22:47:54,243 [7] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 22:54:04,454 [12] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 19.9991 ms
+2017-09-13 22:54:04,486 [12] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 11.9996 ms
+2017-09-13 22:54:04,486 [12] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 22:54:05,937 [12] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 23:04:57,450 [32] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 19.9757 ms
+2017-09-13 23:04:57,482 [32] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.9944 ms
+2017-09-13 23:04:57,482 [32] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 23:04:59,525 [32] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 23:06:56,107 [32] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 27.1005 ms.
+2017-09-13 23:06:56,135 [32] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1653 spent 7.9202 ms
+2017-09-13 23:06:56,155 [32] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 11.965 ms.
+2017-09-13 23:06:56,167 [32] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1028 spent 3.9645 ms
+2017-09-13 23:06:56,167 [32] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 23:06:57,307 [32] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-13 23:11:18,311 [37] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 19.9799 ms
+2017-09-13 23:11:18,343 [37] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 12.0059 ms
+2017-09-13 23:11:18,343 [37] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-13 23:11:20,507 [37] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}

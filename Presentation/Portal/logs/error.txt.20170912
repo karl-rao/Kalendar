@@ -1,0 +1,592 @@
+﻿2017-09-11 16:16:34,883 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Project]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 93.1102 ms.
+2017-09-11 16:16:34,985 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=6 Order by Id DESC cost 59.1271 ms.
+2017-09-11 16:16:35,060 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=5 Order by Id DESC cost 60.1681 ms.
+2017-09-11 16:16:35,107 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=1 Order by Id DESC cost 30.0839 ms.
+2017-09-11 16:17:58,525 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Organization]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 53.1414 ms.
+2017-09-11 16:18:13,568 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 26.5575 ms.
+2017-09-11 16:18:14,502 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=10 Order by Id DESC cost 33.5962 ms.
+2017-09-11 16:18:50,310 [5] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAVZksRGQ4JlBHhm+q+H367oa3vNiTlv6rhBTQAPPlbrQc7+Gf+we4lDqNPmfAmczKgRxspImiUaCilF2T1BseCciN67hm5ydExzjURql/Uk8f8D9va2QZbwVwlsfzjCqsROx7Ds50+NlV/8dNWwcUNlOYyfKfE3mJwf+fQItYrAElXy9Xs0tzSwXd64+cpJ/frj9ca+/2NGkQMLWNXFqVRB6mCHrSxKgDlvg7P94ojG6dQ/ABEUe/lH1EotUyOETW0N6WkgBYNZjHyDtE9f9Va2RHVYzLp/vD/pKpmF24Fs0RGVqMMfDX7jDKyya6MVKI1Y3bfbE9kv1lSNC/4jKj10DZgAACNRJmaojMmJtCAJyZQydYBweDzv7GbBPRKKjJO3hpZ95TPZVUTnUshuaEXbvfzhVyaFyCD/g1tcwTH2Dh7Enq6E0UHtAMzjUuwtmsbWoEUuSjVspRoeotiZrRYSkjU7dhk6izd9JfITInrpuzUZR+5+WCasbfsQjH2dWnjnvd093LdWhEoNoCoo6jYHk6Dz3TB5Lpu0SKwfJon/EfrX1jvxkM7etFjkXPx2FiWX7KysyIcl1E5kjHb3m2ThbCr6lAnQXa4Yo2otq9jaXwZ7sPgORC8cGm/99P2R/az1UZl78R8tA7TRU6LtpmpIgm0K8JLwu59B7bWH0ZQjgtVE3hNEa5aVsMfvrFzXbp4iWP0sUBkGmZPH/9pp7Ro6JPc0yxXZCHfaJFbwKKkOs0yyCp7AxRmuQ6zo25BDmF5iE65881gH9+ohmGTQkPyK6BlFtqABFlouYPAMTSVI7IROGgcqeqPNe57VEwWOXkE3RmBx3183+H3rWd5zUvYDrPZpedxA/PbExfqGDjhumQkRlxgYUordzM7v0Jc9RCQGxYCjI/H9G1ZQ+MwwdJbtmEpovY6TSyvHRxMIVqu2f21RgwyuSdcWTU7ek+nWgJbwEbHwTpWIN7YOZ2u+9/rU5FiNeyfRB6DNec4ppHhv79fKXNty2w59gl23O095peRdPHgoevmof7N3gA0xMJZ/sdefKqbbBNgI=</Token>
+    <RefreshToken>MCcE6ZzGhuhuJA6CpQav2eq3DKwJkrEHhJghZqUe8ghUCUBI2LEyUydaWXDGhHsGSWOQawGleM8jk0W1YByGF2ku8blcDVs*kfZk*O7mSnUNzr4HYqElvKJD7l0RWqssMviIYmWGP5vG5yIzj7hcUin6Kuza7rRcN9*CDSZK8*RL*nI755Ok*iPywgkvk0yo3YL02q41dj8zah!VmQcux4NlQQYCJ*gBLhJGt6OLjbdOhnoLmDLvIKMhhjut0NSFecFlxL0WbWNzJ030BVFSQ!D95zQY5W8CiyzR7L5rx*xsXYoXDvsLeSJjJoRn5JIbFjKEO5J!0bNscbT4*K*bCttfbQ1faXep0GdVzSqAooxlbVTVbhUP1eRVxc1Zz!8UwPUvLiapNII4WInH2GXlDHthjgpsFzDSCU!lSsH07b6bj9bNuASJSHTH7ri6JzcqtI6Th5YQV4GygsjCRZDCXhZ0HMVARcfLyNlD1BNwzjmU!pnBdKYwliyv*Cz18J7TIpQ$$</RefreshToken>
+    <TokenGenerated>2017-09-10T11:39:50.563</TokenGenerated>
+    <TokenExpires>2017-09-10T12:39:50.563</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 16:27:21,934 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.0e04f97bbd1749a599e2716ff399d113:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\kzu.SKII.0e04f97bbd1749a599e2716ff399d113,1043 spent 184.51 ms
+2017-09-11 16:27:23,763 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Project]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 72.2202 ms.
+2017-09-11 16:27:23,860 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO,5608 spent 44.1178 ms
+2017-09-11 16:27:23,927 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=6 Order by Id DESC cost 51.3643 ms.
+2017-09-11 16:27:23,975 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO,28159 spent 41.1094 ms
+2017-09-11 16:27:24,055 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=5 Order by Id DESC cost 69.7003 ms.
+2017-09-11 16:27:24,068 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO,8292 spent 4.8994 ms
+2017-09-11 16:27:24,120 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=1 Order by Id DESC cost 44.0496 ms.
+2017-09-11 16:27:24,129 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO,161 spent 1.8108 ms
+2017-09-11 16:27:24,229 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Organization]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 80.2223 ms.
+2017-09-11 16:27:24,285 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO,165 spent 43.1151 ms
+2017-09-11 16:27:39,983 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 36.0645 ms.
+2017-09-11 16:27:40,057 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 64.4583 ms
+2017-09-11 16:29:46,810 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=10 Order by Id DESC cost 46.1219 ms.
+2017-09-11 16:29:46,860 [13] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 65.17 ms
+2017-09-11 16:29:47,210 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.88e658a163e22b57db507f025b59bafb.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.88e658a163e22b57db507f025b59bafb.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,2464 spent 388.0377 ms
+2017-09-11 16:29:56,358 [5] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 19:38:33,862 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 54.746 ms
+2017-09-11 19:38:33,906 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 16.5103 ms
+2017-09-11 19:38:33,924 [5] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 19:38:36,301 [5] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 19:41:56,677 [9] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 19:42:01,298 [9] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 19:50:01,296 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.08 ms
+2017-09-11 19:50:01,338 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 17.0543 ms
+2017-09-11 19:50:01,356 [8] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 19:50:05,981 [8] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 19:57:07,526 [10] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 31.1258 ms
+2017-09-11 19:57:07,561 [10] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.0267 ms
+2017-09-11 19:57:07,578 [10] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 19:57:12,160 [10] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 20:00:47,907 [20] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 51.1411 ms
+2017-09-11 20:00:47,966 [20] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 30.5015 ms
+2017-09-11 20:00:48,008 [20] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 20:00:52,702 [20] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 20:18:41,280 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 25.0641 ms
+2017-09-11 20:18:41,320 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.0165 ms
+2017-09-11 20:18:41,340 [7] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 20:18:46,089 [7] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 20:21:34,635 [25] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 27.075 ms
+2017-09-11 20:21:34,671 [25] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.0412 ms
+2017-09-11 20:21:34,689 [25] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 20:21:39,344 [25] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 20:26:11,019 [23] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAeibGoj6odmd/Kk5nCKZEfBLGMGumnA8nY3kjr4wNXMrU+UIIzUIDckIKU8zF/fl6ZrNLD0bgpKIkSv2LxVnxbQ3BGJOJTWHi03DtGRNriDuMCyVM60sd9muv0cyC5CJb/pTS5kRWgw3I3wdHpGShiJmPT5OXbFm9BzxeMN9bLEfZmHEa5GNeCU6aNIFtDyDeGB1ycm1D/fGRtlVy78Sondw+8uSqIL9fgIgOe0yNJ9fprBIbtzXSvh6XgCQMz9HFFeeZ/gf7xkhH7+5UOKBTw1Kf/fFo7+ZZSN8pHt/EQ+WPNF08jUqnxP9dEyStdCe8i/hOdx9k1Wm9T+OryMAQQsDZgAACC+s8+aDmeSLCAK+ZUNZM6peGoMVgY4LddeD+Eex1iWnIH8fRm6Qi6L6iQo7kb3hOSc8BJYZmVXuHGjxFu4Kl1AIfM0FzI+WmPOYsG2hPWCiF4YpnjyKyYDvrWj8IhzOaiB80pS3q7io/FiToq4CR/maNckQmBSMXWI/EC7uzMqjY5P9JKg3pgZGJq5GntKbP4kE0EsJVbxcwTrHeSeOnJvDMBpjRjsQ1FcqPEfS7ubf1XYqX2L1K3k98YALvUrp62po6/7+vXQ63eCFqUKbAEa3cYCLZrjJndMww1n+Dw0/ro0BNVdjzk008ak1Tm2UkOvfap7KN+VvEi6rmZhRbwZOMnBGzeDeZGcZa92AI0KtbEvy27s0OWFuEToEO6lpsgqGBYYjOy9rsBUig68XScwqyKE7onbT7/RsoLQrc0MkE83EhVhmWqSIV4Bgm4M9dgG0JsP20/x/E3GPSF98v4OM21PAdAjkjXNtqrhc1QGQcwalFVbNpUYWpeGzySLI6bg1zQnO1zsEmm1JmBV58JgZDiKLSRINJhp67c4IP3/CTf1xgGAyFkoq+2lsChlAY89ZJpe9ZMTTNHT1GyQJQa6Mp+6hzIfIoihllgXWP9wek4DFVaZHl5bGqf47YnQzCV02rvkHetlt1SRDsy7qDkZ5UHlNRG26jilm3c7VHZuRYNLURZ+vR7woQnTiJ8mCclyMNgI=</Token>
+    <RefreshToken>MCfykTk9O!qz107dpikjX3fN1Ztd2mwAyQcDFrqpdF68dwuvhynI7AXRRRYQAjKHdfEXGxBT4Jx1q6BdF9JcNJqhRKLqmU1j6z9Grc3JsdChXq2GkE0kKB!awNXULYoEf9zvGvyVBRR7clz26oi21HFb5tcoZmqMFTtKYqM5tNUeMm!ks5XiVgJnBwG!FLWR*LJl2LHF9M0hHDVX0aUARQPQC8JPK0P7kmxa6w0eug3QV9Bp1StZhhbUQcRAKZ5SVFwGcLTVDetpPHSoo9Wzgpj8tHegBBzjUAhmDJRefCQ9Mlg5kdRgaLp7t!MlzOrwDyGn6iVvvz8Y7iCI7TPvlpn07iZPTDNNO8JdTIUpThMo5um8e!oiSxXisG!aF3g4rSCmOzyibOVVqyjepSrOuYCZxdLqGfdpmbBtbYEDGBGSCWU2QbKnOHQZT9vYSXerIXQigEz3mfb7l!yfBsx3E2R!sQHufbpTjy8GSF3JwnVZKY99HtQkvwPYIMkNPL4yMug$$</RefreshToken>
+    <TokenGenerated>2017-09-11T16:23:04.35</TokenGenerated>
+    <TokenExpires>2017-09-11T17:23:04.35</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 20:26:11,576 [23] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 20:29:06,409 [25] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 25.0692 ms
+2017-09-11 20:29:06,450 [25] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 18.0215 ms
+2017-09-11 20:29:06,454 [25] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Kalendar.Zero.Data.Clients.BaseHelper.ReadApi(String url) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\BaseHelper.cs:行号 22
+2017-09-11 20:29:06,526 [25] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.Runtime.Serialization.SerializationException: 应为来自命名空间“”的元素“root”。。遇到名称为“”、命名空间为“”的“None”。
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 Kalendar.Zero.Utility.Common.ObjectExtensions.JsonToObjContract[T](String str)
+   在 Kalendar.Zero.Data.Clients.MsonlineHelper.ReadContacts(Int32 page) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\MsonlineHelper.cs:行号 193
+2017-09-11 20:32:09,225 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 247.2628 ms
+2017-09-11 20:32:10,898 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 60.6887 ms
+2017-09-11 20:32:10,946 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 44.5308 ms
+2017-09-11 20:32:10,950 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 3.0422 ms
+2017-09-11 20:32:10,951 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.9681 ms
+2017-09-11 20:32:11,010 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 43.6258 ms
+2017-09-11 20:32:36,438 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 122.2281 ms
+2017-09-11 20:32:39,984 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 48.8495 ms
+2017-09-11 20:32:41,535 [5] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.ProtocolViolationException: 无法发送具有此谓词类型的内容正文。
+   在 System.Net.HttpWebRequest.CheckProtocol(Boolean onRequestStream)
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\BrowserClient.cs:行号 89
+2017-09-11 20:32:41,557 [5] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 20:32:41,729 [5] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.Runtime.Serialization.SerializationException: 应为来自命名空间“”的元素“root”。。遇到名称为“”、命名空间为“”的“None”。
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Kalendar.Zero.Utility.Common.ObjectExtensions.JsonToObjContract[T](String str) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\ObjectExtensions.cs:行号 159
+   在 Kalendar.Zero.Data.Clients.MsonlineHelper.ReadContacts(Int32 page) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\MsonlineHelper.cs:行号 200
+2017-09-11 20:37:47,317 [31] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 25.0649 ms
+2017-09-11 20:37:47,377 [31] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 24.5675 ms
+2017-09-11 20:37:47,396 [31] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile)
+2017-09-11 20:37:47,402 [31] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 20:37:47,418 [31] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.Runtime.Serialization.SerializationException: 应为来自命名空间“”的元素“root”。。遇到名称为“”、命名空间为“”的“None”。
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 Kalendar.Zero.Utility.Common.ObjectExtensions.JsonToObjContract[T](String str)
+   在 Kalendar.Zero.Data.Clients.MsonlineHelper.ReadContacts(Int32 page) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\MsonlineHelper.cs:行号 200
+2017-09-11 20:39:22,258 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 247.6882 ms
+2017-09-11 20:39:23,939 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 57.6546 ms
+2017-09-11 20:39:23,992 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 47.7406 ms
+2017-09-11 20:39:23,995 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 2.0071 ms
+2017-09-11 20:39:23,996 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-11 20:39:24,061 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 49.1546 ms
+2017-09-11 20:39:45,577 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 41.1137 ms
+2017-09-11 20:39:45,613 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 35.0942 ms
+2017-09-11 20:39:46,100 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (401) 未经授权。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\BrowserClient.cs:行号 140
+2017-09-11 20:39:46,115 [6] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 20:39:46,180 [6] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.Runtime.Serialization.SerializationException: 应为来自命名空间“”的元素“root”。。遇到名称为“”、命名空间为“”的“None”。
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Kalendar.Zero.Utility.Common.ObjectExtensions.JsonToObjContract[T](String str) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\ObjectExtensions.cs:行号 159
+   在 Kalendar.Zero.Data.Clients.MsonlineHelper.ReadContacts(Int32 page) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\MsonlineHelper.cs:行号 200
+2017-09-11 20:42:48,528 [36] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 24.0636 ms.
+2017-09-11 20:42:48,571 [36] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 13.4797 ms
+2017-09-11 20:42:48,593 [36] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=10 Order by Id DESC cost 11.5985 ms.
+2017-09-11 20:42:48,615 [36] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.88e658a163e22b57db507f025b59bafb.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.88e658a163e22b57db507f025b59bafb.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,2464 spent 12.0299 ms
+2017-09-11 20:42:48,616 [36] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 20:42:48,632 [36] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - <?xml version="1.0" encoding="utf-16"?>
+<WoowRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ChannelSymbol>1</ChannelSymbol>
+  <Method>ReadContacts</Method>
+  <Channel>
+    <Id>1</Id>
+    <AppId>64e08480-fc19-4c22-aceb-81fd0de25cf4</AppId>
+    <AppSecret>Sjz60kzgPVBz5OX3x3JpQim</AppSecret>
+    <CodeCallback>https://www.atimer.cn/outlook/callback</CodeCallback>
+    <Parameters>Offline_Access OpenId User.Read Mail.Read Mail.ReadWrite Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.ReadWrite</Parameters>
+  </Channel>
+  <Avatar>
+    <Id>1</Id>
+    <ChannelId>1</ChannelId>
+    <ChannelIdentity>6cd2df35ca5f55ac</ChannelIdentity>
+    <Code>zhaoma@hotmail.com</Code>
+    <DisplayName>Karl Zhao</DisplayName>
+    <Token>EwA4A8l6BAAU7p9QDpi/D7xJLwsTgCg3TskyTaQAAbSFsH9BlUWX+NJ5thMX1cUW+3i7yc051b6lgUx63oxj8BzFr3n8HpypmrDOtvlz+VxtgrDnJo8Z+p2FjgT4HD6GrmSzdWs7xsgwSkF6/uzSNai5XWRMBuEA7teF6QTIh4gHzINmZisOC7BJfDnCSgSt8C6wfz48Wdb2p0QZ2iqOJuaJ9nXUmJzI4ARes9Sl5NSZxkgrfrQqzbrQ5VUvDTRhbnG2nywsDTA6VZKom+xbZZmPAxR20gy+qapk53Ggh6l5ByZXRoN3+018ngrE3v99m3TKA4IaPw+yQWQn94d7SYeU/rrFTzZnC2Gx2O/YRzEz62CLE3keXIP2rzKs2woDZgAACIF5mjp4zFFxCAKhG/9F4WpG3RDzpSvo9/SwUoujD37V72qcBC6lsD+M7uFVXbqHcmh/7dx89YUGqmxJ3AQsHRtyDcvGyiG58/Hq2rbY/Yg7BUCN58RBxMe6RTg8zsYX8SbbXYsUtERsRSYv0osJvQ38MjbpdWvvUzc0AbpqfQj0K92iawEUBCO7a5ky4qVz1xGY6VphWtaaveNJWf1hBFO/z1jqDMV2GJ/EzYfRTCsHF6iCveYv6ZOLLYTYVGHyCiIIFTYkMfeZdCzzb0Jf2Enr6RGq3REtt04Idko69MgfPZcXDj0fGx+T16t5agC6NiLV9Wzr79yS2w3Yahc2XNvXG6xhap2p5Z7CeOj9ev55H4nCAlUAa0izDHdHSSUjXuNlhj5QRdf7WT7qDSuCX+Vj0/dO1cj5iZDnHKBXsN+gf/xSfskt9Wd3t1a9wll43KQ8xjjyr/BZGlkqUxg7slw3jp7OL3fmlMUor3g6e9mpl0w7cgkozpTuBFw/G9yy4Dwc7eYdh3DJbtbIZwv4+SSH9Iphww+fYb9I4YjRgG7XHdtCuJ0yx8VreFxTpwC+bGXELlk/5JoTmTP3lGPuGWXsAEV4lvXQFuC+tD3EoRKhEV5G1q4ijSJorsV6czu6jotTTt7tnbhQxcLTFzLb1Sxgm7KxFOUcXKZkLUb87w5Tpfg4146VtDVPDM6OlrzQZK4YNgI=</Token>
+    <RefreshToken>MCelFUhucrq4mDyip84Al2ndlnAP*Vv!FAZSDfgYEzMjOpjs7tzeTsxAFsua0dbhq9cr2IsEQm9EFa!UZoZJzLxP39FL*BKtACBGE8jURISuKkF!3ZfZMHuoRz1YaX*!VF8fxqvCBTkkjKo6bpGS3kR4ZNd8kjo4xk*W2NfBC1*1nrxYESigdAU0SmYH!KTPsy**bZJaKUWsVXsu4VHUE0viBXzplW3x7rU0WzgFA5nZnbKECKBuXtQPDaLcfujeLUCwU08Dhz38*z4!Nm5cvI8Y1OGl!3o9hl0gz39Hr2S9BuKDKiLfabc5UxwQ300sttXd7r78O0DZOZyjfGn9hKqeIVE2qzo7*otHAbklGvD45xwESZCWurfY266OtvOy1FQ92ypCSqBCxYXvkwNJU!1Sasr21cXiwouswkAzgplrmoRSEe35c*PMLH1vo0K35XITsubmVjOKToJM1Zj*ipyzqnVEMaHPsljYwTrxCrUi387cHGsRSunRqzJEMcUffRA$$</RefreshToken>
+    <TokenGenerated>2017-09-11T20:42:42.49</TokenGenerated>
+    <TokenExpires>2017-09-11T21:42:42.49</TokenExpires>
+  </Avatar>
+  <Data>1</Data>
+</WoowRequest>
+2017-09-11 20:42:54,069 [36] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {<?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAE8Ofl0AAAA=</ChannelIdentity>
+  <DisplayName>宁泽园</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAE8Ofl0AAAA=","DisplayName":"宁泽园","HomePhones":["13635552055"],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAERktCoAAAA=</ChannelIdentity>
+  <DisplayName>思远 孙</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAERktCoAAAA=","DisplayName":"思远 孙","HomePhones":[],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAERktCkAAAA=</ChannelIdentity>
+  <DisplayName>建勋 黄</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAERktCkAAAA=","DisplayName":"建勋 黄","HomePhones":[],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAERktCgAAAA=</ChannelIdentity>
+  <DisplayName>超 候</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAERktCgAAAA=","DisplayName":"超 候","HomePhones":[],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAEEI7IAAAAA=</ChannelIdentity>
+  <DisplayName>vinin</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAEEI7IAAAAA=","DisplayName":"vinin","HomePhones":["13580517519"],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAADgZ7hkAAAA=</ChannelIdentity>
+  <DisplayName>陈小姐</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAADgZ7hkAAAA=","DisplayName":"陈小姐","HomePhones":["133-2884-1048"],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAArZRNoAAAA=</ChannelIdentity>
+  <DisplayName />
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAArZRNoAAAA=","DisplayName":"","HomePhones":[],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAAdpfmAAAAA=</ChannelIdentity>
+  <DisplayName>德健 强</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAAdpfmAAAAA=","DisplayName":"德健 强","HomePhones":["13275559188"],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAAdpfl8AAAA=</ChannelIdentity>
+  <DisplayName>母娘 丈</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAAdpfl8AAAA=","DisplayName":"母娘 丈","HomePhones":["17755539517"],"MobilePhone":null}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>, <?xml version="1.0"?>
+<AccountContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>0</Id>
+  <AccountId>0</AccountId>
+  <ChannelId>0</ChannelId>
+  <ChannelIdentity>AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAT1-6gAAAA==</ChannelIdentity>
+  <DisplayName>珍珍 赵</DisplayName>
+  <Detail>{"Id":"AQMkADAwATE2ZTkwLWZkMDAALTJhOTUtMDACLTAwCgBGAAADScFE4vrqVUC7Tokm8bk9tgcAPvloAxD2xkOe_cBNAKR4TAAAAgEOAAAAPvloAxD2xkOe_cBNAKR4TAAAAT1-6gAAAA==","DisplayName":"珍珍 赵","HomePhones":[],"MobilePhone":"18116101055"}</Detail>
+  <Valid>false</Valid>
+  <UpdateTime>0001-01-01T00:00:00</UpdateTime>
+  <CreateTime>0001-01-01T00:00:00</CreateTime>
+</AccountContacts>}
+2017-09-11 21:20:26,822 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 113.3117 ms
+2017-09-11 21:21:30,099 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 216.58.200.42:443
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\BrowserClient.cs:行号 92
+2017-09-11 21:21:30,118 [6] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 21:21:30,137 [6] ERROR Kalendar.Zero.Data.Clients.BaseHelper [(null)] - System.Runtime.Serialization.SerializationException: 应为来自命名空间“”的元素“root”。。遇到名称为“”、命名空间为“”的“None”。
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 Kalendar.Zero.Utility.Common.ObjectExtensions.JsonToObjContract[T](String str) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\ObjectExtensions.cs:行号 159
+   在 Kalendar.Zero.Data.Clients.GoogleHelper.ExchangeToken(String code) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Data\Clients\GoogleHelper.cs:行号 47
+2017-09-11 21:21:30,144 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 获取AccessToken:
+2017-09-11 21:22:33,152 [6] ERROR Kalendar.Zero.Utility.Common.BrowserClient [(null)] - System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 216.58.200.42:443
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.Utility.Common.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile) 位置 D:\VisualStudio\Kalendar.Git\Libraries\Utility\Common\BrowserClient.cs:行号 140
+2017-09-11 21:22:33,153 [6] INFO  Kalendar.Zero.Data.Clients.BaseHelper [(null)] - 
+2017-09-11 23:41:06,047 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 34.592 ms
+2017-09-11 23:41:06,231 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 25.5987 ms.
+2017-09-11 23:41:06,255 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\\VisualStudio\\Kalendar\\Presentation\\CacheData\\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 14.0416 ms
+2017-09-11 23:41:06,256 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:41:11,576 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 23:42:22,948 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.0924 ms
+2017-09-11 23:42:22,982 [7] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 14.5382 ms
+2017-09-11 23:42:22,984 [7] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:42:24,023 [7] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 23:52:05,837 [19] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 23.0596 ms
+2017-09-11 23:52:05,874 [19] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 16.009 ms
+2017-09-11 23:52:05,876 [19] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:52:11,420 [19] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-11 23:54:07,646 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 22.0595 ms
+2017-09-11 23:54:07,684 [9] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.04 ms
+2017-09-11 23:54:07,686 [9] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-11 23:54:08,252 [9] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - 
+2017-09-12 12:23:16,508 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.91a5fc0578054cb39c80a6c81ef8dd19:,1043 spent 322.5011 ms
+2017-09-12 12:25:36,085 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.702775ccae294a6faed8de8f430160d0:C:\VisualStudio\Kalendar.Git\CacheData\kzu.SKII.702775ccae294a6faed8de8f430160d0,1043 spent 227.0015 ms
+2017-09-12 12:27:38,536 [11] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.2a0f617d336748be8b9f1a4642554977:C:\VisualStudio\Kalendar.Git\CacheData\kzu.SKII.2a0f617d336748be8b9f1a4642554977,1043 spent 2.5006 ms
+2017-09-12 12:27:38,615 [11] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 76.0006 ms
+2017-09-12 12:34:17,931 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.3333ce57e75d42a8b1c03251b422eaa3:C:\VisualStudio\Kalendar.Git\CacheData\kzu.SKII.3333ce57e75d42a8b1c03251b422eaa3,1043 spent 366.5012 ms
+2017-09-12 12:34:18,739 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Project]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 370.501 ms.
+2017-09-12 12:34:18,777 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO:C:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO,6315 spent 32.4994 ms
+2017-09-12 12:34:18,857 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=6 Order by Id DESC cost 61.5013 ms.
+2017-09-12 12:34:18,907 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO:C:\VisualStudio\Kalendar.Git\CacheData\sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO,28159 spent 45.0006 ms
+2017-09-12 12:34:19,294 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=5 Order by Id DESC cost 380.5008 ms.
+2017-09-12 12:34:19,300 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO:C:\VisualStudio\Kalendar.Git\CacheData\sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO,8292 spent 1.5015 ms
+2017-09-12 12:34:19,342 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=1 Order by Id DESC cost 37.0025 ms.
+2017-09-12 12:34:19,351 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO:C:\VisualStudio\Kalendar.Git\CacheData\sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO,161 spent 0.4999 ms
+2017-09-12 12:34:19,459 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Organization]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 82.0012 ms.
+2017-09-12 12:34:19,503 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO:C:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO,165 spent 35.0015 ms
+2017-09-12 12:45:06,822 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 273.4993 ms
+2017-09-12 12:45:08,603 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 67.9996 ms
+2017-09-12 12:45:08,652 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 45.4998 ms
+2017-09-12 12:45:08,653 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.4996 ms
+2017-09-12 12:45:08,654 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-12 12:45:08,698 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 30.5 ms
+2017-09-12 14:30:50,066 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 176.9998 ms
+2017-09-12 14:30:51,326 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 42.5026 ms
+2017-09-12 14:30:51,361 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 31.8899 ms
+2017-09-12 14:30:51,362 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0068 ms
+2017-09-12 14:30:51,363 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-12 14:30:51,404 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 30.9973 ms
+2017-09-12 14:42:55,719 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 160.5018 ms
+2017-09-12 14:42:56,979 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 43.4981 ms
+2017-09-12 14:42:57,018 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 36.0024 ms
+2017-09-12 14:42:57,019 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5013 ms
+2017-09-12 14:42:57,020 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-12 14:42:57,063 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 28.5006 ms
+2017-09-12 14:44:27,922 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 5444.4028 ms
+2017-09-12 14:44:44,429 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 50.0007 ms
+2017-09-12 14:44:44,479 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 45.4966 ms
+2017-09-12 14:44:44,481 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0019 ms
+2017-09-12 14:44:44,482 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5003 ms
+2017-09-12 14:44:44,528 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 33.4993 ms
+2017-09-12 14:48:42,545 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 3524.8568 ms
+2017-09-12 20:42:49,669 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 20.0239 ms.
+2017-09-12 20:42:49,729 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 24.0311 ms
+2017-09-12 20:42:49,753 [6] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 12.0162 ms.
+2017-09-12 20:42:49,773 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 12.0162 ms
+2017-09-12 20:42:49,773 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 20:42:50,864 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 20:44:39,695 [8] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Channel]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 12.0209 ms.
+2017-09-12 20:44:39,711 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ChannelPO,1606 spent 8.0051 ms
+2017-09-12 20:44:39,739 [8] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [AccountAvatars]  WITH (NOLOCK) Where Valid=1 AND AccountId=13 Order by Id DESC cost 16.0269 ms.
+2017-09-12 20:44:39,751 [8] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.fc2455ef37a108924b68a71e612fd86e.Kalendar.Zero.DB.Entity.Base.AccountAvatarsPO,1035 spent 4.0034 ms
+2017-09-12 20:44:39,755 [8] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 20:44:40,698 [8] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:02:22,308 [24] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 24.0073 ms
+2017-09-12 21:02:22,340 [24] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 11.9889 ms
+2017-09-12 21:02:22,340 [24] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:02:27,196 [24] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:08:16,386 [22] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 20.0034 ms
+2017-09-12 21:08:16,418 [22] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 15.9928 ms
+2017-09-12 21:08:16,418 [22] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:08:21,278 [22] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:54:59,402 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 93.2169 ms
+2017-09-12 21:54:59,450 [6] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 22.0569 ms
+2017-09-12 21:54:59,452 [6] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:55:04,757 [6] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}
+2017-09-12 21:57:32,893 [5] DEBUG Kalendar.Zero.Data.Controls.PortalController [(null)] - TEST
+2017-09-12 21:57:37,742 [5] INFO  Kalendar.Zero.Data.Controls.PortalController [(null)] - {}

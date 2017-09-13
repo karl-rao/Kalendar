@@ -80,7 +80,8 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             {
                 var kv = new Dictionary<string, string>
                 {
-                    {"Authorization", $"Bearer {Avatar.Token}"}
+                    {"Authorization", $"Bearer {Avatar.Token}"},
+                    {"www-authenticate", $"Bearer {Avatar.Token}"}
                 };
 
                 var r = new BrowserClient();

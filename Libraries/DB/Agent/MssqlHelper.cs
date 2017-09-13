@@ -317,6 +317,8 @@ namespace Kalendar.Zero.DB.Agent
                         fields += string.Format(" [{0}]=@{0} ", t.Name);
 
                         param.Add(new SqlParameter($"@{t.Name}", objValue));
+
+                        Logger.Info(string.Format("@{0}={1}",t.Name,objValue));
                     }
 
                     if (attribute.IsPrimaryKey)

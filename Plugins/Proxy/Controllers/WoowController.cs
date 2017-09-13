@@ -61,6 +61,7 @@ namespace Kalendar.Plugins.Proxy.Controllers
                     result = helper.ReadAvatar();
                     break;
                 case "READMESSAGES":
+                    Logger.Debug("READMESSAGES");
                     result = helper.ReadMessages(request.Data.ToInt());
                     break;
                 case "READCONTACTS":

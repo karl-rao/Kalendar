@@ -8,7 +8,7 @@
     <AppId>709789577070-ef1ebhmsbhe94fejfm5dcujdep6avbaq.apps.googleusercontent.com</AppId>
     <AppSecret>ZUcxZYn8x2MUyZ6FHPUji-IO</AppSecret>
     <CodeCallback>https://www.atimer.cn/google/callback</CodeCallback>
-    <Parameters>https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/contacts.readonly https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/calendar</Parameters>
+    <Parameters>https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/contacts.readonly https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/calendar</Parameters>
     <Valid>true</Valid>
     <UpdateTime>2017-07-31T00:00:00</UpdateTime>
     <CreateTime>2017-07-31T00:00:00</CreateTime>
