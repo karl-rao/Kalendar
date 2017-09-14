@@ -32,13 +32,24 @@ namespace Kalendar.Zero.Utility
         /// </summary>
         public static string SessionNameTemp = AssemblyFileName + ".SKII";
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static string CacheKey = DB.Config.AppSetting("CacheKey", "sc.{0}.");
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static string CacheModule = DB.Config.AppSetting("CacheModule", "xml");
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static int CacheDuration = DB.Config.AppSetting("CacheDuration", "1800").ToInt();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static string CacheFolder = DB.Config.AppSetting("CacheFolder", "");
 
     }

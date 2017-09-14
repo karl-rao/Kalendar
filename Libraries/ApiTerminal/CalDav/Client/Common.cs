@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Net;
 using System.Xml.Linq;
+using log4net.Repository.Hierarchy;
 
 namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 	internal static class Common {
 
-		public static Tuple<System.Net.HttpStatusCode, string, System.Net.WebHeaderCollection> Request(Uri url, string method, XDocument content, NetworkCredential credentials = null, System.Collections.Generic.Dictionary<string, object> headers = null) {
+        static log4net.ILog Logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public static Tuple<System.Net.HttpStatusCode, string, System.Net.WebHeaderCollection> Request(Uri url, string method, XDocument content, NetworkCredential credentials = null, System.Collections.Generic.Dictionary<string, object> headers = null) {
 			return Request(url, method, content.Root, credentials, headers);
 		}
 		public static Tuple<System.Net.HttpStatusCode, string, System.Net.WebHeaderCollection> Request(Uri url, string method, XElement content, NetworkCredential credentials = null, System.Collections.Generic.Dictionary<string, object> headers = null) {
@@ -54,8 +57,11 @@ namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 
 				using (var res = GetResponse(req))
 				using (var str = res.GetResponseStream())
-				using (var rdr = new System.IO.StreamReader(str)) {
-					return Tuple.Create(res.StatusCode, rdr.ReadToEnd(), res.Headers);
+				using (var rdr = new System.IO.StreamReader(str))
+				{
+				    var resp = rdr.ReadToEnd();
+                    Logger.Info(resp);
+					return Tuple.Create(res.StatusCode, resp, res.Headers);
 				}
 			}
 		}
