@@ -1,0 +1,55 @@
+﻿2017-09-14 00:27:51,469 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，kzu.SKII.0e04f97bbd1749a599e2716ff399d113:D:\VisualStudio\Kalendar.Git\CacheData\kzu.SKII.0e04f97bbd1749a599e2716ff399d113,1043 spent 168.0026 ms
+2017-09-14 00:27:53,301 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Project]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 63.996 ms.
+2017-09-14 00:27:53,365 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.ProjectPO,6315 spent 52.005 ms
+2017-09-14 00:27:53,426 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=6 Order by Id DESC cost 48.9458 ms.
+2017-09-14 00:27:53,478 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.95663c236e44ae76c51201b19b7bb75d.Kalendar.Zero.DB.Entity.Base.SchedulePO,28159 spent 39.7648 ms
+2017-09-14 00:27:53,530 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=5 Order by Id DESC cost 43.9982 ms.
+2017-09-14 00:27:53,546 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.a47e801aed1c98bcd5b9aee663c653ad.Kalendar.Zero.DB.Entity.Base.SchedulePO,8292 spent 4.0009 ms
+2017-09-14 00:27:53,594 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Schedule]  WITH (NOLOCK) Where Valid=1 AND ProjectId=1 Order by Id DESC cost 39.9991 ms.
+2017-09-14 00:27:53,606 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO,161 spent 4.0017 ms
+2017-09-14 00:27:53,666 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Organization]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 40.0588 ms.
+2017-09-14 00:27:53,702 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO,165 spent 27.8041 ms
+2017-09-14 22:10:28,180 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 655.942 ms
+2017-09-14 22:10:28,834 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 79.4878 ms
+2017-09-14 22:10:28,898 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 60.0075 ms
+2017-09-14 22:10:28,902 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 3.9932 ms
+2017-09-14 22:10:28,902 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-14 22:10:29,010 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 91.9997 ms
+2017-09-14 22:55:16,513 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 183.7064 ms
+2017-09-14 22:55:18,177 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 67.6496 ms
+2017-09-14 22:55:18,233 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 52.5162 ms
+2017-09-14 22:55:18,237 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 2.9836 ms
+2017-09-14 22:55:18,238 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.3103 ms
+2017-09-14 22:55:18,294 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 40.0562 ms
+2017-09-14 22:57:10,442 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 173.2617 ms
+2017-09-14 22:57:11,973 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 57.7777 ms
+2017-09-14 22:57:12,020 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 43.4277 ms
+2017-09-14 22:57:12,021 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-14 22:57:12,022 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-14 22:57:12,072 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 40.631 ms
+2017-09-14 23:09:45,877 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 163.1489 ms
+2017-09-14 23:09:47,332 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 50.3086 ms
+2017-09-14 23:09:47,380 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 45.0999 ms
+2017-09-14 23:09:47,381 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-14 23:09:47,383 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.1729 ms
+2017-09-14 23:09:47,432 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 39.6112 ms
+2017-09-14 23:11:01,448 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 216.139 ms
+2017-09-14 23:14:48,754 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 66.3734 ms
+2017-09-14 23:14:48,812 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 53.0456 ms
+2017-09-14 23:14:48,814 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0031 ms
+2017-09-14 23:14:48,815 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-14 23:14:48,876 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 49.1592 ms
+2017-09-14 23:19:39,715 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 158.0497 ms
+2017-09-14 23:20:06,753 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 53.7616 ms
+2017-09-14 23:26:16,535 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 182.8458 ms
+2017-09-14 23:26:18,031 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 64.0596 ms
+2017-09-14 23:26:18,076 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 40.9727 ms
+2017-09-14 23:26:18,077 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0013 ms
+2017-09-14 23:26:18,078 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0074 ms
+2017-09-14 23:26:18,121 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 33.1152 ms
+2017-09-14 23:31:14,681 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 183.0553 ms
+2017-09-14 23:31:16,145 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 59.4375 ms
+2017-09-14 23:31:16,194 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 46.6598 ms
+2017-09-14 23:31:16,195 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-14 23:31:16,196 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.003 ms
+2017-09-14 23:31:16,239 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 32.8596 ms

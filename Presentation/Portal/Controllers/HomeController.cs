@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using Kalendar.Zero.ApiTerminal.CalDav;
 using Kalendar.Zero.Data.Controls;
 using Kalendar.Zero.DB.Agent;
 using Kalendar.Zero.DB.Entity.Base;
@@ -246,8 +248,8 @@ namespace Kalendar.Web.Portal.Controllers
 
             foreach (var kalendarEvent in events.Result)
             {
-                kalendarEvent.EventStart = kalendarEvent.EventStart.ToDateTime().DateTimeToTimestamp() + "";
-                kalendarEvent.EventEnd = kalendarEvent.EventEnd.ToDateTime().DateTimeToTimestamp() + "";
+                kalendarEvent.EventStart = ObjectExtensions.ToDateTime(kalendarEvent.EventStart).DateTimeToTimestamp() + "";
+                kalendarEvent.EventEnd = ObjectExtensions.ToDateTime(kalendarEvent.EventEnd).DateTimeToTimestamp() + "";
             }
 
             return Content(events.ObjToJsonContract());
@@ -341,14 +343,55 @@ namespace Kalendar.Web.Portal.Controllers
         public ActionResult Caldav()
         {
             //gzky-zztx-nnta-awzy
-            ///("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
-            var server = new Zero.ApiTerminal.CalDav.Client.Server("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
-            if (server.Supports("MKCALENDAR"))
-                server.CreateCalendar("me");
+            
+            var server = new Zero.ApiTerminal.CalDav.Client.Server
+                //("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
+            ("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
+
             var sets = server.GetCalendars();
             Response.Write(sets.Length);
 
+            var calendar = sets[0];
+            var events=calendar.GetAll();
+
+            //var e = new Event
+            //{
+            //    Description = "this is a description",
+            //    Summary = "summary",
+            //    Sequence = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds,
+            //};
+            //calendar.Save(e);
+            //Response.Write(e.Url);
+
+            Response.Write("END");
+
             return Content("");
+        }
+
+        public ActionResult C()
+        {
+            var r=new Zero.ApiTerminal.Clients.BrowserClient();
+            var resp=r.SendHttpRequest(
+                                "https://caldav.icloud.com/", false,
+                "PROPFIND",
+                "", null, null, null, "UTF-8", "text/xml", "text/xml",
+                "", new NetworkCredential
+                {
+                    UserName = "zhaoma@foxmail.com",
+                    Password = "gzky-zztx-nnta-awzy"
+                });
+            //"http://dav.mail.189.cn/cal/", false, 
+            //"PROPFIND", 
+            //"", null, null, null, "UTF-8", "text/xml", "text/xml",
+            //"", new NetworkCredential
+            //{
+            //    UserName = "18121119302@189.cn",
+            //    Password = "1029824z"
+            //});
+
+            //Response.Write(resp);
+
+            return Content(resp);
         }
 
     }
