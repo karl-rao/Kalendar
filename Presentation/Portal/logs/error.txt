@@ -9,3 +9,610 @@
 2017-09-14 00:27:53,606 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO:D:\VisualStudio\Kalendar.Git\CacheData\sc.a36142c6e08e99cc65b2acbd7a9827d2.Kalendar.Zero.DB.Entity.Base.SchedulePO,161 spent 4.0017 ms
 2017-09-14 00:27:53,666 [5] DEBUG Kalendar.Zero.DB.Agent.MssqlHelper`1 [(null)] - Execute Text : Select  *  From [Organization]  WITH (NOLOCK) Where 1=1 Order by Id DESC cost 40.0588 ms.
 2017-09-14 00:27:53,702 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 写入文件缓存，sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO:D:\VisualStudio\Kalendar.Git\CacheData\sc.50347a3f14aea923e9f8eac867fd3bb1.Kalendar.Zero.DB.Entity.Base.OrganizationPO,165 spent 27.8041 ms
+2017-09-19 10:50:06,009 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/
+2017-09-19 10:50:06,034 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 10:50:06,034 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 10:50:06,034 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 10:50:06,329 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 289.0003 ms
+2017-09-19 10:50:07,841 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 56.0001 ms
+2017-09-19 10:50:07,882 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 36.999 ms
+2017-09-19 10:50:07,882 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 10:50:07,883 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.9999 ms
+2017-09-19 10:50:07,921 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.0015 ms
+2017-09-19 10:53:05,433 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 162.9995 ms
+2017-09-19 10:53:06,717 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 50.0014 ms
+2017-09-19 10:53:06,757 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 36.9993 ms
+2017-09-19 10:53:06,758 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0009 ms
+2017-09-19 10:53:06,758 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 10:53:06,795 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.0003 ms
+2017-09-19 10:53:08,985 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/
+2017-09-19 10:53:08,985 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 10:53:08,985 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 10:53:08,985 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 11:05:07,937 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 213.9995 ms
+2017-09-19 11:05:09,260 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 43.9985 ms
+2017-09-19 11:05:09,299 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 37.0003 ms
+2017-09-19 11:05:09,300 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 11:05:09,301 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0002 ms
+2017-09-19 11:05:09,332 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 23.7038 ms
+2017-09-19 11:05:13,426 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 11:05:13,426 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 11:05:13,426 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 11:05:13,426 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 11:06:08,317 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 151.9988 ms
+2017-09-19 11:06:10,039 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 45.9972 ms
+2017-09-19 11:06:10,079 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 37.0006 ms
+2017-09-19 11:06:10,080 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0016 ms
+2017-09-19 11:06:10,080 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 11:06:10,127 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 35.0029 ms
+2017-09-19 11:06:14,938 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 11:06:14,938 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=GET
+2017-09-19 11:06:14,938 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 11:06:14,938 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 11:06:15,396 [5] ERROR Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (400) 错误的请求。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.ApiTerminal.Clients.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile, NetworkCredential credentials) 位置 C:\VisualStudio\Kalendar.Git\Libraries\ApiTerminal\Clients\BrowserClient.cs:行号 163
+2017-09-19 11:06:40,954 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 160.999 ms
+2017-09-19 11:06:42,229 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 58.9997 ms
+2017-09-19 11:06:42,275 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 42.9939 ms
+2017-09-19 11:06:42,276 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0002 ms
+2017-09-19 11:06:42,276 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 11:06:42,316 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.0013 ms
+2017-09-19 11:06:46,955 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 11:06:46,955 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 11:06:46,955 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 11:06:46,955 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:31:51,105 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 232.9995 ms
+2017-09-19 16:31:53,380 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 59.4993 ms
+2017-09-19 16:31:53,428 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 42.4983 ms
+2017-09-19 16:31:53,429 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0012 ms
+2017-09-19 16:31:53,430 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5002 ms
+2017-09-19 16:31:53,484 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 39.5003 ms
+2017-09-19 16:32:36,933 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 16:32:36,933 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:32:36,933 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:32:36,933 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:32:37,019 [5] ERROR Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Kalendar.Zero.ApiTerminal.Clients.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile, NetworkCredential credentials) 位置 C:\VisualStudio\Kalendar.Git\Libraries\ApiTerminal\Clients\BrowserClient.cs:行号 128
+2017-09-19 16:32:38,943 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 16:32:38,943 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:32:38,943 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:32:38,943 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:32:38,969 [5] ERROR Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Kalendar.Zero.ApiTerminal.Clients.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile, NetworkCredential credentials) 位置 C:\VisualStudio\Kalendar.Git\Libraries\ApiTerminal\Clients\BrowserClient.cs:行号 128
+2017-09-19 16:32:51,979 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 16:32:51,979 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:32:51,979 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:32:51,979 [7] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:32:52,013 [7] ERROR Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Kalendar.Zero.ApiTerminal.Clients.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile, NetworkCredential credentials) 位置 C:\VisualStudio\Kalendar.Git\Libraries\ApiTerminal\Clients\BrowserClient.cs:行号 128
+2017-09-19 16:33:51,600 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 388.4993 ms
+2017-09-19 16:33:53,531 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 62.0073 ms
+2017-09-19 16:33:53,584 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 47.4998 ms
+2017-09-19 16:33:53,586 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5006 ms
+2017-09-19 16:33:53,586 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 16:33:53,636 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 34.9995 ms
+2017-09-19 16:34:04,339 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 16:34:04,762 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:34:05,279 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:34:05,736 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:34:09,112 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=1
+2017-09-19 16:56:56,767 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 217.9997 ms
+2017-09-19 16:56:58,532 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 55.5002 ms
+2017-09-19 16:56:58,578 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 39.9986 ms
+2017-09-19 16:56:58,579 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5023 ms
+2017-09-19 16:56:58,580 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.4863 ms
+2017-09-19 16:56:58,621 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.4999 ms
+2017-09-19 16:57:05,107 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 16:57:05,107 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:57:05,107 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:57:05,107 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:57:05,107 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 16:58:23,782 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=http://dav.mail.189.cn/cal/
+2017-09-19 16:58:23,809 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:58:23,809 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:58:23,809 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:58:23,809 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 16:58:24,179 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 269.5006 ms
+2017-09-19 16:58:26,252 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 55.9977 ms
+2017-09-19 16:58:26,291 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 36.0021 ms
+2017-09-19 16:58:26,292 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0002 ms
+2017-09-19 16:58:26,293 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.4999 ms
+2017-09-19 16:58:26,338 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 31.496 ms
+2017-09-19 16:59:12,763 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=http://dav.mail.189.cn/cal/
+2017-09-19 16:59:12,763 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 16:59:12,763 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 16:59:12,763 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 16:59:12,763 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 17:00:09,585 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=http://dav.mail.189.cn/cal/
+2017-09-19 17:00:09,606 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 17:00:09,606 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 17:00:09,606 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 17:00:09,859 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 217.4991 ms
+2017-09-19 17:00:11,624 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 69.9995 ms
+2017-09-19 17:00:11,684 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 54.4996 ms
+2017-09-19 17:00:11,686 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0019 ms
+2017-09-19 17:00:11,686 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5012 ms
+2017-09-19 17:00:11,738 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 38.9997 ms
+2017-09-19 17:00:46,204 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=http://dav.mail.189.cn/cal/
+2017-09-19 17:00:46,236 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 17:00:46,236 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 17:00:46,236 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 17:00:46,236 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=1
+2017-09-19 17:00:46,437 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 263.5017 ms
+2017-09-19 17:00:48,287 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 60.4982 ms
+2017-09-19 17:00:48,329 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 37 ms
+2017-09-19 17:00:48,331 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.5114 ms
+2017-09-19 17:00:48,332 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 17:00:48,384 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 39.5023 ms
+2017-09-19 17:11:00,491 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 280.5003 ms
+2017-09-19 17:16:02,576 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 268.501 ms
+2017-09-19 17:16:04,225 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 48.4986 ms
+2017-09-19 17:16:04,266 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 37.4972 ms
+2017-09-19 17:16:04,267 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5006 ms
+2017-09-19 17:16:04,268 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5013 ms
+2017-09-19 17:16:04,308 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.0006 ms
+2017-09-19 17:16:09,921 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:16:09,921 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:16:09,922 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:16:10,212 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:16:10,212 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:16:10,212 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - Improperly formed XML encountered, unexpected root node
+2017-09-19 17:20:34,735 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:20:36,037 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:20:42,129 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:26:04,200 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:26:04,200 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:26:04,200 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - Improperly formed XML encountered, unexpected root node
+2017-09-19 17:26:19,581 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:26:19,957 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:26:20,237 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:26:57,795 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:27:11,098 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:27:11,676 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multistatus xmlns="DAV:">
+	<response>
+		<href>/</href>
+        
+		    <propstat>
+			    <prop>
+                    
+                        
+                            <current-user-principal><href>/8045321927/principal/</href></current-user-principal>
+                        
+                    
+                        
+        		            <displayname>tmp</displayname>
+                        
+                    
+                        
+        		            <getcontenttype>httpd/unix-directory</getcontenttype>
+                        
+                    
+                        
+                            <resourcetype><collection/></resourcetype>
+                        
+                    
+                        
+                            <allowed-calendar-component-sets xmlns="http://calendarserver.org/ns/">
+                            
+                            <supported-calendar-component-sets xmlns="urn:ietf:params:xml:ns:caldav"><supported-calendar-component-set><comp name="VEVENT"/></supported-calendar-component-set><supported-calendar-component-set><comp name="VTODO"/></supported-calendar-component-set></supported-calendar-component-sets>
+                            </allowed-calendar-component-sets>
+                        
+                    
+                        
+                            <supportedlock>
+                            
+                            <lockentry><lockscope><exclusive/></lockscope><locktype><write/></locktype></lockentry><lockentry><lockscope><shared/></lockscope><locktype><write/></locktype></lockentry>
+                            </supportedlock>
+                        
+                    
+                        
+        		            <resource-class xmlns="http://twistedmatrix.com/xml_namespace/dav/">MMRootResource</resource-class>
+                        
+                    
+                        
+        		            <getetag>W/"1c0001-20000-59c0e2d6"</getetag>
+                        
+                    
+                        
+        		            <getlastmodified>Tue, 19 Sep 2017 02:26:53 GMT</getlastmodified>
+                        
+                    
+                        
+        		            <creationdate>2017-09-19T02:26:53Z</creationdate>
+                        
+                    
+                        
+        		            <getcontentlength>0</getcontentlength>
+                        
+                    
+			    </prop>
+			<status>HTTP/1.1 200 OK</status>
+		</propstat>
+
+	</response>
+</multistatus>
+
+
+2017-09-19 17:28:08,399 [21] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:28:08,399 [21] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:28:08,399 [21] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:28:15,247 [21] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:28:15,247 [21] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:28:15,247 [21] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multistatus xmlns="DAV:">
+	<response>
+		<href>/</href>
+        
+		    <propstat>
+			    <prop>
+                    
+                        
+                            <current-user-principal><href>/8045321927/principal/</href></current-user-principal>
+                        
+                    
+                        
+        		            <displayname>tmp</displayname>
+                        
+                    
+                        
+        		            <getcontenttype>httpd/unix-directory</getcontenttype>
+                        
+                    
+                        
+                            <resourcetype><collection/></resourcetype>
+                        
+                    
+                        
+                            <allowed-calendar-component-sets xmlns="http://calendarserver.org/ns/">
+                            
+                            <supported-calendar-component-sets xmlns="urn:ietf:params:xml:ns:caldav"><supported-calendar-component-set><comp name="VEVENT"/></supported-calendar-component-set><supported-calendar-component-set><comp name="VTODO"/></supported-calendar-component-set></supported-calendar-component-sets>
+                            </allowed-calendar-component-sets>
+                        
+                    
+                        
+                            <supportedlock>
+                            
+                            <lockentry><lockscope><exclusive/></lockscope><locktype><write/></locktype></lockentry><lockentry><lockscope><shared/></lockscope><locktype><write/></locktype></lockentry>
+                            </supportedlock>
+                        
+                    
+                        
+        		            <resource-class xmlns="http://twistedmatrix.com/xml_namespace/dav/">MMRootResource</resource-class>
+                        
+                    
+                        
+        		            <getetag>W/"1c0001-20000-59c0e32d"</getetag>
+                        
+                    
+                        
+        		            <getlastmodified>Tue, 19 Sep 2017 02:28:15 GMT</getlastmodified>
+                        
+                    
+                        
+        		            <creationdate>2017-09-19T02:28:15Z</creationdate>
+                        
+                    
+                        
+        		            <getcontentlength>0</getcontentlength>
+                        
+                    
+			    </prop>
+			<status>HTTP/1.1 200 OK</status>
+		</propstat>
+
+	</response>
+</multistatus>
+
+
+2017-09-19 17:28:46,659 [22] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:28:46,659 [22] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:28:46,659 [22] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:29:31,568 [22] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:30:01,504 [22] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:30:02,134 [22] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multistatus xmlns="DAV:">
+	<response>
+		<href>/</href>
+        
+		    <propstat>
+			    <prop>
+                    
+                        
+                            <current-user-principal><href>/8045321927/principal/</href></current-user-principal>
+                        
+                    
+                        
+        		            <displayname>tmp</displayname>
+                        
+                    
+                        
+        		            <getcontenttype>httpd/unix-directory</getcontenttype>
+                        
+                    
+                        
+                            <resourcetype><collection/></resourcetype>
+                        
+                    
+                        
+                            <allowed-calendar-component-sets xmlns="http://calendarserver.org/ns/">
+                            
+                            <supported-calendar-component-sets xmlns="urn:ietf:params:xml:ns:caldav"><supported-calendar-component-set><comp name="VEVENT"/></supported-calendar-component-set><supported-calendar-component-set><comp name="VTODO"/></supported-calendar-component-set></supported-calendar-component-sets>
+                            </allowed-calendar-component-sets>
+                        
+                    
+                        
+                            <supportedlock>
+                            
+                            <lockentry><lockscope><exclusive/></lockscope><locktype><write/></locktype></lockentry><lockentry><lockscope><shared/></lockscope><locktype><write/></locktype></lockentry>
+                            </supportedlock>
+                        
+                    
+                        
+        		            <resource-class xmlns="http://twistedmatrix.com/xml_namespace/dav/">MMRootResource</resource-class>
+                        
+                    
+                        
+        		            <getetag>W/"180001-1e000-59c0e378"</getetag>
+                        
+                    
+                        
+        		            <getlastmodified>Tue, 19 Sep 2017 02:29:28 GMT</getlastmodified>
+                        
+                    
+                        
+        		            <creationdate>2017-09-19T02:29:28Z</creationdate>
+                        
+                    
+                        
+        		            <getcontentlength>0</getcontentlength>
+                        
+                    
+			    </prop>
+			<status>HTTP/1.1 200 OK</status>
+		</propstat>
+
+	</response>
+</multistatus>
+
+
+2017-09-19 17:39:25,724 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 2521.9972 ms
+2017-09-19 17:39:33,676 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:39:33,976 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - http://dav.mail.189.cn/cal/
+2017-09-19 17:39:34,308 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:40:03,432 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:40:04,145 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - http://dav.mail.189.cn/cal/
+2017-09-19 17:40:04,781 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - <?xml version="1.0" encoding="UTF-8" ?>
+
+<multistatus xmlns="DAV:">
+  <response>
+    <href>/cal/</href>
+    <propstat>
+      <prop>
+        <getcontenttype>text/calendar; component=vevent</getcontenttype>
+        <getcontentlength>0</getcontentlength>
+        <response>
+          <href>/</href>
+          <status>HTTP/1.1 404 not_found</status>
+        </response>
+
+2017-09-19 17:41:29,880 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 191.9968 ms
+2017-09-19 17:41:31,495 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 53.4994 ms
+2017-09-19 17:41:31,538 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 38.9994 ms
+2017-09-19 17:41:31,539 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5006 ms
+2017-09-19 17:41:31,539 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 17:41:31,585 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 32.5022 ms
+2017-09-19 17:41:57,177 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:41:57,562 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:41:57,948 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:42:21,250 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:44:56,705 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:44:57,392 [5] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multistatus xmlns="DAV:">
+	<response>
+		<href>/</href>
+        
+		    <propstat>
+			    <prop>
+                    
+                        
+                            <current-user-principal><href>/8045321927/principal/</href></current-user-principal>
+                        
+                    
+                        
+        		            <displayname>tmp</displayname>
+                        
+                    
+                        
+        		            <getcontenttype>httpd/unix-directory</getcontenttype>
+                        
+                    
+                        
+                            <resourcetype><collection/></resourcetype>
+                        
+                    
+                        
+                            <allowed-calendar-component-sets xmlns="http://calendarserver.org/ns/">
+                            
+                            <supported-calendar-component-sets xmlns="urn:ietf:params:xml:ns:caldav"><supported-calendar-component-set><comp name="VEVENT"/></supported-calendar-component-set><supported-calendar-component-set><comp name="VTODO"/></supported-calendar-component-set></supported-calendar-component-sets>
+                            </allowed-calendar-component-sets>
+                        
+                    
+                        
+                            <supportedlock>
+                            
+                            <lockentry><lockscope><exclusive/></lockscope><locktype><write/></locktype></lockentry><lockentry><lockscope><shared/></lockscope><locktype><write/></locktype></lockentry>
+                            </supportedlock>
+                        
+                    
+                        
+        		            <resource-class xmlns="http://twistedmatrix.com/xml_namespace/dav/">MMRootResource</resource-class>
+                        
+                    
+                        
+        		            <getetag>W/"180001-1e000-59c0e675"</getetag>
+                        
+                    
+                        
+        		            <getlastmodified>Tue, 19 Sep 2017 02:42:17 GMT</getlastmodified>
+                        
+                    
+                        
+        		            <creationdate>2017-09-19T02:42:17Z</creationdate>
+                        
+                    
+                        
+        		            <getcontentlength>0</getcontentlength>
+                        
+                    
+			    </prop>
+			<status>HTTP/1.1 200 OK</status>
+		</propstat>
+
+	</response>
+</multistatus>
+
+
+2017-09-19 17:46:32,563 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - options
+2017-09-19 17:46:32,563 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:46:32,563 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - 
+2017-09-19 17:47:03,920 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - propfind
+2017-09-19 17:47:04,609 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - https://caldav.icloud.com/
+2017-09-19 17:47:05,217 [6] INFO  Kalendar.Zero.ApiTerminal.CalDav.Client.Common [(null)] - <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multistatus xmlns="DAV:">
+	<response>
+		<href>/</href>
+        
+		    <propstat>
+			    <prop>
+                    
+                        
+                            <current-user-principal><href>/8045321927/principal/</href></current-user-principal>
+                        
+                    
+                        
+        		            <displayname>tmp</displayname>
+                        
+                    
+                        
+        		            <getcontenttype>httpd/unix-directory</getcontenttype>
+                        
+                    
+                        
+                            <resourcetype><collection/></resourcetype>
+                        
+                    
+                        
+                            <allowed-calendar-component-sets xmlns="http://calendarserver.org/ns/">
+                            
+                            <supported-calendar-component-sets xmlns="urn:ietf:params:xml:ns:caldav"><supported-calendar-component-set><comp name="VEVENT"/></supported-calendar-component-set><supported-calendar-component-set><comp name="VTODO"/></supported-calendar-component-set></supported-calendar-component-sets>
+                            </allowed-calendar-component-sets>
+                        
+                    
+                        
+                            <supportedlock>
+                            
+                            <lockentry><lockscope><exclusive/></lockscope><locktype><write/></locktype></lockentry><lockentry><lockscope><shared/></lockscope><locktype><write/></locktype></lockentry>
+                            </supportedlock>
+                        
+                    
+                        
+        		            <resource-class xmlns="http://twistedmatrix.com/xml_namespace/dav/">MMRootResource</resource-class>
+                        
+                    
+                        
+        		            <getetag>W/"1a0001-1f000-59c0e785"</getetag>
+                        
+                    
+                        
+        		            <getlastmodified>Tue, 19 Sep 2017 02:46:57 GMT</getlastmodified>
+                        
+                    
+                        
+        		            <creationdate>2017-09-19T02:46:57Z</creationdate>
+                        
+                    
+                        
+        		            <getcontentlength>0</getcontentlength>
+                        
+                    
+			    </prop>
+			<status>HTTP/1.1 200 OK</status>
+		</propstat>
+
+	</response>
+</multistatus>
+
+
+2017-09-19 17:54:13,089 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 176.002 ms
+2017-09-19 17:54:14,626 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 54.5 ms
+2017-09-19 17:54:14,694 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 63.0002 ms
+2017-09-19 17:54:14,696 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 1.0022 ms
+2017-09-19 17:54:14,697 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.4993 ms
+2017-09-19 17:54:14,736 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 28.4983 ms
+2017-09-19 17:54:18,728 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/180001-1e000-59c0e675/
+2017-09-19 17:54:18,728 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 17:54:18,728 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 17:54:18,728 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 17:54:18,728 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 17:54:19,188 [5] ERROR Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (404) 未找到。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.ApiTerminal.Clients.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile, NetworkCredential credentials) 位置 C:\VisualStudio\Kalendar.Git\Libraries\ApiTerminal\Clients\BrowserClient.cs:行号 163
+2017-09-19 17:54:22,488 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=http://dav.mail.189.cn/cal/
+2017-09-19 17:54:22,488 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 17:54:22,488 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 17:54:22,488 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 17:54:22,488 [5] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 17:54:29,473 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/180001-1e000-59c0e675/
+2017-09-19 17:54:29,473 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 17:54:29,473 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 17:54:29,473 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 17:54:29,473 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 17:54:29,700 [6] ERROR Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - System.Net.WebException: 远程服务器返回错误: (404) 未找到。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Kalendar.Zero.ApiTerminal.Clients.BrowserClient.SendHttpRequest(String url, Boolean ssl, String method, String value, Dictionary`2 header, Dictionary`2 formData, Dictionary`2 uploadFiles, String encoding, String accept, String contentType, String saveToFile, NetworkCredential credentials) 位置 C:\VisualStudio\Kalendar.Git\Libraries\ApiTerminal\Clients\BrowserClient.cs:行号 163
+2017-09-19 18:04:41,641 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/
+2017-09-19 18:04:41,701 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 18:04:41,701 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 18:04:41,701 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 18:04:41,701 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 18:04:41,866 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 203.0041 ms
+2017-09-19 18:04:43,623 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 55.0008 ms
+2017-09-19 18:04:43,672 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 44.0025 ms
+2017-09-19 18:04:43,673 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.501 ms
+2017-09-19 18:04:43,674 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 18:04:43,711 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 26.5018 ms
+2017-09-19 18:05:39,623 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 18:05:39,805 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 18:05:39,805 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 18:05:39,805 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 18:05:39,805 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 18:05:39,982 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 437.0009 ms
+2017-09-19 18:05:42,126 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 64.5043 ms
+2017-09-19 18:05:42,178 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 44.999 ms
+2017-09-19 18:05:42,179 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.499 ms
+2017-09-19 18:05:42,179 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 18:05:42,227 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 32.9975 ms
+2017-09-19 18:06:22,031 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 227.9988 ms
+2017-09-19 18:06:23,635 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 58.4988 ms
+2017-09-19 18:06:23,685 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 42.9976 ms
+2017-09-19 18:06:23,686 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.5006 ms
+2017-09-19 18:06:23,686 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.4996 ms
+2017-09-19 18:06:23,727 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 29.5005 ms
+2017-09-19 18:06:28,434 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=https://caldav.icloud.com/8045321927/principal/
+2017-09-19 18:06:28,434 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 18:06:28,434 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 18:06:28,434 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 18:06:28,434 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=1
+2017-09-19 18:12:11,740 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 193.5003 ms
+2017-09-19 18:12:12,078 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - url=http://dav.mail.189.cn/cal/
+2017-09-19 18:12:12,078 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - method=PROPFIND
+2017-09-19 18:12:12,078 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - accept=text/xml
+2017-09-19 18:12:12,078 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - contentType=text/xml
+2017-09-19 18:12:12,078 [6] DEBUG Kalendar.Zero.ApiTerminal.Clients.BrowserClient [(null)] - Depth=0
+2017-09-19 18:12:13,743 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 62.0004 ms
+2017-09-19 18:12:13,800 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 52.0015 ms
+2017-09-19 18:12:13,802 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0.4993 ms
+2017-09-19 18:12:13,802 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 0 ms
+2017-09-19 18:12:13,851 [5] INFO  Kalendar.Zero.Utility.Common.XmlCache [(null)] - 反序列化 spent 34.5002 ms

@@ -47,7 +47,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json",
                     "application/x-www-form-urlencoded");
                 Logger.Info(response);
-                var token = response.JsonToObjContract<Response.MsonlineToken>();
+                var token = response.Content.JsonToObjContract<Response.MsonlineToken>();
                 if (token != null)
                 {
                     avatar.ChannelId = Channel.Id;
@@ -87,7 +87,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json",
                     "application/x-www-form-urlencoded");
                 Logger.Info(response);
-                var token = response.JsonToObjContract<Response.MsonlineToken>();
+                var token = response.Content.JsonToObjContract<Response.MsonlineToken>();
                 if (token != null)
                 {
                     avatar.ChannelId = Channel.Id;

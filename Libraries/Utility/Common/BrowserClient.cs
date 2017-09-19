@@ -21,7 +21,7 @@ namespace Kalendar.Zero.Utility.Common
         {
             ClientCookieContainer = new CookieContainer();
         }
-        
+
         /// <summary>
         /// 模拟WebRequest
         /// </summary>
@@ -45,24 +45,40 @@ namespace Kalendar.Zero.Utility.Common
         /// </param>
         /// <param name="contentType">提交数据格式</param>
         /// <param name="saveToFile">结果保存到文件</param>
+        /// <param name="credentials">结果保存到文件</param>
         /// <returns>响应内容</returns>
-	    public string SendHttpRequest(
-	        string url,
-	        bool ssl = false,
-	        string method = "POST",
-	        string value = "",
-	        Dictionary<string, string> header = null,
-	        Dictionary<string, string> formData = null,
-	        Dictionary<string, string> uploadFiles = null,
-	        string encoding = "utf-8",
-	        string accept = "text/xml",
-	        string contentType = "text/xml",
-	        string saveToFile = "")
-	    {
-	        var result = "";
+        public BrowerResponse SendHttpRequest(
+            string url,
+            bool ssl = false,
+            string method = "POST",
+            string value = "",
+            Dictionary<string, string> header = null,
+            Dictionary<string, string> formData = null,
+            Dictionary<string, string> uploadFiles = null,
+            string encoding = "utf-8",
+            string accept = "text/xml",
+            string contentType = "text/xml",
+            string saveToFile = "",
+            NetworkCredential credentials = null)
+        {
+            var result = new BrowerResponse { Headers = new Dictionary<string, string>() };
             try
             {
                 url = UrlByVerification(url);
+                var encoder = Encoding.GetEncoding(encoding);
+
+                Logger.Debug("url=" + url);
+                Logger.Debug("method=" + method);
+                Logger.Debug("accept=" + accept);
+                Logger.Debug("contentType=" + contentType);
+
+                if (header != null && header.Count > 0)
+                {
+                    foreach (KeyValuePair<string, string> item in header)
+                    {
+                        Logger.Debug(item.Key + "=" + item.Value);
+                    }
+                }
 
                 if (ssl)
                 {
@@ -71,11 +87,18 @@ namespace Kalendar.Zero.Utility.Common
                         new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
                 }
 
-                var request = (HttpWebRequest) WebRequest.Create(url);
+                var request = (HttpWebRequest)WebRequest.Create(url);
                 request.Accept = accept;
-                request.Method = method;
-                request.ContentType = contentType; //+ "; charset=" + encoding.WebName;
+                request.Method = method.ToUpper();
+                request.ContentType = contentType + "; charset=" + encoder.WebName;
                 request.CookieContainer = ClientCookieContainer;
+
+                if (credentials != null)
+                {
+                    var credentialsHeader = "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(
+                        credentials.UserName + ":" + credentials.Password));
+                    request.Headers[HttpRequestHeader.Authorization] = credentialsHeader;
+                }
 
                 if (header != null && header.Count > 0)
                 {
@@ -85,7 +108,6 @@ namespace Kalendar.Zero.Utility.Common
                     }
                 }
 
-                var encoder = Encoding.GetEncoding(encoding);
                 Stream stream = null;
                 if (value != "")
                 {
@@ -116,7 +138,9 @@ namespace Kalendar.Zero.Utility.Common
                 if (uploadFiles != null && uploadFiles.Any())
                 {
                     request.ContentType = "multipart/form-data; boundary=" + boundary;
-                    if (stream == null) { stream = request.GetRequestStream(); }
+
+                    if (stream == null)
+                        stream = request.GetRequestStream();
 
                     string description;
                     foreach (KeyValuePair<string, string> kvp in uploadFiles)
@@ -134,14 +158,19 @@ namespace Kalendar.Zero.Utility.Common
                     }
                 }
 
-                if (stream != null)
-                    stream.Close();
+                stream?.Close();
 
-                using (WebResponse response = request.GetResponse())
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
+                    result.StatusCode = response.StatusCode;
+                    foreach (var key in response.Headers.AllKeys)
+                    {
+                        result.Headers.Add(key, response.Headers[key]);
+                    }
+
                     using (var reader = new StreamReader(response.GetResponseStream(), encoder))
                     {
-                        result = reader.ReadToEnd();
+                        result.Content = reader.ReadToEnd();
                     }
                 }
 
@@ -159,7 +188,7 @@ namespace Kalendar.Zero.Utility.Common
             }
 
             return result;
-	    }
+        }
 
         /// <summary>
         /// WebClient 下载

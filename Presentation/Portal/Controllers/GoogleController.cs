@@ -141,7 +141,7 @@ namespace Kalendar.Web.Portal.Controllers
                     "application/x-www-form-urlencoded");
 
                 Logger.Info(response);
-                return response;
+                return response.Content;
             }
             catch (Exception ex)
             {

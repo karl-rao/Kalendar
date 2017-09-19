@@ -47,12 +47,12 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         /// <param name="saveToFile">结果保存到文件</param>
         /// <param name="credentials">结果保存到文件</param>
         /// <returns>响应内容</returns>
-        public string SendHttpRequest(
+        public BrowerResponse SendHttpRequest(
 	        string url,
 	        bool ssl = false,
 	        string method = "POST",
 	        string value = "",
-	        Dictionary<string, string> header = null,
+	        Dictionary<string, object> header = null,
 	        Dictionary<string, string> formData = null,
 	        Dictionary<string, string> uploadFiles = null,
 	        string encoding = "utf-8",
@@ -61,20 +61,20 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 	        string saveToFile = "",
             NetworkCredential credentials = null)
 	    {
-	        var result = "";
+            var result = new BrowerResponse {Headers=new Dictionary<string, string>()};
             try
             {
                 url = UrlByVerification(url);
                 var encoder = Encoding.GetEncoding(encoding);
 
-
                 Logger.Debug("url=" + url);
                 Logger.Debug("method=" + method);
                 Logger.Debug("accept=" + accept);
                 Logger.Debug("contentType=" + contentType);
+
                 if (header != null && header.Count > 0)
                 {
-                    foreach (KeyValuePair<string, string> item in header)
+                    foreach (KeyValuePair<string, object> item in header)
                     {
                         Logger.Debug(item.Key+"="+ item.Value);
                     }
@@ -89,7 +89,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
                 var request = (HttpWebRequest) WebRequest.Create(url);
                 request.Accept = accept;
-                request.Method =method;
+                request.Method =method.ToUpper();
                 request.ContentType = contentType+ "; charset=" + encoder.WebName;
                 request.CookieContainer = ClientCookieContainer;
 
@@ -102,9 +102,9 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
                 if (header != null && header.Count > 0)
                 {
-                    foreach (KeyValuePair<string, string> item in header)
+                    foreach (KeyValuePair<string, object> item in header)
                     {
-                        request.Headers.Add(item.Key, item.Value);
+                        request.Headers.Add(item.Key, item.Value+"");
                     }
                 }
 
@@ -160,11 +160,17 @@ namespace Kalendar.Zero.ApiTerminal.Clients
 
                 stream?.Close();
 
-                using (WebResponse response = request.GetResponse())
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
+                    result.StatusCode = response.StatusCode;
+                    foreach (var key in response.Headers.AllKeys)
+                    {
+                        result.Headers.Add(key, response.Headers[key]);
+                    }
+
                     using (var reader = new StreamReader(response.GetResponseStream(), encoder))
                     {
-                        result = reader.ReadToEnd();
+                        result.Content = reader.ReadToEnd();
                     }
                 }
 

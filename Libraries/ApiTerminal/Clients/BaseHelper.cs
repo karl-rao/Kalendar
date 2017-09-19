@@ -143,7 +143,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             Logger.Debug("READ API...");
             try
             {
-                var kv = new Dictionary<string, string>
+                var kv = new Dictionary<string, object>
                 {
                     {"Authorization", $"Bearer {Avatar.Token}"},
                     {"www-authenticate", $"Bearer {Avatar.Token}"}
@@ -153,7 +153,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 var response = r.SendHttpRequest(url, true, "GET", "", kv, null, null, "utf-8", "application/json", "application/x-www-form-urlencoded");
 
                 Logger.Info(response);
-                return response;
+                return response.Content;
             }
             catch (Exception ex)
             {

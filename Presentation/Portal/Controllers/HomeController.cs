@@ -344,20 +344,11 @@ namespace Kalendar.Web.Portal.Controllers
         {
             //gzky-zztx-nnta-awzy
             ///("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
-            var server = new Zero.ApiTerminal.CalDav.Client.Server("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
-            if (server.Supports("MKCALENDAR"))
-                server.CreateCalendar("me");
-            var sets = server.GetCalendars();
-            Response.Write(sets.Length);
-            var calendar = sets[0];
-            var e = new Zero.ApiTerminal.CalDav.Event
-            {
-                Description = "this is a description",
-                Summary = "summary",
-                Sequence = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds,
-            };
-            calendar.Save(e);
+            var server = new Zero.ApiTerminal.CalDav.Client.Server
+                //("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
+            ("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
 
+            var sets = server.GetCalendars();
 
             var calendar = sets[0];
             var events=calendar.GetAll();
@@ -379,10 +370,13 @@ namespace Kalendar.Web.Portal.Controllers
         public ActionResult C()
         {
             var r=new Zero.ApiTerminal.Clients.BrowserClient();
+            string query = @"<?xml version=""1.0"" encoding=""utf-8""?>   <propfind xmlns=""DAV:"">     <propname/>   </propfind>";
             var resp=r.SendHttpRequest(
-                                "https://caldav.icloud.com/", false,
+                                "https://caldav.icloud.com/8045321927/principal/", false,
                 "PROPFIND",
-                "", null, null, null, "UTF-8", "text/xml", "text/xml",
+                query, 
+                new Dictionary<string, object> { { "Depth", 1 } }
+                , null, null, "UTF-8", "text/xml", "text/xml",
                 "", new NetworkCredential
                 {
                     UserName = "zhaoma@foxmail.com",
@@ -399,7 +393,54 @@ namespace Kalendar.Web.Portal.Controllers
 
             //Response.Write(resp);
 
-            return Content(resp);
+            Response.Write(resp.StatusCode+"<hr/>");
+            foreach (var header in resp.Headers)
+            {
+                Response.Write(header.Key+"="+header.Value+"<br/>");
+            }
+            Response.Write("<hr/>");
+            Response.Write(Server.HtmlEncode(resp.Content));
+
+
+            return Content("");
+        }
+
+        public ActionResult D()
+        {
+            var r = new Zero.ApiTerminal.Clients.BrowserClient();
+            string query = @"<?xml version=""1.0"" encoding=""utf-8""?>   <propfind xmlns=""DAV:"">     <propname/>   </propfind>";
+            var resp = r.SendHttpRequest(
+                                "http://dav.mail.189.cn/cal/", false,
+                "PROPFIND",
+                query,
+                new Dictionary<string, object> { { "Depth", 0} }
+                , null, null, "UTF-8", "text/xml", "text/xml",
+                "", new NetworkCredential
+                {
+                    UserName = "18121119302@189.cn",
+                    Password = "1029824z"
+                });
+            //"http://dav.mail.189.cn/cal/", false, 
+            //"PROPFIND", 
+            //"", null, null, null, "UTF-8", "text/xml", "text/xml",
+            //"", new NetworkCredential
+            //{
+            //    UserName = "18121119302@189.cn",
+            //    Password = "1029824z"
+            //});
+
+            //Response.Write(resp);
+
+            Response.Write(resp.StatusCode + "<hr/>");
+            foreach (var header in resp.Headers)
+            {
+                Response.Write(header.Key + "=" + header.Value + "<br/>");
+            }
+            Response.Write("<hr/>");
+            Response.Write(Server.HtmlEncode(resp.Content));
+
+
+            return Content("");
         }
 
     }

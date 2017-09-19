@@ -123,6 +123,7 @@
     <Compile Include="CalDav\TimeZone.cs" />
     <Compile Include="CalDav\ToDo.cs" />
     <Compile Include="CalDav\Trigger.cs" />
+    <Compile Include="Clients\BrowerResponse.cs" />
     <Compile Include="Clients\BrowserClient.cs" />
     <Compile Include="Clients\ObjectExtensions.cs" />
     <Compile Include="Clients\Request\WoowRequest.cs" />

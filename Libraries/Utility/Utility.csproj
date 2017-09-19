@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BrowerResponse.cs" />
     <Compile Include="Common\BrowserClient.cs" />
     <Compile Include="Common\Cache.cs" />
     <Compile Include="Common\CacheHelper.cs" />

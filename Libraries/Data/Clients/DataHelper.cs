@@ -29,7 +29,9 @@ namespace Kalendar.Zero.Data.Clients
         private string ReadFromProxy(ApiTerminal.Clients.Request.WoowRequest request)
         {
             var r = new BrowserClient();
-            return r.SendHttpRequest(Config.ProxyApiUri, false, "POST", request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
+            var resp= r.SendHttpRequest(Config.ProxyApiUri, false, "POST", request.ObjToJson(), null, null, null, "UTF-8", "application/json", "application/json");
+
+            return resp.Content;
         }
 
         #endregion

@@ -28,7 +28,7 @@ namespace Kalendar.Zero.Data.Clients
                 var response = r.SendHttpRequest(url, true, "GET", "", kv, null, null, "utf-8", "application/json", "application/x-www-form-urlencoded");
 
                 Logger.Info(response);
-                return response;
+                return response.Content;
             }
             catch (Exception ex)
             {

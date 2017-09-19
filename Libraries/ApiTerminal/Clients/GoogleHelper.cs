@@ -64,7 +64,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 var r = new BrowserClient();
                 var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json", "application/x-www-form-urlencoded");
                 Logger.Info(response);
-                var token = response.JsonToObjContract<Response.GoogleToken>();
+                var token = response.Content.JsonToObjContract<Response.GoogleToken>();
                 if (token != null)
                 {
                     avatar.ChannelId = Channel.Id;
@@ -107,7 +107,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 var r = new BrowserClient();
                 var response = r.SendHttpRequest(url, true, "POST", data, null, null, null, "utf-8", "application/json", "application/x-www-form-urlencoded");
                 Logger.Info(response);
-                var token = response.JsonToObjContract<Response.MsonlineToken>();
+                var token = response.Content.JsonToObjContract<Response.MsonlineToken>();
                 if (token != null)
                 {
                     avatar.ChannelId = Channel.Id;
@@ -141,7 +141,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 var response = r.SendHttpRequest(string.Format(url, avatar.Token), true, "GET", "", null, null, null,
                     "utf-8", "application/json");
                 Logger.Info(response);
-                var user = response.JsonToObjContract<Response.GoogleUser>();
+                var user = response.Content.JsonToObjContract<Response.GoogleUser>();
                 if (user != null)
                 {
                     avatar.ChannelIdentity = user.Id;

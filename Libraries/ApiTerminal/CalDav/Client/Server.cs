@@ -5,7 +5,9 @@ using System.Xml.Linq;
 
 namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 	public class Server {
-		public Uri Url { get; set; }
+        public readonly log4net.ILog Logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public Uri Url { get; set; }
 		public System.Net.NetworkCredential Credentials { get; set; }
 		public Server(string url, string username = null, string password = null)
 			: this(new Uri(url), username, password) { }
@@ -61,7 +63,8 @@ namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 					 new Calendar { Url =  Url, Credentials = Credentials }
 				};
 
-			var xdoc = XDocument.Parse(result.Item2);
+
+            var xdoc = XDocument.Parse(result.Item2);
 			var hrefs = xdoc.Descendants(xcollectionset).SelectMany(x => x.Descendants(CalDav.Common.xDav.GetName("href")));
 			return hrefs.Select(x => new Calendar { Url = new Uri(Url, x.Value), Credentials = Credentials }).ToArray();
 		}
