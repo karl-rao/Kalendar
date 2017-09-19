@@ -343,13 +343,21 @@ namespace Kalendar.Web.Portal.Controllers
         public ActionResult Caldav()
         {
             //gzky-zztx-nnta-awzy
-            
-            var server = new Zero.ApiTerminal.CalDav.Client.Server
-                //("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
-            ("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
-
+            ///("http://dav.mail.189.cn/cal/", "18121119302@189.cn", "1029824z");
+            var server = new Zero.ApiTerminal.CalDav.Client.Server("https://caldav.icloud.com/", "zhaoma@foxmail.com", "gzky-zztx-nnta-awzy");
+            if (server.Supports("MKCALENDAR"))
+                server.CreateCalendar("me");
             var sets = server.GetCalendars();
             Response.Write(sets.Length);
+            var calendar = sets[0];
+            var e = new Zero.ApiTerminal.CalDav.Event
+            {
+                Description = "this is a description",
+                Summary = "summary",
+                Sequence = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds,
+            };
+            calendar.Save(e);
+
 
             var calendar = sets[0];
             var events=calendar.GetAll();

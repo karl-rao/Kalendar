@@ -17,12 +17,14 @@ using Google.Apis.Util.Store;
 
 namespace Kalendar.Zero.ApiTerminal.Clients
 {
+    /// <summary>
+    /// google处理类
+    /// </summary>
     public class GoogleHelper
         : BaseHelper, IBaseHelper
     {
-        private const string ApplicationName = "Atimer.cn";
         /// <summary>
-        /// 
+        /// 登录地址
         /// </summary>
         /// <returns></returns>
         public override string Signin()
@@ -39,7 +41,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         }
 
         /// <summary>
-        /// 
+        /// oauth用code获取token
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
@@ -82,7 +84,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         }
 
         /// <summary>
-        /// 
+        /// 刷新token
         /// </summary>
         /// <param name="refreshToken"></param>
         /// <returns></returns>
@@ -124,7 +126,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
         }
 
         /// <summary>
-        /// 
+        /// 读取用户身份信息
         /// </summary>
         /// <returns></returns>
         public override Entities.Avatar ReadAvatar()

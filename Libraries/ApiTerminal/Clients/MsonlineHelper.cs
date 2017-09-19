@@ -9,6 +9,9 @@ using System.Web;
 
 namespace Kalendar.Zero.ApiTerminal.Clients
 {
+    /// <summary>
+    /// microsoftonline处理类
+    /// </summary>
     public class MsonlineHelper
         : BaseHelper, IBaseHelper
     {
@@ -102,6 +105,10 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
+        /// <summary>
+        /// 读取用户消息
+        /// </summary>
+        /// <returns></returns>
         public override Entities.Avatar ReadAvatar()
         {
             var now = DateTime.Now;
@@ -122,6 +129,11 @@ namespace Kalendar.Zero.ApiTerminal.Clients
             return avatar;
         }
 
+        /// <summary>
+        /// 读取用户消息
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
         public override List<Entities.Message> ReadMessages(int page = 1)
         {
             var result = new List<Entities.Message>();
