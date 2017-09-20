@@ -82,10 +82,11 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                 
                 if (ssl)
                 {
-                    //ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
                     ServicePointManager.ServerCertificateValidationCallback =
                         new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
                 }
+                ServicePointManager.Expect100Continue = false;
 
                 var request = (HttpWebRequest) WebRequest.Create(url);
                 request.Accept = accept;
@@ -98,6 +99,7 @@ namespace Kalendar.Zero.ApiTerminal.Clients
                     var credentialsHeader = "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(
                         credentials.UserName + ":" + credentials.Password));
                     request.Headers[HttpRequestHeader.Authorization] = credentialsHeader;
+                    request.PreAuthenticate = true;
                 }
 
                 if (header != null && header.Count > 0)

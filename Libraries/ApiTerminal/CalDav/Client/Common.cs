@@ -7,7 +7,12 @@ namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 	internal static class Common {
          static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public static Tuple<System.Net.HttpStatusCode, string, System.Net.WebHeaderCollection> Request(Uri url, string method, XDocument content, NetworkCredential credentials = null, System.Collections.Generic.Dictionary<string, object> headers = null) {
+        public static Tuple<System.Net.HttpStatusCode, string, System.Net.WebHeaderCollection> Request(
+            Uri url, 
+            string method,
+            XDocument content, 
+            NetworkCredential credentials = null, 
+            System.Collections.Generic.Dictionary<string, object> headers = null) {
 			return Request(url, method, content.Root, credentials, headers);
 		}
 		public static Tuple<System.Net.HttpStatusCode, string, System.Net.WebHeaderCollection> Request(Uri url, string method, XElement content, NetworkCredential credentials = null, System.Collections.Generic.Dictionary<string, object> headers = null) {

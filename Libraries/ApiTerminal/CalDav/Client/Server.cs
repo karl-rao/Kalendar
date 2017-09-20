@@ -66,7 +66,14 @@ namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 
             var xdoc = XDocument.Parse(result.Item2);
 			var hrefs = xdoc.Descendants(xcollectionset).SelectMany(x => x.Descendants(CalDav.Common.xDav.GetName("href")));
-			return hrefs.Select(x => new Calendar { Url = new Uri(Url, x.Value), Credentials = Credentials }).ToArray();
+
+            Logger.Info(hrefs.Count());
+		    foreach (var xElement in hrefs)
+		    {
+		        Logger.Info(xElement.Name+" = "+xElement.Value);
+		    }
+
+		    return hrefs.Select(x => new Calendar { Url = new Uri(Url, x.Value), Credentials = Credentials }).ToArray();
 		}
 
 

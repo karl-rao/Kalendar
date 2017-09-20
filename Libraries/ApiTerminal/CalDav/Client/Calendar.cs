@@ -13,8 +13,12 @@ namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 		public string Description { get; set; }
 
 		public void Initialize() {
-			var result = global::Kalendar.Zero.ApiTerminal.CalDav.Client.Common.Request(Url, "PROPFIND", global::Kalendar.Zero.ApiTerminal.CalDav.Common.xDav.Element("propfind",
-				global::Kalendar.Zero.ApiTerminal.CalDav.Common.xDav.Element("allprop")), Credentials, new Dictionary<string, object> {
+			var result = global::Kalendar.Zero.ApiTerminal.CalDav.Client.Common.Request(
+                Url, "PROPFIND", 
+                global::Kalendar.Zero.ApiTerminal.CalDav.Common.xDav.Element("propfind",
+				global::Kalendar.Zero.ApiTerminal.CalDav.Common.xDav.Element("allprop")), 
+                Credentials, 
+                new Dictionary<string, object> {
 					{ "Depth", 0 }
 				});
 			var xdoc = XDocument.Parse(result.Item2);
@@ -66,7 +70,10 @@ namespace Kalendar.Zero.ApiTerminal.CalDav.Client {
 		}
 
 		public CalendarCollection GetAll() {
-			var result = global::Kalendar.Zero.ApiTerminal.CalDav.Client.Common.Request(Url, "PROPFIND", global::Kalendar.Zero.ApiTerminal.CalDav.Common.xCalDav.Element("calendar-multiget",
+			var result = global::Kalendar.Zero.ApiTerminal.CalDav.Client.Common.Request(
+                Url, 
+                "PROPFIND", 
+                global::Kalendar.Zero.ApiTerminal.CalDav.Common.xCalDav.Element("calendar-multiget",
 			global::Kalendar.Zero.ApiTerminal.CalDav.Common.xDav.Element("prop",
 				global::Kalendar.Zero.ApiTerminal.CalDav.Common.xDav.Element("getetag"),
 				global::Kalendar.Zero.ApiTerminal.CalDav.Common.xCalDav.Element("calendar-data")

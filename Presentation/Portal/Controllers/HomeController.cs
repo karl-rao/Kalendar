@@ -350,6 +350,7 @@ namespace Kalendar.Web.Portal.Controllers
 
             var sets = server.GetCalendars();
 
+
             var calendar = sets[0];
             var events=calendar.GetAll();
 
@@ -371,11 +372,12 @@ namespace Kalendar.Web.Portal.Controllers
         {
             var r=new Zero.ApiTerminal.Clients.BrowserClient();
             string query = @"<?xml version=""1.0"" encoding=""utf-8""?>   <propfind xmlns=""DAV:"">     <propname/>   </propfind>";
-            var resp=r.SendHttpRequest(
-                                "https://caldav.icloud.com/8045321927/principal/", false,
+            var resp = r.SendHttpRequest(
+                "https://caldav.icloud.com/",
+                false,
                 "PROPFIND",
-                query, 
-                new Dictionary<string, object> { { "Depth", 1 } }
+                query,
+                new Dictionary<string, object> {{"Depth", 1}}
                 , null, null, "UTF-8", "text/xml", "text/xml",
                 "", new NetworkCredential
                 {
